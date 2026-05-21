@@ -699,6 +699,21 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
 <div class="toast" id="toast"><i class="ti ti-circle-check"></i> <span id="toast-msg"></span></div>
 
 <script>
+// ── AUTH GUARD ──
+(function(){
+  try {
+    var session = sessionStorage.getItem('ns_session') || localStorage.getItem('ns_session');
+    if(!session){
+      // Only redirect if not already going to login
+      if(window.location.pathname !== '/login' && window.location.pathname !== '/signup'){
+        window.location.replace('/login');
+      }
+    }
+  } catch(e) {
+    // Storage not available - allow access
+  }
+})();
+
 // ── STATE ──
 let activeTab='type', isRec=false, recog=null, selectedFmt='SOAP', currentNote={};
 
@@ -1329,6 +1344,13 @@ function generateCMS(){
   w.document.write(html);
   w.document.close();
   showToast('CMS-1500 generated — print or save as PDF');
+}
+
+// ── LOGOUT ──
+function logout(){
+  sessionStorage.removeItem('ns_session');
+  localStorage.removeItem('ns_session');
+  window.location.href = '/login';
 }
 
 // ── TOAST ──
