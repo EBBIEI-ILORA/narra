@@ -61,6 +61,8 @@ html,body{min-height:100%;font-family:'Segoe UI',system-ui,sans-serif;background
 /* METRICS */
 .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:1.2rem 0;}
 .metric{background:var(--white);border:1px solid var(--stone-pale);border-radius:14px;padding:1.1rem 1.2rem;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+.metric.clickable{cursor:pointer;transition:all .2s;}
+.metric.clickable:hover{border-color:var(--blue-soft);background:var(--blue-faint);transform:translateY(-2px);box-shadow:0 6px 16px rgba(58,95,138,.12);}
 .metric-val{font-size:28px;font-weight:600;color:var(--text-dark);}
 .metric-label{font-size:12px;color:var(--text-soft);margin-top:2px;}
 .metric-delta{font-size:12px;margin-top:6px;}
@@ -240,17 +242,17 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
 .cms-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:.9rem;}
 .cms-row-1{margin-bottom:.9rem;}
 .cms-label{font-size:11px;font-weight:600;color:var(--text-mid);margin-bottom:4px;display:block;}
-.cms-input{width:100%;padding:9px 11px;border-radius:8px;border:1px solid var(--stone-pale);font-size:13px;background:var(--plaster);color:var(--text-dark);font-family:inherit;}
+.cms-input{width:100%;min-width:0;padding:9px 11px;border-radius:8px;border:1px solid var(--stone-pale);font-size:13px;background:var(--plaster);color:var(--text-dark);font-family:inherit;}
 .cms-input:focus{outline:none;border-color:var(--blue-mid);box-shadow:0 0 0 3px rgba(58,95,138,.08);}
 .cms-select{width:100%;padding:9px 11px;border-radius:8px;border:1px solid var(--stone-pale);font-size:13px;background:var(--plaster);color:var(--text-dark);font-family:inherit;}
 .cms-hint{font-size:11px;color:var(--text-light);margin-top:3px;}
 .cms-generate-btn{width:100%;padding:14px;border-radius:11px;background:var(--iron);color:var(--blue-soft);font-size:14px;font-weight:600;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .15s;font-family:inherit;margin-top:.5rem;}
 .cms-generate-btn:hover{background:var(--iron-mid);color:#fff;}
 .cms-generate-btn i{font-size:17px;}
-.cpt-row{display:flex;gap:8px;align-items:center;margin-bottom:.6rem;}
-.cpt-code{width:120px;flex-shrink:0;}
-.cpt-desc{flex:1;}
-.cpt-fee{width:90px;flex-shrink:0;}
+.cpt-row{display:grid;grid-template-columns:110px 1fr 90px 32px;gap:8px;align-items:center;margin-bottom:.6rem;}
+.cpt-code{width:100%;}
+.cpt-desc{width:100%;}
+.cpt-fee{width:100%;}
 .add-cpt-btn{background:none;border:1px dashed var(--stone-pale);border-radius:7px;padding:6px 12px;font-size:12px;color:var(--text-soft);cursor:pointer;font-family:inherit;transition:all .15s;display:flex;align-items:center;gap:5px;margin-top:4px;}
 .add-cpt-btn:hover{border-color:var(--blue-mid);color:var(--blue-deep);background:var(--blue-mist);}
 .remove-cpt{background:none;border:none;cursor:pointer;color:var(--stone-light);font-size:16px;padding:4px;transition:all .15s;}
@@ -291,13 +293,29 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
 <div class="screen active" id="screen-dashboard">
   <div style="padding:.5rem 0 .75rem;">
     <div style="font-size:24px;font-weight:600;color:var(--text-dark);" id="greeting-title"></div>
-    <div style="font-size:13px;color:var(--text-soft);margin-top:4px;">Harmony Mental Health Clinic &nbsp;·&nbsp; Baltimore, MD &nbsp;·&nbsp; <span id="todays-date"></span></div>
+    <div style="font-size:13px;color:var(--text-soft);margin-top:4px;">Harmony Mental Health Clinic &nbsp;·&nbsp;  &nbsp;·&nbsp; <span id="todays-date"></span></div>
   </div>
   <div class="metrics">
-    <div class="metric"><div class="metric-val">12</div><div class="metric-label">Notes today</div><div class="metric-delta delta-up">↑ 3 from yesterday</div></div>
-    <div class="metric"><div class="metric-val">4</div><div class="metric-label">Pending review</div><div class="metric-delta delta-warn">Needs attention</div></div>
-    <div class="metric"><div class="metric-val">98%</div><div class="metric-label">On-time rate</div><div class="metric-delta delta-up">↑ 12% this month</div></div>
-    <div class="metric"><div class="metric-val" id="metric-therapists">3</div><div class="metric-label">Active therapists</div><div class="metric-delta delta-up">All compliant</div></div>
+    <div class="metric clickable" onclick="goToNotesToday()" title="View today's notes">
+      <div class="metric-val">12</div>
+      <div class="metric-label">Notes today</div>
+      <div class="metric-delta delta-up">↑ 3 from yesterday</div>
+    </div>
+    <div class="metric clickable" onclick="goToPendingNotes()" title="View pending notes">
+      <div class="metric-val">4</div>
+      <div class="metric-label">Pending review</div>
+      <div class="metric-delta delta-warn">Needs attention</div>
+    </div>
+    <div class="metric" title="On-time submission rate">
+      <div class="metric-val">98%</div>
+      <div class="metric-label">On-time rate</div>
+      <div class="metric-delta delta-up">↑ 12% this month</div>
+    </div>
+    <div class="metric clickable" onclick="go('therapists',document.querySelectorAll('.nav-tab')[2])" title="Manage therapists">
+      <div class="metric-val" id="metric-therapists">3</div>
+      <div class="metric-label">Active therapists</div>
+      <div class="metric-delta delta-up">All compliant</div>
+    </div>
   </div>
   <div class="grid-2">
     <div>
@@ -306,9 +324,9 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
         <button class="sec-action" onclick="go('therapists',document.querySelectorAll('.nav-tab')[2])"><i class="ti ti-plus"></i> Add</button>
       </div>
       <div class="list-wrap">
-        <div class="t-row"><div class="avatar">SM</div><div class="row-info"><div class="row-name">Sarah Mitchell, LCSW</div><div class="row-meta">5 notes today · Active 20 min ago</div></div><span class="badge badge-on">Active</span></div>
-        <div class="t-row"><div class="avatar stone">JK</div><div class="row-info"><div class="row-name">James Kim, LPC</div><div class="row-meta">3 notes today · Active 1 hr ago</div></div><span class="badge badge-on">Active</span></div>
-        <div class="t-row"><div class="avatar stone">AT</div><div class="row-info"><div class="row-name">Aisha Thompson, PhD</div><div class="row-meta">Invite pending · 0 notes</div></div><span class="badge badge-off">Pending</span></div>
+        <div class="t-row" style="cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='var(--blue-soft)';this.style.background='var(--blue-faint)'" onmouseout="this.style.borderColor='';this.style.background=''" onclick="go('therapists',document.querySelectorAll('.nav-tab')[2])"><div class="avatar">SM</div><div class="row-info"><div class="row-name">Sarah Mitchell, LCSW</div><div class="row-meta">5 notes today · Active 20 min ago</div></div><span class="badge badge-on">Active</span><i class="ti ti-chevron-right" style="color:var(--text-light);font-size:14px;margin-left:auto;"></i></div>
+        <div class="t-row" style="cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='var(--blue-soft)';this.style.background='var(--blue-faint)'" onmouseout="this.style.borderColor='';this.style.background=''" onclick="go('therapists',document.querySelectorAll('.nav-tab')[2])"><div class="avatar stone">JK</div><div class="row-info"><div class="row-name">James Kim, LPC</div><div class="row-meta">3 notes today · Active 1 hr ago</div></div><span class="badge badge-on">Active</span><i class="ti ti-chevron-right" style="color:var(--text-light);font-size:14px;margin-left:auto;"></i></div>
+        <div class="t-row" style="cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='var(--blue-soft)';this.style.background='var(--blue-faint)'" onmouseout="this.style.borderColor='';this.style.background=''" onclick="go('therapists',document.querySelectorAll('.nav-tab')[2])"><div class="avatar stone">AT</div><div class="row-info"><div class="row-name">Aisha Thompson, PhD</div><div class="row-meta">Invite pending · 0 notes</div></div><span class="badge badge-off">Pending</span><i class="ti ti-chevron-right" style="color:var(--text-light);font-size:14px;margin-left:auto;"></i></div>
       </div>
     </div>
     <div>
@@ -348,7 +366,7 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
       <div class="note-info-item"><div class="nii-label">Session date</div><div class="nii-value" id="nd-date"></div></div>
       <div class="note-info-item"><div class="nii-label">Note format</div><div class="nii-value" id="nd-format"></div></div>
       <div class="note-info-item"><div class="nii-label">Session time</div><div class="nii-value" id="nd-time"></div></div>
-      <div class="note-info-item"><div class="nii-label">Clinic</div><div class="nii-value">Harmony MHC · Baltimore, MD</div></div>
+      <div class="note-info-item"><div class="nii-label">Clinic</div><div class="nii-value">Harmony MHC </div></div>
     </div>
     <div id="nd-blocks"></div>
     <div class="sig-block">
@@ -473,17 +491,17 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
     <div class="therapist-card">
       <div class="avatar" style="width:44px;height:44px;font-size:14px;">SM</div>
       <div class="tc-info"><div class="tc-name">Sarah Mitchell, LCSW</div><div class="tc-role">Therapist · SOAP format · sarah@harmonymhc.com</div><div class="tc-stats">47 notes this month &nbsp;·&nbsp; 98% on-time &nbsp;·&nbsp; License: MD-LCSW-44821</div></div>
-      <div class="tc-actions"><span class="badge badge-on">Active</span><button class="t-btn">Edit</button><button class="t-btn danger" onclick="removeTherapist(this)">Remove</button></div>
+      <div class="tc-actions"><span class="badge badge-on">Active</span><button class="t-btn" onclick="editTherapist(this)">Edit</button><button class="t-btn danger" onclick="removeTherapist(this)">Remove</button></div>
     </div>
     <div class="therapist-card">
       <div class="avatar stone" style="width:44px;height:44px;font-size:14px;">JK</div>
       <div class="tc-info"><div class="tc-name">James Kim, LPC</div><div class="tc-role">Therapist · DAP format · james@harmonymhc.com</div><div class="tc-stats">31 notes this month &nbsp;·&nbsp; 97% on-time &nbsp;·&nbsp; License: MD-LPC-30192</div></div>
-      <div class="tc-actions"><span class="badge badge-on">Active</span><button class="t-btn">Edit</button><button class="t-btn danger" onclick="removeTherapist(this)">Remove</button></div>
+      <div class="tc-actions"><span class="badge badge-on">Active</span><button class="t-btn" onclick="editTherapist(this)">Edit</button><button class="t-btn danger" onclick="removeTherapist(this)">Remove</button></div>
     </div>
     <div class="therapist-card">
       <div class="avatar stone" style="width:44px;height:44px;font-size:14px;">AT</div>
       <div class="tc-info"><div class="tc-name">Aisha Thompson, PhD</div><div class="tc-role">Clinical Supervisor · BIRP format · aisha@harmonymhc.com</div><div class="tc-stats">Invite sent · Awaiting account setup</div></div>
-      <div class="tc-actions"><span class="badge badge-off">Pending</span><button class="t-btn">Resend invite</button><button class="t-btn danger" onclick="removeTherapist(this)">Remove</button></div>
+      <div class="tc-actions"><span class="badge badge-off">Pending</span><button class="t-btn" onclick="resendInvite(this)">Resend invite</button><button class="t-btn danger" onclick="removeTherapist(this)">Remove</button></div>
     </div>
   </div>
 </div>
@@ -492,7 +510,7 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
 <div class="screen" id="screen-settings">
   <div class="clinic-hdr">
     <div class="clinic-ico"><i class="ti ti-building-hospital"></i></div>
-    <div><div style="font-size:16px;font-weight:600;color:var(--text-dark);">Harmony Mental Health Clinic</div><div style="font-size:12px;color:var(--text-soft);margin-top:3px;">1200 N Charles St, Baltimore, MD 21201 &nbsp;·&nbsp; COMAR & HIPAA compliant</div></div>
+    <div><div style="font-size:16px;font-weight:600;color:var(--text-dark);">Harmony Mental Health Clinic</div><div style="font-size:12px;color:var(--text-soft);margin-top:3px;">&nbsp;·&nbsp; COMAR & HIPAA compliant</div></div>
     <i class="ti ti-edit" style="margin-left:auto;color:var(--blue-mid);cursor:pointer;font-size:20px;"></i>
   </div>
   <div class="grid-2">
@@ -500,7 +518,7 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
       <div class="card">
         <div class="stg-title">Clinic information</div>
         <div class="form-group"><label class="form-label">Clinic name</label><input type="text" value="Harmony Mental Health Clinic"></div>
-        <div class="form-group"><label class="form-label">Address</label><input type="text" value="1200 N Charles St, Baltimore, MD 21201"></div>
+        <div class="form-group"><label class="form-label">Address</label><input type="text" value=""></div>
         <div class="form-row"><div><label class="form-label">NPI number</label><input type="text" value="1234567890"></div><div><label class="form-label">Tax ID</label><input type="text" value="XX-XXXXXXX"></div></div>
         <div class="form-group" style="margin-bottom:0;"><label class="form-label">Admin email</label><input type="email" value="admin@harmonymhc.com"></div>
       </div>
@@ -588,7 +606,7 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
       <div><label class="cms-label">Member ID / Policy #</label><input type="text" class="cms-input" id="pt-memberid" placeholder="XYZ123456789"></div>
     </div>
     <div class="cms-row">
-      <div><label class="cms-label">Patient address</label><input type="text" class="cms-input" id="pt-addr" placeholder="123 Main St, Baltimore, MD 21201"></div>
+      <div><label class="cms-label">Patient address</label><input type="text" class="cms-input" id="pt-addr" placeholder="123 Main St, "></div>
       <div><label class="cms-label">Phone</label><input type="text" class="cms-input" id="pt-phone" placeholder="(410) 555-0100"></div>
     </div>
   </div>
@@ -624,7 +642,7 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
     </div>
     <div class="cms-row">
       <div><label class="cms-label">Practice name</label><input type="text" class="cms-input" id="prov-practice" placeholder="Harmony Mental Health Clinic"></div>
-      <div><label class="cms-label">Practice address</label><input type="text" class="cms-input" id="prov-addr" placeholder="1200 N Charles St, Baltimore, MD 21201"></div>
+      <div><label class="cms-label">Practice address</label><input type="text" class="cms-input" id="prov-addr" placeholder=""></div>
     </div>
     <div class="cms-row">
       <div><label class="cms-label">Practice phone</label><input type="text" class="cms-input" id="prov-phone" placeholder="(410) 555-0200"></div>
@@ -647,7 +665,7 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
       </div>
     </div>
     <div style="margin-bottom:.5rem;">
-      <div style="display:grid;grid-template-columns:120px 1fr 90px 28px;gap:8px;margin-bottom:4px;">
+      <div style="display:grid;grid-template-columns:110px 1fr 90px 32px;gap:8px;margin-bottom:4px;">
         <div class="cms-label">CPT code</div>
         <div class="cms-label">Description</div>
         <div class="cms-label">Fee ($)</div>
@@ -674,7 +692,7 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
   </button>
 </div>
 
-<div class="footer">NarraScribe &nbsp;·&nbsp;  &nbsp;·&nbsp; HIPAA-compliant AI clinical documentation &nbsp;·&nbsp; Baltimore, MD</div>
+<div class="footer">NarraScribe &nbsp;·&nbsp; HIPAA-compliant AI clinical documentation</div>
 </div>
 
 <!-- TOAST -->
@@ -717,6 +735,36 @@ function renderNotes(){
       <div class="n-right"><span class="n-time">${n.time}</span><span class="badge ${n.status==='Submitted'?'badge-done':'badge-draft'}">${n.status}</span></div>`;
     list.appendChild(row);
   });
+}
+
+// ── METRIC CARD ACTIONS ──
+function goToNotesToday(){
+  // Go to notes list filtered to today - shows all notes
+  go('dashboard', document.querySelectorAll('.nav-tab')[0]);
+  // Scroll down to recent notes section
+  setTimeout(function(){
+    var el = document.getElementById('notes-list');
+    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 100);
+}
+
+function goToPendingNotes(){
+  // Filter notes list to show only drafts/pending
+  go('dashboard', document.querySelectorAll('.nav-tab')[0]);
+  setTimeout(function(){
+    var el = document.getElementById('notes-list');
+    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    // Highlight pending notes
+    document.querySelectorAll('.n-row').forEach(function(row){
+      var badge = row.querySelector('.badge-draft');
+      if(badge){
+        row.style.borderColor = 'var(--amber)';
+        row.style.background = 'var(--amber-light)';
+        setTimeout(function(){ row.style.borderColor=''; row.style.background=''; }, 2500);
+      }
+    });
+    showToast('Showing pending notes — highlighted below');
+  }, 150);
 }
 
 // ── NAVIGATION ──
@@ -791,7 +839,7 @@ h1{font-size:20px;color:#3A5F8A;margin-bottom:4px;}.sub{font-size:13px;color:#7A
 <div><div class="ml">Date</div><div class="mv">${new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</div></div>
 <div><div class="ml">Format</div><div class="mv">${n.fmt}</div></div>
 <div><div class="ml">Session time</div><div class="mv">${n.time}</div></div>
-<div><div class="ml">Clinic</div><div class="mv">Harmony MHC · Baltimore, MD</div></div>
+<div><div class="ml">Clinic</div><div class="mv">Harmony MHC </div></div>
 </div>${secs}
 <div class="sig"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#7A8592;margin-bottom:12px;">Clinician Signature & Attestation</div>
 <div class="sg"><div><div class="sl">Clinician name</div><div class="sv">${n.clinician}</div></div><div><div class="sl">License</div><div class="sv">${n.cred}</div></div><div><div class="sl">Date signed</div><div class="sv">${new Date().toLocaleDateString()}</div></div></div>
@@ -819,7 +867,7 @@ h1{font-size:20px;color:#3A5F8A;margin-bottom:4px;}.sub{font-size:13px;color:#7A
       <div><label class="cms-label">Member ID / Policy #</label><input type="text" class="cms-input" id="pt-memberid" placeholder="XYZ123456789"></div>
     </div>
     <div class="cms-row">
-      <div><label class="cms-label">Patient address</label><input type="text" class="cms-input" id="pt-addr" placeholder="123 Main St, Baltimore, MD 21201"></div>
+      <div><label class="cms-label">Patient address</label><input type="text" class="cms-input" id="pt-addr" placeholder="123 Main St, "></div>
       <div><label class="cms-label">Phone</label><input type="text" class="cms-input" id="pt-phone" placeholder="(410) 555-0100"></div>
     </div>
   </div>
@@ -855,7 +903,7 @@ h1{font-size:20px;color:#3A5F8A;margin-bottom:4px;}.sub{font-size:13px;color:#7A
     </div>
     <div class="cms-row">
       <div><label class="cms-label">Practice name</label><input type="text" class="cms-input" id="prov-practice" placeholder="Harmony Mental Health Clinic"></div>
-      <div><label class="cms-label">Practice address</label><input type="text" class="cms-input" id="prov-addr" placeholder="1200 N Charles St, Baltimore, MD 21201"></div>
+      <div><label class="cms-label">Practice address</label><input type="text" class="cms-input" id="prov-addr" placeholder=""></div>
     </div>
     <div class="cms-row">
       <div><label class="cms-label">Practice phone</label><input type="text" class="cms-input" id="prov-phone" placeholder="(410) 555-0200"></div>
@@ -878,7 +926,7 @@ h1{font-size:20px;color:#3A5F8A;margin-bottom:4px;}.sub{font-size:13px;color:#7A
       </div>
     </div>
     <div style="margin-bottom:.5rem;">
-      <div style="display:grid;grid-template-columns:120px 1fr 90px 28px;gap:8px;margin-bottom:4px;">
+      <div style="display:grid;grid-template-columns:110px 1fr 90px 32px;gap:8px;margin-bottom:4px;">
         <div class="cms-label">CPT code</div>
         <div class="cms-label">Description</div>
         <div class="cms-label">Fee ($)</div>
@@ -1063,13 +1111,30 @@ function addTherapist(){
   card.className='therapist-card';
   card.innerHTML=`<div class="avatar stone" style="width:44px;height:44px;font-size:14px;">${init}</div>
     <div class="tc-info"><div class="tc-name">${fn} ${ln}${lic?', '+lic:''}</div><div class="tc-role">${role} &nbsp;·&nbsp; ${fmt} format &nbsp;·&nbsp; ${email}</div><div class="tc-stats">Invite sent &nbsp;·&nbsp; Awaiting account setup${licnum?' &nbsp;·&nbsp; License: '+licnum:''}</div></div>
-    <div class="tc-actions"><span class="badge badge-off">Pending</span><button class="t-btn">Resend invite</button><button class="t-btn danger" onclick="removeTherapist(this)">Remove</button></div>`;
+    <div class="tc-actions"><span class="badge badge-off">Pending</span><button class="t-btn" onclick="resendInvite(this)">Resend invite</button><button class="t-btn danger" onclick="removeTherapist(this)">Remove</button></div>`;
   document.getElementById('therapist-cards').appendChild(card);
   ['t-fname','t-lname','t-email','t-phone','t-license','t-licnum'].forEach(id=>{document.getElementById(id).value='';});
   document.getElementById('add-form').classList.remove('show');
   showToast('Invite sent to '+fn+' '+ln);
 }
 function removeTherapist(btn){if(confirm('Remove this therapist from the clinic?')){btn.closest('.therapist-card').remove();showToast('Therapist removed');}}
+
+function editTherapist(btn){
+  const card = btn.closest('.therapist-card');
+  const name = card.querySelector('.tc-name').textContent;
+  const role = card.querySelector('.tc-role').textContent;
+  const stats = card.querySelector('.tc-stats').textContent;
+  showToast('Edit '+name+' — full editing available once connected to database');
+}
+
+function resendInvite(btn){
+  const card = btn.closest('.therapist-card');
+  const name = card.querySelector('.tc-name').textContent;
+  btn.textContent = 'Sent!';
+  btn.style.color = 'var(--green)';
+  setTimeout(()=>{btn.textContent='Resend invite';btn.style.color='';},3000);
+  showToast('Invite resent to '+name);
+}
 
 // ── SETTINGS ──
 function addRow(){
@@ -1113,133 +1178,157 @@ document.addEventListener('input', e=>{
 function g(id){ return (document.getElementById(id)||{}).value||''; }
 
 function generateCMS(){
-  const ptName  = g('pt-lname')+', '+g('pt-fname');
-  const provName= g('prov-lname')+', '+g('prov-fname');
-  const insName = (g('ins-lname')||g('pt-lname'))+', '+(g('ins-fname')||g('pt-fname'));
-  const pos     = document.getElementById('prov-pos').selectedOptions[0].text;
-
   // Collect CPT lines
   const rows = document.querySelectorAll('#cpt-rows .cpt-row');
   let svcLines = '';
   let total = 0;
-  rows.forEach((row,i)=>{
+  rows.forEach(function(row){
     const inputs = row.querySelectorAll('input');
     const code = inputs[0].value||'';
     const desc = inputs[1].value||'';
     const fee  = parseFloat(inputs[2].value)||0;
     total += fee;
     if(code){
-      svcLines += `
-        <tr>
-          <td style="border:1px solid #ccc;padding:4px 6px;font-size:11px;">${g('svc-date')}</td>
-          <td style="border:1px solid #ccc;padding:4px 6px;font-size:11px;">${g('prov-pos').split(' ')[0]}</td>
-          <td style="border:1px solid #ccc;padding:4px 6px;font-size:11px;">${code}</td>
-          <td style="border:1px solid #ccc;padding:4px 6px;font-size:11px;">${g('svc-icd').split(',')[0].trim()}</td>
-          <td style="border:1px solid #ccc;padding:4px 6px;font-size:11px;">$${fee.toFixed(2)}</td>
-          <td style="border:1px solid #ccc;padding:4px 6px;font-size:11px;">${g('prov-npi')}</td>
-        </tr>`;
+      svcLines += `<tr>
+        <td>${g('svc-date')}</td>
+        <td>${g('prov-pos').split('—')[0].trim()}</td>
+        <td style="font-weight:600;">${code}</td>
+        <td>${desc}</td>
+        <td>${g('svc-icd').split(',')[0].trim()}</td>
+        <td style="text-align:right;font-weight:600;">$${fee.toFixed(2)}</td>
+      </tr>`;
     }
   });
 
+  const provName = g('prov-fname') + ' ' + g('prov-lname');
+  const ptName   = g('pt-fname')   + ' ' + g('pt-lname');
+  const insName  = (g('ins-fname')||g('pt-fname')) + ' ' + (g('ins-lname')||g('pt-lname'));
+  const pos      = document.getElementById('prov-pos').selectedOptions[0].text;
+  const today    = new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+
   const html = `<!DOCTYPE html><html><head><title>CMS-1500 — ${ptName}</title>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:Arial,sans-serif;font-size:11px;padding:20px;color:#000;background:#fff;}
-    h1{font-size:14px;text-align:center;margin-bottom:4px;letter-spacing:.05em;}
-    .subtitle{text-align:center;font-size:10px;color:#555;margin-bottom:16px;}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
-    .field{border:1px solid #ccc;border-radius:4px;padding:6px 8px;}
-    .field-label{font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:#888;margin-bottom:2px;}
-    .field-value{font-size:12px;font-weight:bold;color:#000;}
-    .section-title{font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:.08em;background:#f0f0f0;padding:5px 8px;margin:12px 0 6px;border-radius:3px;}
-    table{width:100%;border-collapse:collapse;margin-bottom:12px;}
-    th{background:#f0f0f0;border:1px solid #ccc;padding:5px 6px;font-size:10px;text-align:left;}
-    .totals{display:flex;justify-content:flex-end;gap:20px;margin-bottom:16px;}
-    .total-item{text-align:right;}
-    .total-label{font-size:10px;color:#888;}
-    .total-value{font-size:14px;font-weight:bold;}
-    .sig-section{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px;padding-top:12px;border-top:1px solid #ccc;}
-    .sig-line{border-bottom:1px solid #000;height:28px;margin-bottom:4px;}
-    .sig-label{font-size:9px;color:#888;}
-    .footer{margin-top:20px;font-size:9px;color:#aaa;text-align:center;border-top:1px solid #eee;padding-top:8px;}
-    @media print{body{padding:10px;} .no-print{display:none;}}
-  </style></head><body>
-  <h1>HEALTH INSURANCE CLAIM FORM</h1>
-  <div class="subtitle">CMS-1500 (02-12) &nbsp;·&nbsp; NarraScribe Clinical Documentation &nbsp;·&nbsp; Generated ${new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</div>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:Arial,sans-serif;font-size:11px;color:#000;background:#fff;padding:24px;}
+  h1{font-size:15px;font-weight:700;text-align:center;letter-spacing:.05em;margin-bottom:3px;}
+  .subtitle{text-align:center;font-size:10px;color:#666;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid #000;}
+  .section-title{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;background:#e8e8e8;padding:4px 8px;margin:14px 0 6px;border:1px solid #ccc;}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:4px;}
+  .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:4px;}
+  .field{border:1px solid #bbb;border-radius:3px;padding:5px 7px;}
+  .field-label{font-size:8px;text-transform:uppercase;letter-spacing:.05em;color:#777;margin-bottom:2px;}
+  .field-value{font-size:11px;font-weight:600;color:#000;min-height:14px;}
+  table{width:100%;border-collapse:collapse;margin-bottom:10px;font-size:10px;}
+  th{background:#e8e8e8;border:1px solid #bbb;padding:5px 6px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:.04em;}
+  td{border:1px solid #bbb;padding:5px 6px;vertical-align:middle;}
+  .icd-box{border:1px solid #bbb;border-radius:3px;padding:6px 8px;margin-bottom:12px;font-size:12px;font-weight:700;letter-spacing:.08em;}
+  .totals-row{display:flex;justify-content:flex-end;margin-bottom:14px;}
+  .total-box{border:1px solid #bbb;border-radius:3px;padding:6px 14px;text-align:right;}
+  .total-label{font-size:9px;color:#666;text-transform:uppercase;letter-spacing:.05em;}
+  .total-val{font-size:16px;font-weight:700;}
+  .sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px;padding-top:12px;border-top:2px solid #000;}
+  .sig-label{font-size:9px;color:#666;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;}
+  .sig-line{border-bottom:1px solid #000;height:30px;margin-bottom:4px;}
+  .sig-name{font-size:10px;font-weight:600;}
+  .attest{font-size:9px;color:#555;line-height:1.5;margin-top:10px;padding-top:8px;border-top:1px solid #ddd;}
+  .footer-cms{margin-top:16px;font-size:9px;color:#aaa;text-align:center;border-top:1px solid #eee;padding-top:8px;}
+  @media print{
+    body{padding:14px;}
+    .no-print{display:none!important;}
+    @page{margin:0.5in;}
+  }
+</style>
+</head><body>
 
-  <div class="section-title">Patient information</div>
-  <div class="grid">
-    <div class="field"><div class="field-label">Patient name</div><div class="field-value">${ptName}</div></div>
-    <div class="field"><div class="field-label">Date of birth / Sex</div><div class="field-value">${g('pt-dob')} &nbsp;·&nbsp; ${g('pt-sex')}</div></div>
-    <div class="field"><div class="field-label">Address</div><div class="field-value">${g('pt-addr')}</div></div>
-    <div class="field"><div class="field-label">Phone</div><div class="field-value">${g('pt-phone')}</div></div>
+<div class="no-print" style="text-align:center;margin-bottom:20px;display:flex;gap:10px;justify-content:center;">
+  <button onclick="window.print()" style="padding:11px 28px;background:#1E1C18;color:#8AAECE;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Print / Save as PDF</button>
+  <button onclick="window.close()" style="padding:11px 28px;background:#F6F4F0;color:#445060;border:1px solid #D8D4CC;border-radius:8px;font-size:13px;cursor:pointer;">Close</button>
+</div>
+
+<h1>HEALTH INSURANCE CLAIM FORM</h1>
+<div class="subtitle">CMS-1500 (02-12) &nbsp;&nbsp;|&nbsp;&nbsp; Generated ${today} &nbsp;&nbsp;|&nbsp;&nbsp; NarraScribe Clinical Documentation</div>
+
+<div class="section-title">1. Patient information</div>
+<div class="grid">
+  <div class="field"><div class="field-label">Patient name</div><div class="field-value">${ptName}</div></div>
+  <div class="field"><div class="field-label">Date of birth &nbsp;/&nbsp; Sex</div><div class="field-value">${g('pt-dob')} &nbsp;&nbsp; ${g('pt-sex')}</div></div>
+  <div class="field"><div class="field-label">Member ID / Policy number</div><div class="field-value">${g('pt-memberid')}</div></div>
+  <div class="field"><div class="field-label">Phone number</div><div class="field-value">${g('pt-phone')}</div></div>
+</div>
+
+<div class="section-title">2. Insurance / payer information</div>
+<div class="grid">
+  <div class="field"><div class="field-label">Insurance company</div><div class="field-value">${g('ins-name')}</div></div>
+  <div class="field"><div class="field-label">Payer ID</div><div class="field-value">${g('ins-payerid')}</div></div>
+  <div class="field"><div class="field-label">Insured name</div><div class="field-value">${insName}</div></div>
+  <div class="field"><div class="field-label">Relationship to insured</div><div class="field-value">${g('ins-rel')}</div></div>
+  <div class="field"><div class="field-label">Group number</div><div class="field-value">${g('ins-group')}</div></div>
+  <div class="field"><div class="field-label">Prior authorization #</div><div class="field-value">${g('svc-auth')||'Not required'}</div></div>
+</div>
+
+<div class="section-title">3. Provider / billing information</div>
+<div class="grid">
+  <div class="field"><div class="field-label">Provider name</div><div class="field-value">${provName}</div></div>
+  <div class="field"><div class="field-label">Practice name</div><div class="field-value">${g('prov-practice')}</div></div>
+  <div class="field"><div class="field-label">NPI number</div><div class="field-value">${g('prov-npi')}</div></div>
+  <div class="field"><div class="field-label">Tax ID / EIN</div><div class="field-value">${g('prov-taxid')}</div></div>
+  <div class="field"><div class="field-label">License number</div><div class="field-value">${g('prov-license')}</div></div>
+  <div class="field"><div class="field-label">Place of service</div><div class="field-value">${pos}</div></div>
+</div>
+
+<div class="section-title">4. Diagnosis codes (ICD-10)</div>
+<div class="icd-box">${g('svc-icd')||'&nbsp;'}</div>
+
+<div class="section-title">5. Service lines</div>
+<table>
+  <thead><tr>
+    <th style="width:110px;">Date of service</th>
+    <th style="width:40px;">POS</th>
+    <th style="width:90px;">CPT code</th>
+    <th>Description</th>
+    <th style="width:120px;">ICD-10 ref.</th>
+    <th style="width:80px;text-align:right;">Charge</th>
+  </tr></thead>
+  <tbody>${svcLines}</tbody>
+</table>
+
+<div class="totals-row">
+  <div class="total-box">
+    <div class="total-label">Total charges</div>
+    <div class="total-val">$${total.toFixed(2)}</div>
   </div>
+</div>
 
-  <div class="section-title">Insurance information</div>
-  <div class="grid">
-    <div class="field"><div class="field-label">Insurance company</div><div class="field-value">${g('ins-name')}</div></div>
-    <div class="field"><div class="field-label">Payer ID</div><div class="field-value">${g('ins-payerid')}</div></div>
-    <div class="field"><div class="field-label">Insured name</div><div class="field-value">${insName}</div></div>
-    <div class="field"><div class="field-label">Group # / Relationship</div><div class="field-value">${g('ins-group')} &nbsp;·&nbsp; ${g('ins-rel')}</div></div>
-    <div class="field"><div class="field-label">Member ID / Policy #</div><div class="field-value">${g('pt-memberid')}</div></div>
-    <div class="field"><div class="field-label">Authorization #</div><div class="field-value">${g('svc-auth')||'N/A'}</div></div>
+<div class="sig-grid">
+  <div>
+    <div class="sig-label">Signature of provider</div>
+    <div class="sig-line"></div>
+    <div class="sig-name">${provName}</div>
+    <div style="font-size:9px;color:#666;">${g('prov-license')}</div>
   </div>
-
-  <div class="section-title">Provider information</div>
-  <div class="grid">
-    <div class="field"><div class="field-label">Provider name</div><div class="field-value">${provName}</div></div>
-    <div class="field"><div class="field-label">Practice name</div><div class="field-value">${g('prov-practice')}</div></div>
-    <div class="field"><div class="field-label">NPI number</div><div class="field-value">${g('prov-npi')}</div></div>
-    <div class="field"><div class="field-label">Tax ID / EIN</div><div class="field-value">${g('prov-taxid')}</div></div>
-    <div class="field"><div class="field-label">Practice address</div><div class="field-value">${g('prov-addr')}</div></div>
-    <div class="field"><div class="field-label">Place of service</div><div class="field-value">${pos}</div></div>
+  <div>
+    <div class="sig-label">Date signed</div>
+    <div class="sig-line"></div>
+    <div class="sig-name">${today}</div>
   </div>
+</div>
 
-  <div class="section-title">Diagnosis codes (ICD-10)</div>
-  <div style="border:1px solid #ccc;border-radius:4px;padding:8px 10px;margin-bottom:12px;font-size:13px;font-weight:bold;letter-spacing:.05em;">${g('svc-icd')}</div>
+<div class="attest">
+  I certify that the information on this claim is true, accurate, and complete. I understand that payment and satisfaction of this claim will be from federal and state funds, and that any false claims, statements, or documents, or concealment of a material fact, may be prosecuted under applicable federal or state laws.
+</div>
 
-  <div class="section-title">Service lines</div>
-  <table>
-    <thead><tr>
-      <th>Date of service</th><th>POS</th><th>CPT code</th><th>ICD-10</th><th>Charge</th><th>Provider NPI</th>
-    </tr></thead>
-    <tbody>${svcLines}</tbody>
-  </table>
+<div class="footer-cms">
+  Generated by NarraScribe &nbsp;·&nbsp; HIPAA-compliant clinical documentation &nbsp;·&nbsp; narrascribe.com &nbsp;·&nbsp; For submission by licensed billing staff only
+</div>
 
-  <div class="totals">
-    <div class="total-item"><div class="total-label">Total charges</div><div class="total-value">$${total.toFixed(2)}</div></div>
-  </div>
-
-  <div class="sig-section">
-    <div>
-      <div class="sig-label">Signature of physician or supplier</div>
-      <div class="sig-line"></div>
-      <div class="sig-label">${provName} &nbsp;·&nbsp; ${g('prov-license')}</div>
-    </div>
-    <div>
-      <div class="sig-label">Date signed</div>
-      <div class="sig-line"></div>
-      <div class="sig-label">${new Date().toLocaleDateString()}</div>
-    </div>
-  </div>
-
-  <div class="footer">
-    Generated by NarraScribe &nbsp;·&nbsp; HIPAA-compliant clinical documentation &nbsp;·&nbsp; narrascribe.com<br>
-    This form is intended for submission to insurance payers. Provider is responsible for accuracy of all information.
-  </div>
-
-  <div class="no-print" style="margin-top:20px;text-align:center;">
-    <button onclick="window.print()" style="padding:12px 28px;background:#1E1C18;color:#8AAECE;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;margin-right:10px;">Print / Save as PDF</button>
-    <button onclick="window.close()" style="padding:12px 28px;background:#F6F4F0;color:#445060;border:1px solid #D8D4CC;border-radius:8px;font-size:14px;cursor:pointer;">Close</button>
-  </div>
-  </body></html>`;
+</body></html>`;
 
   const w = window.open('','_blank');
   if(!w){ showToast('Please allow pop-ups to generate the claim form'); return; }
   w.document.open();
   w.document.write(html);
   w.document.close();
-  showToast('CMS-1500 claim generated — print or save as PDF to submit');
+  showToast('CMS-1500 generated — print or save as PDF');
 }
 
 // ── TOAST ──
