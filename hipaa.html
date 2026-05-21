@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HIPAA & BAA — NarraScribe</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--iron:#1E1C18;--blue-deep:#3A5F8A;--blue-mid:#5A7FA8;--blue-soft:#8AAECE;--blue-pale:#C2D8EC;--blue-mist:#E8F1F8;--stone-pale:#D8D4CC;--plaster:#F6F4F0;--white:#FDFCFA;--text-dark:#1A1C22;--text-mid:#445060;--text-soft:#7A8592;--green:#4A9E75;--green-light:#E8F5EF;}
+body{font-family:'DM Sans',sans-serif;background:var(--plaster);color:var(--text-dark);font-size:16px;line-height:1.7;}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 4rem;background:var(--iron);}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo{width:32px;height:32px;background:var(--blue-mid);border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.nav-logo i{font-size:18px;color:#fff;}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#fff;}
+.nav-name span{color:var(--blue-soft);}
+.nav-back{font-size:13px;color:var(--blue-soft);text-decoration:none;display:flex;align-items:center;gap:5px;}
+.nav-back:hover{color:#fff;}
+.hero{background:var(--iron);padding:4rem 4rem 3rem;text-align:center;}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-soft);margin-bottom:1rem;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:#fff;margin-bottom:.75rem;}
+.hero-sub{font-size:.95rem;color:rgba(255,255,255,.4);max-width:520px;margin:0 auto;font-weight:300;}
+.content{max-width:800px;margin:0 auto;padding:4rem 2rem;}
+h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--text-dark);margin:2.5rem 0 .75rem;}
+p{font-size:14px;color:var(--text-mid);margin-bottom:.9rem;font-weight:300;line-height:1.8;}
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.comp-card{background:var(--white);border:1px solid var(--stone-pale);border-radius:12px;padding:1.25rem 1.4rem;display:flex;align-items:flex-start;gap:1rem;}
+.comp-icon{width:36px;height:36px;border-radius:8px;background:var(--green-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.comp-icon i{font-size:18px;color:var(--green);}
+.comp-title{font-size:13px;font-weight:500;color:var(--text-dark);margin-bottom:3px;}
+.comp-desc{font-size:12px;color:var(--text-soft);font-weight:300;line-height:1.6;}
+.baa-card{background:var(--blue-mist);border:1px solid var(--blue-pale);border-radius:14px;padding:2rem;margin:2rem 0;text-align:center;}
+.baa-card i{font-size:36px;color:var(--blue-mid);margin-bottom:1rem;display:block;}
+.baa-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--text-dark);margin-bottom:.5rem;}
+.baa-desc{font-size:13px;color:var(--text-soft);font-weight:300;margin-bottom:1.25rem;}
+.baa-btn{display:inline-block;padding:11px 28px;border-radius:9px;background:var(--iron);color:var(--blue-soft);font-size:13px;font-weight:500;text-decoration:none;transition:all .2s;}
+.baa-btn:hover{background:#2E2C26;color:#fff;}
+.footer{background:var(--iron);padding:2.5rem 4rem;text-align:center;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-top:.75rem;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,.25);text-decoration:none;}
+.footer-links a:hover{color:rgba(255,255,255,.6);}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="NarraScribe-Landing.html" class="nav-brand">
+    <div class="nav-logo"><i class="ti ti-notes"></i></div>
+    <div class="nav-name">Narra<span>Scribe</span></div>
+  </a>
+  <a href="NarraScribe-Landing.html" class="nav-back"><i class="ti ti-arrow-left"></i> Back to home</a>
+</nav>
+<div class="hero">
+  <div class="hero-eyebrow">Compliance</div>
+  <h1 class="hero-title">HIPAA & BAA</h1>
+  <p class="hero-sub">NarraScribe is built on HIPAA-compliant infrastructure from the ground up. Here's exactly how we protect your data.</p>
+</div>
+<div class="content">
+  <h2>Our compliance commitments</h2>
+  <div class="comp-grid">
+    <div class="comp-card"><div class="comp-icon"><i class="ti ti-writing"></i></div><div><div class="comp-title">Business Associate Agreement</div><div class="comp-desc">BAA signed with Anthropic for Claude API access. PHI is contractually protected at every layer of the stack.</div></div></div>
+    <div class="comp-card"><div class="comp-icon"><i class="ti ti-lock"></i></div><div><div class="comp-title">AES-256 encryption</div><div class="comp-desc">All data encrypted at rest and in transit. No exceptions.</div></div></div>
+    <div class="comp-card"><div class="comp-icon"><i class="ti ti-list-check"></i></div><div><div class="comp-title">Audit logging</div><div class="comp-desc">Every access, edit, and submission timestamped and logged per HIPAA Security Rule requirements.</div></div></div>
+    <div class="comp-card"><div class="comp-icon"><i class="ti ti-microphone-off"></i></div><div><div class="comp-title">Audio auto-deletion</div><div class="comp-desc">Voice recordings are permanently deleted immediately after transcription — never retained.</div></div></div>
+    <div class="comp-card"><div class="comp-icon"><i class="ti ti-brain"></i></div><div><div class="comp-title">AI training opt-out</div><div class="comp-desc">Your PHI is never used to train, fine-tune, or improve any AI model. Guaranteed contractually.</div></div></div>
+    <div class="comp-card"><div class="comp-icon"><i class="ti ti-map-pin"></i></div><div><div class="comp-title">COMAR Maryland</div><div class="comp-desc">Meets Maryland Code of Maryland Regulations for behavioral health documentation standards.</div></div></div>
+  </div>
+
+  <h2>Business Associate Agreement</h2>
+  <p>A Business Associate Agreement (BAA) is a contract required by HIPAA between a covered entity (your clinic) and any vendor that handles Protected Health Information on their behalf. NarraScribe acts as a Business Associate and will sign a BAA with every clinic we onboard.</p>
+  <p>Our BAA covers the full scope of PHI processing within NarraScribe, including shorthand input, AI processing, generated notes, stored records, and audit logs.</p>
+
+  <div class="baa-card">
+    <i class="ti ti-file-certificate"></i>
+    <div class="baa-title">Request your BAA</div>
+    <div class="baa-desc">BAA execution is included with every NarraScribe subscription at no additional cost. Contact us to initiate the signing process before your clinic goes live.</div>
+    <a href="NarraScribe-Contact.html" class="baa-btn">Request BAA signing</a>
+  </div>
+
+  <h2>Infrastructure</h2>
+  <p>NarraScribe is hosted on HIPAA-eligible cloud infrastructure. All AI processing occurs on systems covered by active BAAs. No PHI is ever transmitted to or stored on systems without an active Business Associate Agreement in place.</p>
+  <p>For questions about our compliance posture or to request our Security Overview document, contact <strong>compliance@narrascribe.com</strong>.</p>
+</div>
+<footer class="footer">
+  <div class="footer-copy">© 2026 NarraScribe. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="NarraScribe-Landing.html">Home</a>
+    <a href="NarraScribe-About.html">About</a>
+    <a href="NarraScribe-Privacy.html">Privacy policy</a>
+    <a href="NarraScribe-Terms.html">Terms of service</a>
+    <a href="NarraScribe-Contact.html">Contact</a>
+  </div>
+</footer>
+</body>
+</html>
