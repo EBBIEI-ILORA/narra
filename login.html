@@ -292,7 +292,12 @@ function handleLogin(){
   btn.innerHTML = '<div class="spin"></div> Signing in...';
 
   setTimeout(function(){
-    // Demo: redirect to app after short delay
+    // Set session token
+    var session = { email: email, ts: Date.now() };
+    sessionStorage.setItem('ns_session', JSON.stringify(session));
+    if(document.getElementById('remember-me').checked){
+      localStorage.setItem('ns_session', JSON.stringify(session));
+    }
     window.location.href = '/app';
   }, 1400);
 }
@@ -312,6 +317,9 @@ function handleSSO(){
   btn.innerHTML = '<div class="spin" style="border-top-color:var(--blue-deep);border-color:var(--stone-pale);"></div> Connecting...';
   btn.disabled = true;
   setTimeout(function(){
+    var session = { email: 'google_user', ts: Date.now() };
+    sessionStorage.setItem('ns_session', JSON.stringify(session));
+    localStorage.setItem('ns_session', JSON.stringify(session));
     window.location.href = '/app';
   }, 1600);
 }

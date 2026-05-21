@@ -708,6 +708,10 @@ function nextStep(from){
     document.getElementById('success-name').textContent = fn + '!';
     document.getElementById('success-email').textContent = em;
     document.getElementById('success-format').textContent = fmt;
+    // Set session so they go straight to app after signup
+    var session = { email: em, name: fn, ts: Date.now() };
+    sessionStorage.setItem('ns_session', JSON.stringify(session));
+    localStorage.setItem('ns_session', JSON.stringify(session));
     setStep(6);
     return;
   }
