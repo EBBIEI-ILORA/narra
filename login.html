@@ -118,7 +118,7 @@ input::placeholder{color:var(--text-light);}
 
   <!-- LEFT -->
   <div class="left">
-    <a href="landing.html" class="brand">
+    <a href="/landing" class="brand">
       <div class="brand-logo"><i class="ti ti-notes"></i></div>
       <div class="brand-name">Narra<span>Scribe</span></div>
     </a>
@@ -137,9 +137,9 @@ input::placeholder{color:var(--text-light);}
       </div>
     </div>
     <div class="left-bottom">
-      <div class="left-bottom-text">Don't have an account? <a href="signup.html">Get started free</a></div>
-      <div class="left-bottom-text" style="margin-top:.4rem;">Need help? <a href="contact.html">Contact support</a></div>
-      <div class="left-bottom-text" style="margin-top:.4rem;">© 2026 NarraScribe &nbsp;·&nbsp; <a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a></div>
+      <div class="left-bottom-text">Don't have an account? <a href="/signup">Get started free</a></div>
+      <div class="left-bottom-text" style="margin-top:.4rem;">Need help? <a href="/contact">Contact support</a></div>
+      <div class="left-bottom-text" style="margin-top:.4rem;">© 2026 NarraScribe &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/terms">Terms</a></div>
     </div>
   </div>
 
@@ -203,7 +203,7 @@ input::placeholder{color:var(--text-light);}
         </button>
 
         <div class="signup-prompt">
-          Don't have an account? <a href="signup.html">Create one free →</a>
+          Don't have an account? <a href="/signup">Create one free →</a>
         </div>
 
         <div class="hipaa-pill">
@@ -293,7 +293,7 @@ function handleLogin(){
 
   setTimeout(function(){
     // Demo: redirect to app after short delay
-    window.location.href = 'index.html';
+    window.location.href = '/app';
   }, 1400);
 }
 
@@ -312,7 +312,7 @@ function handleSSO(){
   btn.innerHTML = '<div class="spin" style="border-top-color:var(--blue-deep);border-color:var(--stone-pale);"></div> Connecting...';
   btn.disabled = true;
   setTimeout(function(){
-    window.location.href = 'index.html';
+    window.location.href = '/app';
   }, 1600);
 }
 </script>
