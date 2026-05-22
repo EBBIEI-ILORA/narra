@@ -129,6 +129,20 @@ ul li{margin-bottom:.4rem;}
   .step-row { gap: 4px; }
   .step { padding: 6px 7px; font-size: 10px; }
 }
+
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;margin-left:auto;}
+.hamburger span{width:22px;height:2px;background:rgba(255,255,255,.7);border-radius:2px;display:block;transition:all .3s;}
+.mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--iron);z-index:200;padding:1.5rem;flex-direction:column;}
+.mobile-nav.open{display:flex;}
+.mobile-nav-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;}
+.mobile-nav-close{background:none;border:none;cursor:pointer;color:rgba(255,255,255,.6);font-size:24px;padding:4px;}
+.mobile-nav a{display:block;padding:1rem 0;color:rgba(255,255,255,.7);text-decoration:none;font-size:16px;border-bottom:1px solid rgba(255,255,255,.07);font-family:'DM Sans',sans-serif;}
+.mobile-nav a:hover{color:#fff;}
+.mobile-nav-demo{display:block;margin-top:1.5rem;padding:14px;background:var(--blue-mid);color:#fff!important;border-radius:10px;text-align:center;font-weight:600;font-size:15px;border:none!important;}
+@media(max-width:768px){
+  .hamburger{display:flex;}
+  .nav-back{display:none;}
+}
 </style>
 </head>
 <body>
@@ -138,7 +152,28 @@ ul li{margin-bottom:.4rem;}
     <div class="nav-name">Narra<span>Scribe</span></div>
   </a>
   <a href="/" class="nav-back"><i class="ti ti-arrow-left"></i> Back to home</a>
+  <button class="hamburger" onclick="openMobileNav()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-header">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="nav-logo"><i class="ti ti-notes"></i></div>
+      <div class="nav-name">Narra<span>Scribe</span></div>
+    </div>
+    <button class="mobile-nav-close" onclick="closeMobileNav()">&#x2715;</button>
+  </div>
+  <a href="/" onclick="closeMobileNav()">Home</a>
+  <a href="/about" onclick="closeMobileNav()">About</a>
+  <a href="/contact" onclick="closeMobileNav()">Contact</a>
+  <a href="/privacy" onclick="closeMobileNav()">Privacy policy</a>
+  <a href="/terms" onclick="closeMobileNav()">Terms of service</a>
+  <a href="/hipaa" onclick="closeMobileNav()">HIPAA &amp; BAA</a>
+  <a href="/login" onclick="closeMobileNav()">Sign in</a>
+  <a href="https://narrascribe.com/demo" class="mobile-nav-demo">Book a demo</a>
+</div>
 <div class="hero">
   <div class="hero-eyebrow">Legal</div>
   <h1 class="hero-title">Privacy Policy</h1>
@@ -198,5 +233,9 @@ ul li{margin-bottom:.4rem;}
     <a href="/contact">Contact</a>
   </div>
 </footer>
+<script>
+function openMobileNav(){ document.getElementById('mobile-nav').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeMobileNav(){ document.getElementById('mobile-nav').classList.remove('open'); document.body.style.overflow=''; }
+</script>
 </body>
 </html>
