@@ -60,7 +60,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-d
 .hero-line{position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(184,208,232,.3),transparent);}
 .pen-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:1;overflow:hidden;}
 .pen-svg{overflow:visible;max-width:90%;max-height:75%;}
-.pen-path{fill:none;stroke:rgba(164,200,228,0.18);stroke-width:0.8px;}
+.pen-path{fill:none;stroke:rgba(164,200,228,0.22);stroke-width:0.9px;transition:none;}
 
 /* ── PEN WRITING ── */
 
@@ -280,6 +280,102 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-d
 .ornamental-divider{display:flex;align-items:center;gap:1.5rem;max-width:1200px;margin:0 auto;padding:0 4rem;}
 .ornamental-divider::before,.ornamental-divider::after{content:'';flex:1;height:1px;background:var(--stone-pale);}
 .ornamental-divider span{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--stone-light);letter-spacing:.15em;}
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+  /* NAV */
+  .nav { padding: .75rem 1rem; flex-wrap: nowrap; }
+  .nav-tabs { display: none !important; }
+  .nav-user { margin-left: auto; }
+  .hamburger { display: flex !important; }
+  .mobile-menu { display: block; }
+  .mobile-menu.open { display: block; }
+
+  /* HERO / PAGE */
+  .shell, .content { padding: 1rem; }
+  .hero-content { grid-template-columns: 1fr; padding: 0 1.25rem; padding-top: 5rem; gap: 2rem; }
+  .hero-right { display: none; }
+  .hero-title { font-size: 2.6rem; }
+  .hero-actions { flex-direction: column; gap: .75rem; }
+  .btn-hero-primary, .btn-hero-ghost { width: 100%; justify-content: center; }
+
+  /* SECTIONS */
+  .section { padding: 3.5rem 1.25rem; }
+  .section-inner { padding: 0; }
+  .grid-2, .how-grid, .compliance-grid, .grid-3 { grid-template-columns: 1fr; gap: 1.5rem; }
+  .features-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .metrics { grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .metric-val { font-size: 22px; }
+
+  /* APP DASHBOARD */
+  .nav-tabs { display: flex; overflow-x: auto; gap: 2px; width: 100%; padding-bottom: 2px; }
+  .nav-tab { padding: 6px 10px; font-size: 11px; white-space: nowrap; }
+  .nav-tab i { display: none; }
+
+  /* CARDS */
+  .card { padding: 1rem; }
+  .form-row, .form-row-3, .cms-row, .cms-row-3 { grid-template-columns: 1fr; }
+  .sig-grid, .note-info-grid { grid-template-columns: 1fr; }
+  .act-row { flex-direction: column; }
+  .act-btn { width: 100%; }
+
+  /* LOGIN / SIGNUP */
+  .page { grid-template-columns: 1fr; }
+  .left { display: none; }
+  .right { padding: 1.5rem 1.25rem; align-items: flex-start; padding-top: 2rem; }
+  .form-wrap { max-width: 100%; }
+
+  /* CLAIMS */
+  .cpt-row { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .cpt-row input:nth-child(2) { grid-column: 1 / -1; }
+
+  /* FOOTER */
+  .footer { padding: 2rem 1.25rem; }
+  .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-bottom { flex-direction: column; gap: .75rem; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+
+  /* LOGOS BAR */
+  .logos-section { padding: 1.5rem 1.25rem; }
+  .logos-inner { flex-direction: column; gap: 1rem; }
+  .logos-list { flex-wrap: wrap; gap: 1rem; }
+
+  /* STATS */
+  .stats { flex-wrap: wrap; gap: 1rem; }
+
+  /* FORMAT GRID */
+  .format-grid { grid-template-columns: 1fr; }
+
+  /* PLAN CARDS */
+  .plan-card { padding: .9rem 1rem; }
+
+  /* ROLE CARDS */
+  .role-cards { grid-template-columns: 1fr; }
+
+  /* THERAPIST CARDS */
+  .therapist-card { flex-wrap: wrap; }
+  .tc-actions { width: 100%; justify-content: flex-end; margin-top: .5rem; }
+
+  /* HERO LEFT PANEL ON SIGNUP/LOGIN */
+  .hero { padding: 3rem 1.25rem 2.5rem; }
+  .hero-title { font-size: 2rem; }
+
+  /* CTA */
+  .cta-actions { flex-direction: column; align-items: center; gap: .75rem; }
+  .btn-cta-primary { width: 100%; max-width: 300px; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .metric { padding: .75rem; }
+  .hero-title { font-size: 2rem; }
+  .section-title { font-size: 1.8rem; }
+  .nav-tab { font-size: 10px; padding: 5px 8px; }
+  .step-row { gap: 4px; }
+  .step { padding: 6px 7px; font-size: 10px; }
+}
 </style>
 </head>
 <body>
@@ -297,7 +393,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-d
     <a href="#features" class="nav-link">Features</a>
     <a href="#compliance" class="nav-link">Compliance</a>
     <a href="#pricing" class="nav-link">Pricing</a>
-    <a href="#" class="nav-cta">Request a demo</a>
+    <a href="https://narrascribe.com/demo" class="nav-cta">Request a demo</a>
   </div>
 </nav>
 
@@ -322,7 +418,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-d
       </h1>
       <p class="hero-subtitle">NarraScribe transforms your therapists' shorthand into complete, insurance-ready clinical documentation — so they spend more time with clients and less time on paperwork.</p>
       <div class="hero-actions">
-        <a href="/signup" class="btn-hero-primary">
+        <a href="https://narrascribe.com/demo" class="btn-hero-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/></svg>
           Get started free
         </a>
@@ -549,60 +645,79 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-d
   <div class="section-inner">
     <div class="section-eyebrow reveal" style="text-align:center;">Simple pricing</div>
     <h2 class="section-title reveal" style="text-align:center;">Clear, transparent <em>plans</em></h2>
-    <p class="section-subtitle reveal" style="text-align:center;margin:0 auto 0;">No hidden fees. No per-note charges. Just a flat monthly rate per clinic.</p>
-    <div class="pricing-grid" style="margin-top:3.5rem;">
+    <p class="section-subtitle reveal" style="text-align:center;margin:0 auto 1rem;">No hidden fees. No per-note charges. Just a flat monthly rate per clinic.</p>
+    <p style="text-align:center;font-size:13px;color:var(--text-soft);margin-bottom:3.5rem;">Group plan includes 3 clinicians. Add up to 10 clinicians at +$35/month each. Enterprise pricing available for 11+ clinicians.</p>
+
+    <div class="pricing-grid">
+
+      <!-- SOLO -->
       <div class="pricing-card">
-        <div class="pricing-badge">Starter</div>
+        <div class="pricing-badge">Solo</div>
         <div class="pricing-name">Solo Practice</div>
         <div class="pricing-price"><span class="pricing-price-num">$99</span><span class="pricing-price-per">/ month</span></div>
-        <div class="pricing-setup">+ $500 one-time setup fee</div>
+        <div class="pricing-setup">1 clinician &nbsp;·&nbsp; Unlimited notes</div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Up to 3 therapists</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Unlimited notes</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> SOAP, DAP, BIRP, GIRP</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> AI note generation (SOAP/DAP/BIRP/GIRP)</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Voice, type &amp; upload shorthand</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Custom shorthand dictionary</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> HIPAA-compliant infrastructure</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> CMS-1500 claim form generator</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> HIPAA-compliant + BAA included</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Maryland COMAR compliant</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Email support</li>
         </ul>
-        <button class="pricing-btn pricing-btn-outline">Get started</button>
+        <a href="https://narrascribe.com/demo" class="pricing-btn pricing-btn-outline">Get started</a>
       </div>
 
+      <!-- GROUP — FEATURED -->
       <div class="pricing-card featured">
         <div class="pricing-badge">Most popular</div>
         <div class="pricing-name" style="color:var(--white);">Group Practice</div>
-        <div class="pricing-price"><span class="pricing-price-num" style="color:var(--white);">$199</span><span class="pricing-price-per"style="color:rgba(255,255,255,.4);"> / month</span></div>
-        <div class="pricing-setup" style="color:rgba(255,255,255,.3);">+ $900 one-time setup fee</div>
+        <div class="pricing-price">
+          <span class="pricing-price-num" style="color:var(--white);">$287</span>
+          <span class="pricing-price-per" style="color:rgba(255,255,255,.4);"> / month</span>
+        </div>
+        <div class="pricing-setup" style="color:rgba(255,255,255,.35);">3 clinicians included &nbsp;·&nbsp; +$35/additional (up to 10)</div>
         <div class="pricing-divider" style="background:rgba(255,255,255,.08);"></div>
         <ul class="pricing-features">
-          <li><svg viewBox="0 0 24 24" style="stroke:var(--blue-soft)"><polyline points="20 6 9 17 4 12"/></svg> Up to 10 therapists</li>
-          <li><svg viewBox="0 0 24 24" style="stroke:var(--blue-soft)"><polyline points="20 6 9 17 4 12"/></svg> Unlimited notes</li>
-          <li><svg viewBox="0 0 24 24" style="stroke:var(--blue-soft)"><polyline points="20 6 9 17 4 12"/></svg> All note formats</li>
-          <li><svg viewBox="0 0 24 24" style="stroke:var(--blue-soft)"><polyline points="20 6 9 17 4 12"/></svg> Custom shorthand dictionary</li>
-          <li><svg viewBox="0 0 24 24" style="stroke:var(--blue-soft)"><polyline points="20 6 9 17 4 12"/></svg> Compliance dashboard</li>
+          <li><svg viewBox="0 0 24 24" style="stroke:var(--blue-soft)"><polyline points="20 6 9 17 4 12"/></svg> Everything in Solo</li>
+          <li><svg viewBox="0 0 24 24" style="stroke:var(--blue-soft)"><polyline points="20 6 9 17 4 12"/></svg> 3 clinicians included</li>
+          <li><svg viewBox="0 0 24 24" style="stroke:var(--blue-soft)"><polyline points="20 6 9 17 4 12"/></svg> Add up to 10 clinicians at +$35/mo each</li>
+          <li><svg viewBox="0 0 24 24" style="stroke:var(--blue-soft)"><polyline points="20 6 9 17 4 12"/></svg> Clinic admin dashboard</li>
+          <li><svg viewBox="0 0 24 24" style="stroke:var(--blue-soft)"><polyline points="20 6 9 17 4 12"/></svg> Therapist compliance tracking</li>
           <li><svg viewBox="0 0 24 24" style="stroke:var(--blue-soft)"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
-          <li><svg viewBox="0 0 24 24" style="stroke:var(--blue-soft)"><polyline points="20 6 9 17 4 12"/></svg> COMAR Maryland compliance</li>
+          <li><svg viewBox="0 0 24 24" style="stroke:var(--blue-soft)"><polyline points="20 6 9 17 4 12"/></svg> HIPAA BAA for full clinic</li>
         </ul>
-        <button class="pricing-btn pricing-btn-primary">Get started</button>
+        <a href="https://narrascribe.com/demo" class="pricing-btn pricing-btn-primary">Get started</a>
       </div>
 
+      <!-- ENTERPRISE -->
       <div class="pricing-card">
         <div class="pricing-badge">Enterprise</div>
-        <div class="pricing-name">Large Clinic</div>
-        <div class="pricing-price"><span class="pricing-price-num">Custom</span></div>
-        <div class="pricing-setup">Tailored to your organization</div>
+        <div class="pricing-name">Enterprise</div>
+        <div class="pricing-price"><span class="pricing-price-num" style="font-size:2.2rem;">Custom</span></div>
+        <div class="pricing-setup">11+ clinicians &nbsp;·&nbsp; Volume pricing</div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Unlimited therapists</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Unlimited notes</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> White-label option</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> EHR integration</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Everything in Group</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Unlimited clinicians</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Dedicated account manager</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> On-site training available</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Custom onboarding &amp; training</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> SLA &amp; uptime guarantee</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Custom contract &amp; invoicing</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Phone &amp; priority support</li>
         </ul>
-        <button class="pricing-btn pricing-btn-outline">Contact us</button>
+        <a href="https://narrascribe.com/demo" class="pricing-btn pricing-btn-outline">Contact us</a>
       </div>
+
     </div>
+
+    <!-- ADD-ON NOTE -->
+    <div style="margin-top:2.5rem;background:var(--blue-mist);border:1px solid var(--blue-pale);border-radius:14px;padding:1.4rem 2rem;text-align:center;">
+      <div style="font-size:13px;font-weight:600;color:var(--blue-deep);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">All plans include</div>
+      <div style="font-size:14px;color:var(--text-mid);font-weight:300;">Signed BAA &nbsp;·&nbsp; AES-256 encryption &nbsp;·&nbsp; Audit logging &nbsp;·&nbsp; Maryland COMAR compliance &nbsp;·&nbsp; CMS-1500 generator &nbsp;·&nbsp; Unlimited notes</div>
+    </div>
+
   </div>
 </section>
 
@@ -657,7 +772,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-d
     <h2 class="cta-title reveal">Ready to give your therapists<br><em>their time back?</em></h2>
     <p class="cta-subtitle reveal">Join mental health clinics across Maryland and the Mid-Atlantic who are completing notes faster, staying compliant, and spending more time on what matters — their clients.</p>
     <div class="cta-actions reveal">
-      <a href="/signup" class="btn-cta-primary">
+      <a href="https://narrascribe.com/demo" class="btn-cta-primary">
         Get started free
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
@@ -681,7 +796,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-d
           <li><a href="#how">How it works</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#">Changelog</a></li>
+          <li><a href="/contact">Contact us</a></li>
         </ul>
       </div>
       <div>
@@ -719,6 +834,32 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-d
 
 
 
+// ── SCRIPT WRITING ANIMATION ──
+document.addEventListener('DOMContentLoaded', function(){
+  var path = document.querySelector('.pen-path');
+  if(!path) return;
+  var len;
+  try { len = path.getTotalLength(); } catch(e){ return; }
+  if(!len) return;
+  path.style.strokeDasharray  = len;
+  path.style.strokeDashoffset = len;
+  setTimeout(function(){
+    path.style.transition = 'stroke-dashoffset 14s linear';
+    path.style.strokeDashoffset = '0';
+  }, 1200);
+});
+
+// ── MOBILE MENU ──
+function toggleMenu(){
+  var menu = document.getElementById('mobile-menu');
+  var isOpen = menu.style.display === 'flex';
+  menu.style.display = isOpen ? 'none' : 'flex';
+}
+function closeMenu(){
+  document.getElementById('mobile-menu').style.display = 'none';
+}
+
+// ── NAV SCROLL EFFECT ──
 // Nav scroll effect
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{

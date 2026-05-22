@@ -111,6 +111,99 @@ input::placeholder{color:var(--text-light);}
 
 .spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+  /* NAV */
+  .nav { padding: .75rem 1rem; flex-wrap: wrap; gap: .5rem; border-radius: 0; }
+  .nav-tabs { display: none; }
+  .nav-user { margin-left: auto; }
+
+  /* HERO / PAGE */
+  .shell, .content { padding: 1rem; }
+  .hero-content { grid-template-columns: 1fr; padding: 0 1.25rem; padding-top: 5rem; gap: 2rem; }
+  .hero-right { display: none; }
+  .hero-title { font-size: 2.6rem; }
+  .hero-actions { flex-direction: column; gap: .75rem; }
+  .btn-hero-primary, .btn-hero-ghost { width: 100%; justify-content: center; }
+
+  /* SECTIONS */
+  .section { padding: 3.5rem 1.25rem; }
+  .section-inner { padding: 0; }
+  .grid-2, .how-grid, .compliance-grid, .grid-3 { grid-template-columns: 1fr; gap: 1.5rem; }
+  .features-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .metrics { grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .metric-val { font-size: 22px; }
+
+  /* APP DASHBOARD */
+  .nav-tabs { display: flex; overflow-x: auto; gap: 2px; width: 100%; padding-bottom: 2px; }
+  .nav-tab { padding: 6px 10px; font-size: 11px; white-space: nowrap; }
+  .nav-tab i { display: none; }
+
+  /* CARDS */
+  .card { padding: 1rem; }
+  .form-row, .form-row-3, .cms-row, .cms-row-3 { grid-template-columns: 1fr; }
+  .sig-grid, .note-info-grid { grid-template-columns: 1fr; }
+  .act-row { flex-direction: column; }
+  .act-btn { width: 100%; }
+
+  /* LOGIN / SIGNUP */
+  .page { grid-template-columns: 1fr; }
+  .left { display: none; }
+  .right { padding: 1.5rem 1.25rem; align-items: flex-start; padding-top: 2rem; }
+  .form-wrap { max-width: 100%; }
+
+  /* CLAIMS */
+  .cpt-row { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .cpt-row input:nth-child(2) { grid-column: 1 / -1; }
+
+  /* FOOTER */
+  .footer { padding: 2rem 1.25rem; }
+  .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-bottom { flex-direction: column; gap: .75rem; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+
+  /* LOGOS BAR */
+  .logos-section { padding: 1.5rem 1.25rem; }
+  .logos-inner { flex-direction: column; gap: 1rem; }
+  .logos-list { flex-wrap: wrap; gap: 1rem; }
+
+  /* STATS */
+  .stats { flex-wrap: wrap; gap: 1rem; }
+
+  /* FORMAT GRID */
+  .format-grid { grid-template-columns: 1fr; }
+
+  /* PLAN CARDS */
+  .plan-card { padding: .9rem 1rem; }
+
+  /* ROLE CARDS */
+  .role-cards { grid-template-columns: 1fr; }
+
+  /* THERAPIST CARDS */
+  .therapist-card { flex-wrap: wrap; }
+  .tc-actions { width: 100%; justify-content: flex-end; margin-top: .5rem; }
+
+  /* HERO LEFT PANEL ON SIGNUP/LOGIN */
+  .hero { padding: 3rem 1.25rem 2.5rem; }
+  .hero-title { font-size: 2rem; }
+
+  /* CTA */
+  .cta-actions { flex-direction: column; align-items: center; gap: .75rem; }
+  .btn-cta-primary { width: 100%; max-width: 300px; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .metric { padding: .75rem; }
+  .hero-title { font-size: 2rem; }
+  .section-title { font-size: 1.8rem; }
+  .nav-tab { font-size: 10px; padding: 5px 8px; }
+  .step-row { gap: 4px; }
+  .step { padding: 6px 7px; font-size: 10px; }
+}
 </style>
 </head>
 <body>
