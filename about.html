@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — NarraScribe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--iron:#1E1C18;--blue-deep:#3A5F8A;--blue-mid:#5A7FA8;--blue-soft:#8AAECE;--blue-pale:#C2D8EC;--blue-mist:#E8F1F8;--stone-pale:#D8D4CC;--plaster:#F6F4F0;--white:#FDFCFA;--text-dark:#1A1C22;--text-mid:#445060;--text-soft:#7A8592;--text-light:#AABAC8;}
+body{font-family:'DM Sans',sans-serif;background:var(--plaster);color:var(--text-dark);font-size:16px;line-height:1.7;}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 4rem;background:var(--iron);}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo{width:32px;height:32px;background:var(--blue-mid);border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.nav-logo i{font-size:18px;color:#fff;}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#fff;}
+.nav-name span{color:var(--blue-soft);}
+.nav-back{font-size:13px;color:var(--blue-soft);text-decoration:none;display:flex;align-items:center;gap:5px;}
+.nav-back:hover{color:#fff;}
+.hero{background:var(--iron);padding:5rem 4rem 4rem;text-align:center;}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-soft);margin-bottom:1rem;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:300;color:#fff;line-height:1.1;margin-bottom:1rem;}
+.hero-title em{font-style:italic;color:var(--blue-soft);}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.45);max-width:560px;margin:0 auto;font-weight:300;}
+.content{max-width:800px;margin:0 auto;padding:4rem 2rem;}
+.section{margin-bottom:3.5rem;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:400;color:var(--text-dark);margin-bottom:1rem;}
+.section-title em{font-style:italic;color:var(--blue-deep);}
+p{font-size:15px;color:var(--text-mid);margin-bottom:1rem;font-weight:300;line-height:1.8;}
+.highlight{background:var(--blue-mist);border-left:3px solid var(--blue-mid);padding:1.25rem 1.5rem;border-radius:0 10px 10px 0;margin:2rem 0;}
+.highlight p{margin:0;color:var(--text-dark);font-style:italic;font-size:1rem;}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.5rem;}
+.value-card{background:#fff;border:1px solid var(--stone-pale);border-radius:12px;padding:1.25rem 1.4rem;}
+.value-card i{font-size:22px;color:var(--blue-mid);margin-bottom:.75rem;display:block;}
+.value-title{font-size:14px;font-weight:500;color:var(--text-dark);margin-bottom:.4rem;}
+.value-desc{font-size:13px;color:var(--text-soft);font-weight:300;line-height:1.65;}
+.footer{background:var(--iron);padding:2.5rem 4rem;text-align:center;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-top:.75rem;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,.25);text-decoration:none;}
+.footer-links a:hover{color:rgba(255,255,255,.6);}
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+  /* NAV */
+  .nav { padding: .75rem 1rem; flex-wrap: wrap; gap: .5rem; border-radius: 0; }
+  .nav-tabs { display: none; }
+  .nav-user { margin-left: auto; }
+
+  /* HERO / PAGE */
+  .shell, .content { padding: 1rem; }
+  .hero-content { grid-template-columns: 1fr; padding: 0 1.25rem; padding-top: 5rem; gap: 2rem; }
+  .hero-right { display: none; }
+  .hero-title { font-size: 2.6rem; }
+  .hero-actions { flex-direction: column; gap: .75rem; }
+  .btn-hero-primary, .btn-hero-ghost { width: 100%; justify-content: center; }
+
+  /* SECTIONS */
+  .section { padding: 3.5rem 1.25rem; }
+  .section-inner { padding: 0; }
+  .grid-2, .how-grid, .compliance-grid, .grid-3 { grid-template-columns: 1fr; gap: 1.5rem; }
+  .features-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .metrics { grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .metric-val { font-size: 22px; }
+
+  /* APP DASHBOARD */
+  .nav-tabs { display: flex; overflow-x: auto; gap: 2px; width: 100%; padding-bottom: 2px; }
+  .nav-tab { padding: 6px 10px; font-size: 11px; white-space: nowrap; }
+  .nav-tab i { display: none; }
+
+  /* CARDS */
+  .card { padding: 1rem; }
+  .form-row, .form-row-3, .cms-row, .cms-row-3 { grid-template-columns: 1fr; }
+  .sig-grid, .note-info-grid { grid-template-columns: 1fr; }
+  .act-row { flex-direction: column; }
+  .act-btn { width: 100%; }
+
+  /* LOGIN / SIGNUP */
+  .page { grid-template-columns: 1fr; }
+  .left { display: none; }
+  .right { padding: 1.5rem 1.25rem; align-items: flex-start; padding-top: 2rem; }
+  .form-wrap { max-width: 100%; }
+
+  /* CLAIMS */
+  .cpt-row { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .cpt-row input:nth-child(2) { grid-column: 1 / -1; }
+
+  /* FOOTER */
+  .footer { padding: 2rem 1.25rem; }
+  .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-bottom { flex-direction: column; gap: .75rem; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+
+  /* LOGOS BAR */
+  .logos-section { padding: 1.5rem 1.25rem; }
+  .logos-inner { flex-direction: column; gap: 1rem; }
+  .logos-list { flex-wrap: wrap; gap: 1rem; }
+
+  /* STATS */
+  .stats { flex-wrap: wrap; gap: 1rem; }
+
+  /* FORMAT GRID */
+  .format-grid { grid-template-columns: 1fr; }
+
+  /* PLAN CARDS */
+  .plan-card { padding: .9rem 1rem; }
+
+  /* ROLE CARDS */
+  .role-cards { grid-template-columns: 1fr; }
+
+  /* THERAPIST CARDS */
+  .therapist-card { flex-wrap: wrap; }
+  .tc-actions { width: 100%; justify-content: flex-end; margin-top: .5rem; }
+
+  /* HERO LEFT PANEL ON SIGNUP/LOGIN */
+  .hero { padding: 3rem 1.25rem 2.5rem; }
+  .hero-title { font-size: 2rem; }
+
+  /* CTA */
+  .cta-actions { flex-direction: column; align-items: center; gap: .75rem; }
+  .btn-cta-primary { width: 100%; max-width: 300px; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .metric { padding: .75rem; }
+  .hero-title { font-size: 2rem; }
+  .section-title { font-size: 1.8rem; }
+  .nav-tab { font-size: 10px; padding: 5px 8px; }
+  .step-row { gap: 4px; }
+  .step { padding: 6px 7px; font-size: 10px; }
+}
+
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;margin-left:auto;}
+.hamburger span{width:22px;height:2px;background:rgba(255,255,255,.7);border-radius:2px;display:block;transition:all .3s;}
+.mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--iron);z-index:200;padding:1.5rem;flex-direction:column;}
+.mobile-nav.open{display:flex;}
+.mobile-nav-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;}
+.mobile-nav-close{background:none;border:none;cursor:pointer;color:rgba(255,255,255,.6);font-size:24px;padding:4px;}
+.mobile-nav a{display:block;padding:1rem 0;color:rgba(255,255,255,.7);text-decoration:none;font-size:16px;border-bottom:1px solid rgba(255,255,255,.07);font-family:'DM Sans',sans-serif;}
+.mobile-nav a:hover{color:#fff;}
+.mobile-nav-demo{display:block;margin-top:1.5rem;padding:14px;background:var(--blue-mid);color:#fff!important;border-radius:10px;text-align:center;font-weight:600;font-size:15px;border:none!important;}
+@media(max-width:768px){
+  .hamburger{display:flex;}
+  .nav-back{display:none;}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="/" class="nav-brand">
+    <div class="nav-logo"><i class="ti ti-notes"></i></div>
+    <div class="nav-name">Narra<span>Scribe</span></div>
+  </a>
+  <a href="/" class="nav-back"><i class="ti ti-arrow-left"></i> Back to home</a>
+  <button class="hamburger" onclick="openMobileNav()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-header">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="nav-logo"><i class="ti ti-notes"></i></div>
+      <div class="nav-name">Narra<span>Scribe</span></div>
+    </div>
+    <button class="mobile-nav-close" onclick="closeMobileNav()">&#x2715;</button>
+  </div>
+  <a href="/" onclick="closeMobileNav()">Home</a>
+  <a href="/about" onclick="closeMobileNav()">About</a>
+  <a href="/contact" onclick="closeMobileNav()">Contact</a>
+  <a href="/privacy" onclick="closeMobileNav()">Privacy policy</a>
+  <a href="/terms" onclick="closeMobileNav()">Terms of service</a>
+  <a href="/hipaa" onclick="closeMobileNav()">HIPAA &amp; BAA</a>
+  <a href="/login" onclick="closeMobileNav()">Sign in</a>
+  <a href="https://narrascribe.com/demo" class="mobile-nav-demo">Book a demo</a>
+</div>
+<div class="hero">
+  <div class="hero-eyebrow">Our story</div>
+  <h1 class="hero-title">Built for the people who <em>listen</em></h1>
+  <p class="hero-sub">NarraScribe was created to give mental health professionals what they deserve — time.</p>
+</div>
+<div class="content">
+  <div class="section">
+    <h2 class="section-title">Why <em>NarraScribe</em> exists</h2>
+    <p>Mental health therapists are among the most dedicated professionals in healthcare. They listen deeply, hold space for their clients, and carry an emotional weight that most of us will never fully understand. And yet, after every session, they sit down to write. For hours.</p>
+    <p>Clinical documentation is a necessary part of the work — it protects clients, supports insurance reimbursement, and creates a record that informs future care. But the time it takes is time stolen from rest, from preparation, and from the lives therapists are trying to live outside the office.</p>
+    <div class="highlight"><p>"My therapists used to dread note completion. Now they finish notes before they even leave the building."</p></div>
+    <p>NarraScribe was built to solve this. By combining the intelligence of AI with the real workflows of mental health clinics, we turn post-session shorthand into complete, insurance-ready clinical notes in seconds — not hours.</p>
+  </div>
+  <div class="section">
+    <h2 class="section-title">What we <em>believe</em></h2>
+    <div class="values">
+      <div class="value-card"><i class="ti ti-heart"></i><div class="value-title">Clinicians first</div><div class="value-desc">Every decision we make is filtered through one question: does this make a therapist's day better?</div></div>
+      <div class="value-card"><i class="ti ti-lock"></i><div class="value-title">Privacy without compromise</div><div class="value-desc">HIPAA compliance and data security are not features — they are the foundation everything else is built on.</div></div>
+      <div class="value-card"><i class="ti ti-sparkles"></i><div class="value-title">AI as a tool, not a replacement</div><div class="value-desc">The therapist always reviews, edits, and signs. NarraScribe assists — it never replaces clinical judgment.</div></div>
+      <div class="value-card"><i class="ti ti-map-pin"></i><div class="value-title">Built for Maryland</div><div class="value-desc">We understand COMAR requirements, Maryland behavioral health standards, and the specific needs of Mid-Atlantic practices.</div></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2 class="section-title">The <em>mission</em></h2>
+    <p>To give mental health professionals back the time they spend on documentation — so they can spend it on what actually matters: their clients, their practice, and themselves.</p>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-copy">© 2026 NarraScribe. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/privacy">Privacy policy</a>
+    <a href="/terms">Terms of service</a>
+    <a href="/hipaa">HIPAA & BAA</a>
+    <a href="/contact">Contact</a>
+  </div>
+</footer>
+<script>
+function openMobileNav(){ document.getElementById('mobile-nav').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeMobileNav(){ document.getElementById('mobile-nav').classList.remove('open'); document.body.style.overflow=''; }
+</script>
+</body>
+</html>
