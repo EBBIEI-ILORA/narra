@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training Resources — NarraScribe</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --iron:#1E1C18;--iron-mid:#2A2825;
+  --blue-deep:#3A5F8A;--blue-mid:#5A7FA8;--blue-soft:#8AAECE;--blue-pale:#C2D8EC;--blue-mist:#E8F1F8;
+  --stone-pale:#D8D4CC;--stone-faint:#EEEBE5;
+  --plaster:#F6F4F0;--white:#FDFCFA;
+  --text-dark:#1A1C22;--text-mid:#445060;--text-soft:#7A8592;--text-light:#AABAC8;
+  --green:#4A9E75;--green-light:#E8F5EF;
+}
+html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--plaster);color:var(--text-dark);}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.85rem clamp(1rem,4vw,2rem);background:var(--iron);position:sticky;top:0;z-index:100;}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo{width:30px;height:30px;background:var(--blue-mid);border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.nav-logo i{font-size:16px;color:#fff;}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:#fff;}
+.nav-name span{color:var(--blue-soft);}
+.nav-back{font-size:13px;color:var(--blue-soft);text-decoration:none;display:flex;align-items:center;gap:5px;transition:color .15s;}
+.nav-back:hover{color:#fff;}
+
+/* HERO */
+.hero{background:var(--iron);padding:clamp(3rem,8vw,6rem) clamp(1rem,4vw,4rem);text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(58,95,138,.15) 0%,transparent 70%);}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-soft);margin-bottom:1rem;position:relative;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:300;color:#fff;line-height:1.1;margin-bottom:1rem;position:relative;}
+.hero-title em{font-style:italic;color:var(--blue-soft);}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.4);max-width:520px;margin:0 auto;font-weight:300;line-height:1.7;position:relative;}
+
+/* COMING SOON BADGE */
+.cs-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(58,95,138,.2);border:1px solid rgba(138,174,206,.3);color:var(--blue-soft);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:8px 20px;border-radius:30px;margin-bottom:2rem;animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.6;}}
+
+/* MAIN CONTENT */
+.content{max-width:900px;margin:0 auto;padding:clamp(3rem,6vw,5rem) clamp(1rem,3vw,2rem);}
+
+/* RESOURCE CARDS */
+.resources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:3rem;}
+.resource-card{background:var(--white);border:1px solid var(--stone-pale);border-radius:16px;padding:1.5rem;position:relative;overflow:hidden;transition:all .2s;}
+.resource-card::after{content:'Coming Soon';position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-mid);background:var(--blue-mist);border:1px solid var(--blue-pale);padding:3px 10px;border-radius:20px;}
+.resource-icon{width:48px;height:48px;border-radius:12px;background:var(--stone-faint);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.resource-icon i{font-size:22px;color:var(--text-soft);}
+.resource-title{font-size:15px;font-weight:600;color:var(--text-dark);margin-bottom:.4rem;}
+.resource-desc{font-size:13px;color:var(--text-soft);font-weight:300;line-height:1.6;}
+.resource-eta{font-size:11px;color:var(--text-light);margin-top:.75rem;font-style:italic;}
+
+/* NOTIFY SECTION */
+.notify-section{background:var(--white);border:1px solid var(--stone-pale);border-radius:18px;padding:2.5rem;text-align:center;margin-bottom:3rem;}
+.notify-icon{width:64px;height:64px;border-radius:50%;background:var(--blue-mist);border:1px solid var(--blue-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;}
+.notify-icon i{font-size:28px;color:var(--blue-mid);}
+.notify-title{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--text-dark);margin-bottom:.5rem;}
+.notify-title em{font-style:italic;color:var(--blue-deep);}
+.notify-sub{font-size:14px;color:var(--text-soft);font-weight:300;max-width:460px;margin:0 auto 1.5rem;line-height:1.7;}
+.notify-form{display:flex;gap:10px;max-width:400px;margin:0 auto;}
+.notify-input{flex:1;padding:11px 14px;border-radius:9px;border:1px solid var(--stone-pale);font-size:14px;background:var(--plaster);color:var(--text-dark);font-family:inherit;}
+.notify-input:focus{outline:none;border-color:var(--blue-mid);}
+.notify-btn{padding:11px 22px;border-radius:9px;background:var(--iron);color:var(--blue-soft);font-size:14px;font-weight:600;border:none;cursor:pointer;font-family:inherit;white-space:nowrap;transition:all .2s;}
+.notify-btn:hover{background:var(--iron-mid);color:#fff;}
+.notify-success{display:none;font-size:13px;color:var(--green);background:var(--green-light);border:1px solid #B8DFC9;padding:10px 14px;border-radius:9px;margin-top:1rem;}
+
+/* TIMELINE */
+.timeline{margin-bottom:3rem;}
+.timeline-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--text-dark);margin-bottom:1.5rem;text-align:center;}
+.timeline-items{display:flex;flex-direction:column;gap:0;position:relative;}
+.timeline-items::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:1px;background:var(--stone-pale);}
+.timeline-item{display:flex;gap:1.25rem;padding:0 0 1.5rem 0;position:relative;}
+.timeline-dot{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;}
+.timeline-dot.done{background:var(--green);border:2px solid var(--green);}
+.timeline-dot.active{background:var(--iron);border:2px solid var(--blue-soft);}
+.timeline-dot.soon{background:var(--white);border:2px solid var(--stone-pale);}
+.timeline-dot i{font-size:16px;}
+.timeline-dot.done i{color:#fff;}
+.timeline-dot.active i{color:var(--blue-soft);}
+.timeline-dot.soon i{color:var(--text-light);}
+.timeline-content{padding-top:8px;}
+.timeline-label{font-size:14px;font-weight:600;color:var(--text-dark);}
+.timeline-desc{font-size:13px;color:var(--text-soft);margin-top:3px;font-weight:300;}
+.timeline-tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;margin-left:8px;}
+.tag-done{background:var(--green-light);color:var(--green);}
+.tag-now{background:var(--blue-mist);color:var(--blue-deep);}
+.tag-soon{background:var(--stone-faint);color:var(--text-soft);}
+
+/* IN THE MEANTIME */
+.meantime{background:var(--iron);border-radius:18px;padding:2rem;margin-bottom:3rem;}
+.meantime-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:#fff;margin-bottom:1rem;}
+.meantime-title em{font-style:italic;color:var(--blue-soft);}
+.meantime-items{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+.meantime-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.85rem 1rem;display:flex;align-items:center;gap:.75rem;}
+.meantime-item i{font-size:18px;color:var(--blue-soft);flex-shrink:0;}
+.meantime-item-text{font-size:13px;color:rgba(255,255,255,.7);font-weight:300;}
+.meantime-item-link{font-size:12px;color:var(--blue-soft);text-decoration:none;display:block;margin-top:2px;}
+.meantime-item-link:hover{color:#fff;}
+
+/* FOOTER */
+.footer{background:var(--iron);padding:2rem clamp(1rem,4vw,4rem);text-align:center;border-top:1px solid rgba(255,255,255,.05);}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-top:.75rem;flex-wrap:wrap;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,.25);text-decoration:none;}
+.footer-links a:hover{color:rgba(255,255,255,.6);}
+
+@media(max-width:768px){
+  .resources-grid{grid-template-columns:1fr;}
+  .meantime-items{grid-template-columns:1fr;}
+  .notify-form{flex-direction:column;}
+  .notify-btn{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/app" class="nav-brand">
+    <div class="nav-logo"><i class="ti ti-notes"></i></div>
+    <div class="nav-name">Narra<span>Scribe</span></div>
+  </a>
+  <a href="/app" class="nav-back"><i class="ti ti-arrow-left"></i> Back to dashboard</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Resources</div>
+  <div class="cs-badge"><i class="ti ti-clock" style="font-size:14px;"></i> Coming Soon</div>
+  <h1 class="hero-title">Training <em>Resources</em></h1>
+  <p class="hero-sub">Video walkthroughs, best-practice guides, shorthand tips, and clinical documentation templates — all in one place. We're building it now.</p>
+</div>
+
+<div class="content">
+
+  <!-- RESOURCE CARDS -->
+  <div class="resources-grid">
+    <div class="resource-card">
+      <div class="resource-icon"><i class="ti ti-video"></i></div>
+      <div class="resource-title">Video Walkthroughs</div>
+      <div class="resource-desc">Step-by-step video guides for every feature — note generation, CMS-1500 prep, shorthand dictionary setup, and more.</div>
+      <div class="resource-eta">Estimated: Q3 2026</div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-icon"><i class="ti ti-file-text"></i></div>
+      <div class="resource-title">Quick-Start Guide</div>
+      <div class="resource-desc">A downloadable PDF guide covering everything a new clinician needs to know to get started with NarraScribe in under 30 minutes.</div>
+      <div class="resource-eta">Estimated: Q3 2026</div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-icon"><i class="ti ti-book"></i></div>
+      <div class="resource-title">Shorthand Library</div>
+      <div class="resource-desc">A curated library of clinical shorthand terms organized by specialty — anxiety, depression, trauma, substance use, and more.</div>
+      <div class="resource-eta">Estimated: Q3 2026</div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-icon"><i class="ti ti-template"></i></div>
+      <div class="resource-title">Note Templates</div>
+      <div class="resource-desc">Pre-built SOAP, DAP, BIRP, and GIRP note templates for common presenting concerns — ready to customize for your practice.</div>
+      <div class="resource-eta">Estimated: Q3 2026</div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-icon"><i class="ti ti-certificate"></i></div>
+      <div class="resource-title">Compliance Guides</div>
+      <div class="resource-desc">State-by-state compliance documentation guides covering HIPAA requirements, recording consent laws, and audit preparation.</div>
+      <div class="resource-eta">Estimated: Q4 2026</div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-icon"><i class="ti ti-headset"></i></div>
+      <div class="resource-title">Live Training Sessions</div>
+      <div class="resource-desc">Monthly live onboarding sessions and Q&A with the NarraScribe team — available to all active clinic subscribers.</div>
+      <div class="resource-eta">Estimated: Q4 2026</div>
+    </div>
+  </div>
+
+  <!-- NOTIFY ME -->
+  <div class="notify-section">
+    <div class="notify-icon"><i class="ti ti-bell"></i></div>
+    <div class="notify-title">Get notified <em>first</em></div>
+    <p class="notify-sub">Enter your email and we'll let you know the moment training resources go live — before we announce it anywhere else.</p>
+    <div class="notify-form">
+      <input type="email" class="notify-input" id="notify-email" placeholder="your@clinic.com">
+      <button class="notify-btn" onclick="submitNotify()">Notify me</button>
+    </div>
+    <div class="notify-success" id="notify-success"><i class="ti ti-circle-check"></i> You're on the list — we'll email you first when resources launch!</div>
+  </div>
+
+  <!-- WHY NARRASCRIBE -->
+  <div style="margin-bottom:3rem;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--text-dark);text-align:center;margin-bottom:.5rem;">Why <em style="font-style:italic;color:var(--blue-deep);">NarraScribe</em></div>
+    <div style="text-align:center;font-size:14px;color:var(--text-soft);font-weight:300;margin-bottom:2rem;">What makes us different from every other documentation tool on the market.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+
+      <div style="background:var(--blue-mist);border:1px solid var(--blue-pale);border-radius:16px;padding:1.5rem;display:flex;gap:1rem;">
+        <div style="width:44px;height:44px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <i class="ti ti-brain" style="font-size:20px;color:var(--blue-mid);"></i>
+        </div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:.35rem;">Custom shorthand dictionary</div>
+          <div style="font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.65;">NarraScribe learns your clinic's unique shorthand. No other platform lets you build a custom abbreviation library that auto-expands exactly the way your clinicians write.</div>
+        </div>
+      </div>
+
+      <div style="background:var(--blue-mist);border:1px solid var(--blue-pale);border-radius:16px;padding:1.5rem;display:flex;gap:1rem;">
+        <div style="width:44px;height:44px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <i class="ti ti-file-invoice" style="font-size:20px;color:var(--blue-mid);"></i>
+        </div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:.35rem;">CMS-1500 claim prep built in</div>
+          <div style="font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.65;">Every note connects directly to a pre-filled CMS-1500 claim form. Provider NPI, CPT codes, diagnosis codes, and place of service — all auto-populated. No other documentation tool does this.</div>
+        </div>
+      </div>
+
+      <div style="background:var(--blue-mist);border:1px solid var(--blue-pale);border-radius:16px;padding:1.5rem;display:flex;gap:1rem;">
+        <div style="width:44px;height:44px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <i class="ti ti-shield-check" style="font-size:20px;color:var(--blue-mid);"></i>
+        </div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:.35rem;">All 50 states compliance built in</div>
+          <div style="font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.65;">State-specific recording consent laws, minor consent rules, 42 CFR Part 2 substance-use protections, and data retention requirements — all handled automatically per clinic location.</div>
+        </div>
+      </div>
+
+      <div style="background:var(--blue-mist);border:1px solid var(--blue-pale);border-radius:16px;padding:1.5rem;display:flex;gap:1rem;">
+        <div style="width:44px;height:44px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <i class="ti ti-map-pin" style="font-size:20px;color:var(--blue-mid);"></i>
+        </div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:.35rem;">Built for behavioral health — not general medicine</div>
+          <div style="font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.65;">DSM-5 diagnosis codes, behavioral health CPT codes, mental health POS codes, supervisor sign-off workflows, and 48-hour audit compliance tracking — purpose-built for mental health practices.</div>
+        </div>
+      </div>
+
+      <div style="background:var(--blue-mist);border:1px solid var(--blue-pale);border-radius:16px;padding:1.5rem;display:flex;gap:1rem;">
+        <div style="width:44px;height:44px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <i class="ti ti-users" style="font-size:20px;color:var(--blue-mid);"></i>
+        </div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:.35rem;">Clinic-level management — not just per user</div>
+          <div style="font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.65;">Clinic owners manage their full team from one dashboard — therapist roster, compliance tracking, performance reports, and shared shorthand dictionaries. Competitors charge per seat with no clinic oversight.</div>
+        </div>
+      </div>
+
+      <div style="background:var(--blue-mist);border:1px solid var(--blue-pale);border-radius:16px;padding:1.5rem;display:flex;gap:1rem;">
+        <div style="width:44px;height:44px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <i class="ti ti-lock" style="font-size:20px;color:var(--blue-mid);"></i>
+        </div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:.35rem;">HIPAA-compliant with signed BAA</div>
+          <div style="font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.65;">Every clinic receives a signed Business Associate Agreement. AES-256 encryption, audit logging, role-based access control, and PHI isolation per clinic — built in from day one, not bolted on.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- IN THE MEANTIME -->
+  <div class="meantime">
+    <div class="meantime-title">In the <em>meantime</em></div>
+    <div class="meantime-items">
+      <div class="meantime-item">
+        <i class="ti ti-mail"></i>
+        <div>
+          <div class="meantime-item-text">Questions about using NarraScribe?</div>
+          <a href="/contact" class="meantime-item-link">Contact our support team →</a>
+        </div>
+      </div>
+      <div class="meantime-item">
+        <i class="ti ti-calendar"></i>
+        <div>
+          <div class="meantime-item-text">Want a personal walkthrough?</div>
+          <a href="https://narrascribe.com/demo" class="meantime-item-link">Book a 1-on-1 demo session →</a>
+        </div>
+      </div>
+      <div class="meantime-item">
+        <i class="ti ti-shield-check"></i>
+        <div>
+          <div class="meantime-item-text">HIPAA & compliance questions</div>
+          <a href="/hipaa" class="meantime-item-link">View our compliance documentation →</a>
+        </div>
+      </div>
+      <div class="meantime-item">
+        <i class="ti ti-settings"></i>
+        <div>
+          <div class="meantime-item-text">Set up your shorthand dictionary</div>
+          <a href="/app" class="meantime-item-link">Go to Settings in your dashboard →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-copy">© 2026 NarraScribe. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+    <a href="/privacy">Privacy policy</a>
+    <a href="/terms">Terms of service</a>
+    <a href="/hipaa">HIPAA &amp; BAA</a>
+  </div>
+</footer>
+
+<script>
+function submitNotify(){
+  var email = document.getElementById('notify-email').value.trim();
+  if(!email || !email.includes('@')){ alert('Please enter a valid email address.'); return; }
+  document.getElementById('notify-success').style.display = 'block';
+  document.querySelector('.notify-btn').textContent = 'Subscribed!';
+  document.querySelector('.notify-btn').style.background = '#4A9E75';
+  document.querySelector('.notify-btn').style.color = '#fff';
+  document.querySelector('.notify-btn').disabled = true;
+}
+</script>
+
+</body>
+</html>

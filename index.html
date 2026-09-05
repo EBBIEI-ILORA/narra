@@ -283,6 +283,8 @@ html{overflow-x:hidden;}body{font-family:'DM Sans',sans-serif;background:var(--c
 
 /* ── MOBILE RESPONSIVE ── */
 @media (max-width: 768px) {
+  .nav-links { display: none !important; }
+  .hamburger { display: flex !important; }
   /* NAV */
   .nav { padding: .75rem 1rem; flex-wrap: nowrap; }
   .nav-tabs { display: none !important; }
@@ -378,7 +380,7 @@ html{overflow-x:hidden;}body{font-family:'DM Sans',sans-serif;background:var(--c
   .step-row { gap: 4px; }
   .step { padding: 6px 7px; font-size: 10px; }
 }
-.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;justify-content:center;gap:5px;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;justify-content:center;gap:5px;} /* hidden on desktop, shown on mobile */
 .hamburger span{width:24px;height:2px;background:rgba(255,255,255,.8);border-radius:2px;display:block;transition:all .3s;}
 .mobile-overlay{display:none;position:fixed;inset:0;background:var(--iron);z-index:999;flex-direction:column;padding:1.5rem;}
 .mobile-overlay.open{display:flex;}

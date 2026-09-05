@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NarraScribe — From shorthand to submission, in seconds.</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NarraScribe — Behavioral Health Platform</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
 <style>
+
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --iron:#1E1C18;--iron-mid:#2E2C26;
@@ -265,31 +266,292 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
 /* TOAST */
 .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(10px);background:var(--iron);color:var(--blue-soft);padding:12px 24px;border-radius:10px;font-size:13px;font-weight:600;opacity:0;transition:all .3s;pointer-events:none;z-index:999;display:flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(0,0,0,.3);}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* ── EXTENDED STYLES for new screens ── */
+.form-input,.form-select{width:100%;padding:10px 13px;border-radius:9px;border:1px solid var(--stone-pale);font-size:13px;background:var(--white);color:var(--text-dark);font-family:inherit;transition:border-color .15s;}
+.form-input:focus,.form-select:focus{outline:none;border-color:var(--blue-mid);box-shadow:0 0 0 3px rgba(58,95,138,.09);}
+.form-textarea{resize:vertical;min-height:90px;line-height:1.6;}
+.form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:.9rem;}
+.form-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:.9rem;}
+.form-field{display:flex;flex-direction:column;gap:.25rem;margin-bottom:.75rem;}
+.form-field label{font-size:12px;font-weight:600;color:var(--text-mid);}
+.req{color:var(--red);}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;}
+.tbl thead tr{border-bottom:1px solid var(--stone-pale);}
+.tbl th{padding:.5rem .8rem;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-soft);}
+.tbl td{padding:.65rem .8rem;color:var(--text-mid);border-bottom:1px solid var(--stone-faint);}
+.tbl tr:last-child td{border-bottom:none;}
+.tbl tbody tr{cursor:pointer;transition:background .1s;}
+.tbl tbody tr:hover td{background:var(--blue-faint);}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:1.2rem;}
+.stat-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1.2rem;}
+.stat-box{background:var(--white);border:1px solid var(--stone-pale);border-radius:14px;padding:1.1rem 1.2rem;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+.stat-v{font-size:28px;font-weight:600;color:var(--text-dark);}
+.stat-l{font-size:12px;color:var(--text-soft);margin-top:2px;}
+.stat-d{font-size:12px;margin-top:6px;}
+.bx-green{background:var(--green-light);color:var(--green);border:1px solid #B8DFC9;}
+.bx-amber{background:var(--amber-light);color:var(--amber);border:1px solid #F0D898;}
+.bx-red{background:var(--red-light);color:var(--red);border:1px solid #F0C0C0;}
+.bx-blue{background:var(--blue-mist);color:var(--blue-deep);border:1px solid var(--blue-pale);}
+.bx-gray{background:var(--stone-faint);color:var(--stone-mid);border:1px solid var(--stone-pale);}
+.bdge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:500;}
+.alert-box{display:flex;align-items:center;gap:.65rem;padding:.65rem .9rem;border-radius:9px;margin-bottom:.45rem;font-size:13px;}
+.alert-box i{font-size:15px;flex-shrink:0;}
+.ab-red{background:var(--red-light);border:1px solid #F0C0C0;color:var(--red);}
+.ab-amber{background:var(--amber-light);border:1px solid #F0D898;color:var(--amber);}
+.ab-blue{background:var(--blue-mist);border:1px solid var(--blue-pale);color:var(--blue-deep);}
+.ab-green{background:var(--green-light);border:1px solid #B8DFC9;color:var(--green);}
+.pipe-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;}
+.pipe-col{background:var(--white);border:1px solid var(--stone-pale);border-radius:12px;padding:.9rem;}
+.pipe-col-hdr{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-soft);margin-bottom:.65rem;display:flex;align-items:center;justify-content:space-between;}
+.pipe-card{background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.65rem .8rem;margin-bottom:.45rem;cursor:pointer;transition:all .12s;}
+.pipe-card:hover{border-color:var(--blue-soft);background:var(--blue-faint);}
+.pipe-cname{font-size:13px;font-weight:600;color:var(--text-dark);}
+.pipe-cmeta{font-size:11px;color:var(--text-soft);margin-top:2px;}
+.fmt-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:.9rem;}
+.pbar{height:6px;background:var(--stone-faint);border-radius:3px;overflow:hidden;margin-top:.3rem;}
+.pbar-fill{height:100%;border-radius:3px;}
+.pb-green{background:linear-gradient(90deg,var(--green),#6DC99A);}
+.pb-blue{background:linear-gradient(90deg,var(--blue-deep),var(--blue-soft));}
+.pb-amber{background:linear-gradient(90deg,var(--amber),#D4A855);}
+.pb-red{background:linear-gradient(90deg,var(--red),#C04848);}
+.modal-ov{position:fixed;inset:0;background:rgba(0,0,0,.28);z-index:200;display:none;align-items:center;justify-content:center;backdrop-filter:blur(2px);}
+.modal-ov.open{display:flex;}
+.modal{background:var(--white);border-radius:16px;padding:1.75rem;width:520px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.15);}
+.modal-hdr{font-size:16px;font-weight:700;color:var(--text-dark);margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between;}
+.modal-x{background:none;border:none;cursor:pointer;font-size:20px;color:var(--text-soft);padding:2px;line-height:1;}
+.modal-x:hover{color:var(--text-dark);}
+.drop-panel{position:fixed;top:72px;background:var(--white);border:1px solid var(--stone-pale);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.12);z-index:150;display:none;}
+.drop-panel.open{display:block;}
+.dp-hdr{padding:.75rem 1rem;border-bottom:1px solid var(--stone-faint);display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:700;}
+.dp-item{display:flex;align-items:center;gap:.7rem;padding:.6rem 1rem;font-size:13px;color:var(--text-mid);cursor:pointer;transition:background .12s;}
+.dp-item:hover{background:var(--plaster);}
+.dp-item i{font-size:15px;color:var(--stone-light);}
+.notif-dot{position:absolute;top:4px;right:4px;width:8px;height:8px;border-radius:50%;background:var(--amber);border:2px solid var(--iron);}
+.ni{padding:.7rem 1rem;border-bottom:1px solid var(--stone-faint);cursor:pointer;border-left:3px solid transparent;transition:background .1s;}
+.ni:last-child{border-bottom:none;}
+.ni:hover{background:var(--plaster);}
+.ni-t{font-size:12px;font-weight:600;color:var(--text-dark);}
+.ni-s{font-size:11px;color:var(--text-soft);margin-top:1px;}
+.ni.ur{border-left-color:var(--red);}
+.ni.ua{border-left-color:var(--amber);}
+.ni.ub{border-left-color:var(--blue-deep);}
+.ni.ug{border-left-color:var(--green);}
+.cal-wrap{background:var(--white);border:1px solid var(--stone-pale);border-radius:14px;padding:1.2rem;}
+.cal-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:.85rem;}
+.cal-month{font-size:15px;font-weight:700;color:var(--text-dark);}
+.cal-nav{width:28px;height:28px;border-radius:7px;border:1px solid var(--stone-pale);background:var(--plaster);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;}
+.cal-nav:hover{background:var(--blue-mist);}
+.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
+.cal-lbl-d{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text-light);text-align:center;padding:3px 0;}
+.cal-cell{aspect-ratio:1;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;border:1px solid transparent;transition:all .12s;}
+.cal-cell:hover{background:var(--blue-mist);}
+.cal-cell.today{font-weight:700;color:var(--blue-deep);}
+.cal-cell.selected{background:var(--iron);color:#fff;}
+.cal-cell.has-appt{background:var(--green-light);border-color:#B8DFC9;}
+.cal-cell.other-m{color:var(--stone-pale);pointer-events:none;}
+.sr-item{display:flex;align-items:center;gap:.7rem;padding:.6rem .85rem;border-radius:8px;cursor:pointer;font-size:13px;color:var(--text-mid);}
+.sr-item:hover{background:var(--blue-mist);color:var(--blue-deep);}
+.sr-item i{font-size:15px;color:var(--text-light);}
+.sr-sec{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-light);padding:.5rem .85rem .2rem;}
+/* sidebar nav for extended app */
+.sidebar-nav{display:flex;gap:4px;flex-wrap:wrap;}
+.subnav-row{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;}
+.subnav-btn{padding:5px 12px;border-radius:7px;border:1px solid var(--stone-pale);background:var(--plaster);font-size:12px;color:var(--text-soft);cursor:pointer;font-family:inherit;font-weight:500;transition:all .15s;}
+.subnav-btn:hover{background:var(--blue-mist);color:var(--blue-deep);border-color:var(--blue-pale);}
+.subnav-btn.active{background:var(--blue-mist);color:var(--blue-deep);border-color:var(--blue-pale);font-weight:600;}
 </style>
 </head>
 <body>
 <div class="shell">
 
-<!-- NAV -->
+<!-- NAV — exact original aesthetic -->
 <nav class="nav">
   <div class="nav-brand">
     <div class="nav-logo"><i class="ti ti-notes"></i></div>
     <div class="nav-name">Narra<span>Scribe</span></div>
   </div>
-  <div class="nav-tabs">
+  <div class="nav-tabs" id="nav-tabs">
     <button class="nav-tab active" onclick="go('dashboard',this)"><i class="ti ti-layout-dashboard"></i> Dashboard</button>
-    <button class="nav-tab" onclick="go('notes',this)"><i class="ti ti-plus"></i> New Note</button>
+    <button class="nav-tab" onclick="go('new-note',this)"><i class="ti ti-plus"></i> New Note</button>
     <button class="nav-tab" onclick="go('therapists',this)"><i class="ti ti-users"></i> Therapists</button>
     <button class="nav-tab" onclick="go('settings',this)"><i class="ti ti-settings"></i> Settings</button>
     <button class="nav-tab" onclick="go('claims',this)"><i class="ti ti-file-invoice"></i> Claims</button>
+    <button class="nav-tab" onclick="showMoreMenu(this)"><i class="ti ti-grid-dots"></i> More</button>
   </div>
-  <div class="nav-user">
-    <div class="nav-avatar">DR</div>
-    <span class="nav-uname">Dr. Rivera</span>
+  <div style="display:flex;align-items:center;gap:8px;">
+    <div style="position:relative;">
+      <button style="background:transparent;border:none;cursor:pointer;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;" onclick="toggleDrop('notif-drop')" id="notif-btn"><i class="ti ti-bell" style="font-size:18px;color:var(--stone-light);"></i><div class="notif-dot"></div></button>
+    </div>
+    <div class="nav-user" onclick="toggleDrop('user-drop')" style="cursor:pointer;">
+      <div class="nav-avatar" id="nav-av">DR</div>
+      <span class="nav-uname" id="nav-uname">Dr. Rivera</span>
+    </div>
   </div>
 </nav>
 
-<!-- ══ DASHBOARD ══ -->
+<!-- MORE MENU -->
+<div class="drop-panel" id="more-menu" style="left:50%;transform:translateX(-50%);width:680px;padding:.75rem 1rem;">
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-soft);margin-bottom:.6rem;">All screens</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;">
+    <button onclick="go('notes',qNav(1));closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-files" style="font-size:14px;color:var(--blue-mid);"></i> All notes</button>
+    <button onclick="go('clients',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-users" style="font-size:14px;color:var(--blue-mid);"></i> Clients</button>
+    <button onclick="go('intake',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-clipboard-list" style="font-size:14px;color:var(--blue-mid);"></i> Patient intake</button>
+    <button onclick="go('assessments',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-checklist" style="font-size:14px;color:var(--blue-mid);"></i> Assessments</button>
+    <button onclick="go('scheduler',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-calendar" style="font-size:14px;color:var(--blue-mid);"></i> Scheduler</button>
+    <button onclick="go('compliance',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-shield-check" style="font-size:14px;color:var(--blue-mid);"></i> Compliance</button>
+    <button onclick="go('reports',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseover="this.style.background='var(--plaster)'"><i class="ti ti-chart-bar" style="font-size:14px;color:var(--blue-mid);"></i> Reports</button>
+    <button onclick="go('referrals',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-git-branch" style="font-size:14px;color:var(--blue-mid);"></i> Referrals</button>
+    <button onclick="go('treatment-plans',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-clipboard-heart" style="font-size:14px;color:var(--blue-mid);"></i> Treatment plans</button>
+    <button onclick="go('group-notes',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-users-group" style="font-size:14px;color:var(--blue-mid);"></i> Group notes</button>
+    <button onclick="go('telehealth',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-video" style="font-size:14px;color:var(--blue-mid);"></i> Telehealth</button>
+    <button onclick="go('crm',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-address-book" style="font-size:14px;color:var(--blue-mid);"></i> CRM</button>
+    <button onclick="go('billing',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-cash" style="font-size:14px;color:var(--blue-mid);"></i> Billing</button>
+    <button onclick="go('insurance',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-building-bank" style="font-size:14px;color:var(--blue-mid);"></i> Insurance</button>
+    <button onclick="go('authorizations',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-license" style="font-size:14px;color:var(--blue-mid);"></i> Authorizations</button>
+    <button onclick="go('analytics',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-chart-line" style="font-size:14px;color:var(--blue-mid);"></i> Analytics</button>
+    <button onclick="go('discharge',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-door-exit" style="font-size:14px;color:var(--blue-mid);"></i> Discharge</button>
+    <button onclick="go('ceo',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-chart-pie" style="font-size:14px;color:var(--blue-mid);"></i> Exec view</button>
+    <button onclick="go('credentialing',null);closeDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.55rem .7rem;font-size:12px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;" onmouseover="this.style.background='var(--blue-mist)'" onmouseout="this.style.background='var(--plaster)'"><i class="ti ti-certificate" style="font-size:14px;color:var(--blue-mid);"></i> Credentialing</button>
+  </div>
+</div>
+
+<!-- NOTIFICATION PANEL -->
+<div class="drop-panel" id="notif-drop" style="right:140px;width:310px;">
+  <div class="dp-hdr"><span>Notifications</span><button onclick="clearNotifs()" style="font-size:11px;color:var(--blue-deep);background:none;border:none;cursor:pointer;font-weight:600;">Mark all read</button></div>
+  <div class="ni ur" onclick="go('compliance',null);closeDrops()"><div class="ni-t">2 notes near 48-hour deadline</div><div class="ni-s">Complete by 6:00 PM today</div></div>
+  <div class="ni ua" onclick="go('compliance',null);closeDrops()"><div class="ni-t">3 notes pending supervisor sign-off</div><div class="ni-s">James Kim · awaiting review</div></div>
+  <div class="ni ub" onclick="go('treatment-plans',null);closeDrops()"><div class="ni-t">5 treatment plans expiring soon</div><div class="ni-s">Within the next 30 days</div></div>
+  <div class="ni ug" onclick="closeDrops()"><div class="ni-t">Sarah Mitchell — 100% compliance</div><div class="ni-s">Excellent documentation this week</div></div>
+</div>
+
+<!-- USER PANEL -->
+<div class="drop-panel" id="user-drop" style="right:8px;width:195px;">
+  <div class="dp-hdr">Dr. Rivera</div>
+  <div class="dp-item" onclick="go('settings',qNav(3));closeDrops()"><i class="ti ti-adjustments"></i> Settings</div>
+  <div class="dp-item" onclick="go('credentialing',null);closeDrops()"><i class="ti ti-certificate"></i> My credentials</div>
+  <div class="dp-item" onclick="go('reports',null);closeDrops()"><i class="ti ti-chart-bar"></i> My reports</div>
+  <div style="border-top:1px solid var(--stone-faint);"></div>
+  <div class="dp-item" style="color:var(--red);" onclick="signOut()"><i class="ti ti-logout" style="color:var(--red);"></i> Sign out</div>
+</div>
+
+<!-- SEARCH MODAL -->
+<div class="modal-ov" id="search-modal">
+  <div class="modal" style="width:580px;">
+    <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;"><i class="ti ti-search" style="font-size:18px;color:var(--text-soft);"></i><input type="text" id="search-inp" style="flex:1;border:none;font-size:15px;color:var(--text-dark);font-family:inherit;background:transparent;" placeholder="Search clients, notes, screens..." oninput="liveSearch(this.value)"><button class="modal-x" onclick="closeMod('search-modal')">&#10005;</button></div>
+    <div id="search-res"></div>
+  </div>
+</div>
+
+<!-- APPOINTMENT MODAL -->
+<div class="modal-ov" id="appt-modal">
+  <div class="modal">
+    <div class="modal-hdr">Schedule appointment <button class="modal-x" onclick="closeMod('appt-modal')">&#10005;</button></div>
+    <div class="form-grid-2">
+      <div class="form-field"><label>Client name <span class="req">*</span></label><input type="text" class="form-input" id="appt-name" placeholder="Full name"></div>
+      <div class="form-field"><label>Date <span class="req">*</span></label><input type="date" class="form-input" id="appt-date"></div>
+      <div class="form-field"><label>Time</label><input type="time" class="form-input" id="appt-time"></div>
+      <div class="form-field"><label>Clinician</label><select class="form-select" id="appt-clin"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option><option>Aisha Brown</option></select></div>
+    </div>
+    <div style="display:flex;gap:.6rem;margin-top:.5rem;">
+      <button class="btn-primary" style="flex:1;" onclick="saveAppt()"><i class="ti ti-check"></i> Schedule</button>
+      <button class="btn-secondary" onclick="closeMod('appt-modal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- NEW CLIENT MODAL -->
+<div class="modal-ov" id="new-client-modal">
+  <div class="modal">
+    <div class="modal-hdr">Add new client <button class="modal-x" onclick="closeMod('new-client-modal')">&#10005;</button></div>
+    <div class="form-grid-2">
+      <div class="form-field"><label>First name <span class="req">*</span></label><input type="text" class="form-input" id="nc-first" placeholder="First name"></div>
+      <div class="form-field"><label>Last name <span class="req">*</span></label><input type="text" class="form-input" id="nc-last" placeholder="Last name"></div>
+      <div class="form-field"><label>Date of birth</label><input type="date" class="form-input" id="nc-dob"></div>
+      <div class="form-field"><label>Insurance</label><input type="text" class="form-input" id="nc-ins" placeholder="Provider"></div>
+      <div class="form-field"><label>Clinician</label><select class="form-select" id="nc-clin"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option><option>Aisha Brown</option></select></div>
+      <div class="form-field"><label>Phone</label><input type="tel" class="form-input" placeholder="(410) 555-0100"></div>
+    </div>
+    <div style="display:flex;gap:.6rem;margin-top:.5rem;">
+      <button class="btn-primary" style="flex:1;" onclick="saveNewClient()"><i class="ti ti-check"></i> Add client</button>
+      <button class="btn-secondary" onclick="closeMod('new-client-modal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- CLINICIAN DETAIL MODAL -->
+<div class="modal-ov" id="clin-modal">
+  <div class="modal">
+    <div class="modal-hdr">Clinician profile <button class="modal-x" onclick="closeMod('clin-modal')">&#10005;</button></div>
+    <div id="clin-modal-body"></div>
+  </div>
+</div>
+
+<!-- ASSESSMENT MODAL -->
+<div class="modal-ov" id="assess-modal">
+  <div class="modal" style="width:560px;">
+    <div class="modal-hdr" id="assess-title">Assessment <button class="modal-x" onclick="closeMod('assess-modal')">&#10005;</button></div>
+    <div class="form-grid-2" style="margin-bottom:.85rem;">
+      <div class="form-field"><label>Client name</label><input type="text" class="form-input" placeholder="Client name"></div>
+      <div class="form-field"><label>Clinician</label><select class="form-select"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option></select></div>
+    </div>
+    <div id="assess-qs"></div>
+    <div style="display:flex;gap:.6rem;margin-top:1.1rem;">
+      <button class="btn-primary" style="flex:1;" onclick="submitAssess()"><i class="ti ti-check"></i> Submit</button>
+      <button class="btn-secondary" onclick="closeMod('assess-modal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- TREATMENT PLAN MODAL -->
+<div class="modal-ov" id="tp-modal">
+  <div class="modal">
+    <div class="modal-hdr">New treatment plan <button class="modal-x" onclick="closeMod('tp-modal')">&#10005;</button></div>
+    <div class="form-grid-2">
+      <div class="form-field"><label>Client name <span class="req">*</span></label><input type="text" class="form-input" id="tp-client" placeholder="Client name"></div>
+      <div class="form-field"><label>Primary diagnosis</label><select class="form-select"><option>F41.1 — GAD</option><option>F32.1 — MDD</option><option>F43.10 — PTSD</option><option>F31.81 — Bipolar II</option></select></div>
+      <div class="form-field"><label>Clinician</label><select class="form-select"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option><option>Aisha Brown</option></select></div>
+      <div class="form-field"><label>Review date</label><input type="date" class="form-input"></div>
+    </div>
+    <div class="form-field"><label>Treatment goals</label><textarea class="form-input form-textarea" id="tp-goals" placeholder="List measurable goals..."></textarea></div>
+    <div style="display:flex;gap:.6rem;margin-top:.5rem;">
+      <button class="btn-primary" style="flex:1;" onclick="saveTP()"><i class="ti ti-check"></i> Save plan</button>
+      <button class="btn-secondary" onclick="closeMod('tp-modal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- CREDENTIAL MODAL -->
+<div class="modal-ov" id="cred-modal">
+  <div class="modal">
+    <div class="modal-hdr">Add credential <button class="modal-x" onclick="closeMod('cred-modal')">&#10005;</button></div>
+    <div class="form-grid-2">
+      <div class="form-field"><label>Clinician</label><select class="form-select"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option><option>Aisha Brown</option></select></div>
+      <div class="form-field"><label>License type</label><input type="text" class="form-input" placeholder="LCSW, LPC, PsyD..."></div>
+      <div class="form-field"><label>License #</label><input type="text" class="form-input" placeholder="MD-LCSW-XXXXX"></div>
+      <div class="form-field"><label>Expiration date</label><input type="date" class="form-input"></div>
+    </div>
+    <div style="display:flex;gap:.6rem;margin-top:.5rem;">
+      <button class="btn-primary" style="flex:1;" onclick="closeMod('cred-modal');showToast('Credential saved')"><i class="ti ti-check"></i> Save</button>
+      <button class="btn-secondary" onclick="closeMod('cred-modal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- VIEW NOTE MODAL -->
+<div class="modal-ov" id="view-note-modal">
+  <div class="modal" style="width:580px;">
+    <div class="modal-hdr">Clinical note <button class="modal-x" onclick="closeMod('view-note-modal')">&#10005;</button></div>
+    <div id="view-note-body"></div>
+    <div style="display:flex;gap:.6rem;margin-top:1.25rem;">
+      <button class="btn-secondary" onclick="try{navigator.clipboard.writeText(document.getElementById('view-note-body').innerText);}catch(e){}showToast('Copied')"><i class="ti ti-copy"></i> Copy</button>
+      <button class="btn-primary" onclick="closeMod('view-note-modal');showToast('Note approved and submitted')"><i class="ti ti-circle-check"></i> Approve</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
 <div class="screen active" id="screen-dashboard">
   <div style="padding:.5rem 0 .75rem;">
     <div style="font-size:24px;font-weight:600;color:var(--text-dark);" id="greeting-title"></div>
@@ -698,7 +960,531 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
 <!-- TOAST -->
 <div class="toast" id="toast"><i class="ti ti-circle-check"></i> <span id="toast-msg"></span></div>
 
+
+
+<!-- ALL NOTES -->
+<div class="screen" id="screen-notes">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;">
+    <div><div style="font-size:20px;font-weight:600;color:var(--text-dark);">Clinical Notes</div><div style="font-size:13px;color:var(--text-soft);margin-top:3px;">All documentation — filter by clinician or status</div></div>
+    <button class="btn-primary" onclick="go('new-note',qNav(1))"><i class="ti ti-plus"></i> New note</button>
+  </div>
+  <div class="card">
+    <div style="display:flex;gap:.6rem;margin-bottom:1rem;flex-wrap:wrap;">
+      <input type="text" class="form-input" placeholder="Search notes..." style="flex:1;min-width:160px;" oninput="renderNotes(this.value)">
+      <select class="form-select" style="width:auto;" onchange="renderNotesSt(this.value)"><option value="">All statuses</option><option>Approved</option><option>Pending review</option><option>Overdue</option></select>
+    </div>
+    <div style="overflow-x:auto;"><table class="tbl"><thead><tr><th>Client</th><th>Clinician</th><th>Date</th><th>Format</th><th>Diagnosis</th><th>Status</th><th></th></tr></thead><tbody id="notes-tbody"></tbody></table></div>
+  </div>
+</div>
+
+<!-- CLIENTS -->
+<div class="screen" id="screen-clients">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;">
+    <div><div style="font-size:20px;font-weight:600;">Client Records</div><div style="font-size:13px;color:var(--text-soft);margin-top:3px;">Active caseload — click any row to view</div></div>
+    <button class="btn-primary" onclick="openMod('new-client-modal')"><i class="ti ti-plus"></i> Add client</button>
+  </div>
+  <div class="card">
+    <div style="display:flex;gap:.6rem;margin-bottom:1rem;">
+      <input type="text" class="form-input" placeholder="Search clients..." style="flex:1;" oninput="renderClients(this.value)">
+      <select class="form-select" style="width:auto;"><option>All clinicians</option><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option><option>Aisha Brown</option></select>
+    </div>
+    <div style="overflow-x:auto;"><table class="tbl"><thead><tr><th>Client</th><th>ID</th><th>DOB</th><th>Insurance</th><th>Clinician</th><th>Last seen</th><th>Status</th></tr></thead><tbody id="clients-tbody"></tbody></table></div>
+  </div>
+</div>
+
+<!-- INTAKE -->
+<div class="screen" id="screen-intake">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;">
+    <div><div style="font-size:20px;font-weight:600;">Patient Intake</div><div style="font-size:13px;color:var(--text-soft);margin-top:3px;">Collect demographics, insurance, and consents</div></div>
+    <button class="btn-secondary" onclick="clearIntake()"><i class="ti ti-refresh"></i> Clear</button>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-user"></i> Demographics</div>
+    <div class="form-grid-2">
+      <div class="form-field"><label>First name <span class="req">*</span></label><input type="text" class="form-input" id="in-first" placeholder="First name"></div>
+      <div class="form-field"><label>Last name <span class="req">*</span></label><input type="text" class="form-input" id="in-last" placeholder="Last name"></div>
+      <div class="form-field"><label>Date of birth</label><input type="date" class="form-input"></div>
+      <div class="form-field"><label>Gender identity</label><select class="form-select"><option>Prefer not to say</option><option>Male</option><option>Female</option><option>Non-binary</option></select></div>
+      <div class="form-field"><label>Phone</label><input type="tel" class="form-input" placeholder="(410) 555-0100"></div>
+      <div class="form-field"><label>Email</label><input type="email" class="form-input" placeholder="client@email.com"></div>
+      <div class="form-field"><label>Emergency contact</label><input type="text" class="form-input" placeholder="Name · Relationship · Phone"></div>
+      <div class="form-field"><label>Assigned clinician</label><select class="form-select"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option><option>Aisha Brown</option></select></div>
+    </div>
+    <div style="height:1px;background:var(--stone-faint);margin:.85rem 0;"></div>
+    <div class="card-title" style="margin-bottom:.75rem;"><i class="ti ti-building-bank"></i> Insurance</div>
+    <div class="form-grid-2">
+      <div class="form-field"><label>Insurance provider</label><input type="text" class="form-input" placeholder="BlueCross BlueShield"></div>
+      <div class="form-field"><label>Member ID</label><input type="text" class="form-input" placeholder="Member ID"></div>
+      <div class="form-field"><label>Group number</label><input type="text" class="form-input" placeholder="Group number"></div>
+      <div class="form-field"><label>Policy holder</label><input type="text" class="form-input" placeholder="If different from patient"></div>
+    </div>
+    <div style="height:1px;background:var(--stone-faint);margin:.85rem 0;"></div>
+    <div class="card-title" style="margin-bottom:.75rem;"><i class="ti ti-writing"></i> Consents</div>
+    <div style="display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem;">
+      <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-mid);cursor:pointer;"><input type="checkbox" style="accent-color:var(--blue-deep);"> General treatment consent</label>
+      <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-mid);cursor:pointer;"><input type="checkbox" style="accent-color:var(--blue-deep);"> HIPAA notice of privacy practices</label>
+      <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-mid);cursor:pointer;"><input type="checkbox" style="accent-color:var(--blue-deep);"> Telehealth consent</label>
+      <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-mid);cursor:pointer;"><input type="checkbox" style="accent-color:var(--blue-deep);"> Release of information</label>
+    </div>
+    <button class="btn-primary" onclick="saveIntake()"><i class="ti ti-check"></i> Save intake form</button>
+  </div>
+</div>
+
+<!-- ASSESSMENTS -->
+<div class="screen" id="screen-assessments">
+  <div style="font-size:20px;font-weight:600;margin-bottom:.3rem;">Clinical Assessments</div>
+  <div style="font-size:13px;color:var(--text-soft);margin-bottom:1.2rem;">Standardized screening tools</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.25rem;">
+    <div class="card" style="cursor:pointer;margin-bottom:0;transition:all .15s;" onmouseover="this.style.borderColor='var(--blue-soft)'" onmouseout="this.style.borderColor=''" onclick="openAssess('PHQ-9','Patient Health Questionnaire','Depression screening · 9 questions · 5 min')">
+      <div style="width:40px;height:40px;border-radius:10px;background:var(--blue-mist);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;"><i class="ti ti-mood-sad" style="font-size:20px;color:var(--blue-deep);"></i></div>
+      <div style="font-size:15px;font-weight:600;margin-bottom:.2rem;">PHQ-9</div>
+      <div style="font-size:13px;color:var(--text-soft);">Depression screening</div>
+      <div style="font-size:12px;color:var(--blue-deep);margin-top:.5rem;font-weight:600;">9 questions · 5 min</div>
+    </div>
+    <div class="card" style="cursor:pointer;margin-bottom:0;transition:all .15s;" onmouseover="this.style.borderColor='var(--blue-soft)'" onmouseout="this.style.borderColor=''" onclick="openAssess('GAD-7','Generalized Anxiety Disorder Scale','Anxiety screening · 7 questions · 3 min')">
+      <div style="width:40px;height:40px;border-radius:10px;background:var(--blue-mist);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;"><i class="ti ti-mood-nervous" style="font-size:20px;color:var(--blue-deep);"></i></div>
+      <div style="font-size:15px;font-weight:600;margin-bottom:.2rem;">GAD-7</div>
+      <div style="font-size:13px;color:var(--text-soft);">Anxiety screening</div>
+      <div style="font-size:12px;color:var(--blue-deep);margin-top:.5rem;font-weight:600;">7 questions · 3 min</div>
+    </div>
+    <div class="card" style="cursor:pointer;margin-bottom:0;transition:all .15s;" onmouseover="this.style.borderColor='var(--blue-soft)'" onmouseout="this.style.borderColor=''" onclick="openAssess('PCL-5','PTSD Checklist','DSM-5 version · 20 questions · 10 min')">
+      <div style="width:40px;height:40px;border-radius:10px;background:var(--blue-mist);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;"><i class="ti ti-brain" style="font-size:20px;color:var(--blue-deep);"></i></div>
+      <div style="font-size:15px;font-weight:600;margin-bottom:.2rem;">PCL-5</div>
+      <div style="font-size:13px;color:var(--text-soft);">PTSD Checklist</div>
+      <div style="font-size:12px;color:var(--blue-deep);margin-top:.5rem;font-weight:600;">20 questions · 10 min</div>
+    </div>
+    <div class="card" style="cursor:pointer;margin-bottom:0;transition:all .15s;" onmouseover="this.style.borderColor='var(--red)'" onmouseout="this.style.borderColor=''" onclick="openAssess('Columbia','Suicide Severity Rating','C-SSRS · 6 questions · 5 min')">
+      <div style="width:40px;height:40px;border-radius:10px;background:var(--red-light);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;"><i class="ti ti-alert-triangle" style="font-size:20px;color:var(--red);"></i></div>
+      <div style="font-size:15px;font-weight:600;margin-bottom:.2rem;">Columbia Scale</div>
+      <div style="font-size:13px;color:var(--text-soft);">Suicide severity rating</div>
+      <div style="font-size:12px;color:var(--red);margin-top:.5rem;font-weight:600;">6 questions · 5 min</div>
+    </div>
+    <div class="card" style="cursor:pointer;margin-bottom:0;transition:all .15s;" onmouseover="this.style.borderColor='var(--amber)'" onmouseout="this.style.borderColor=''" onclick="openAssess('AUDIT-C','Alcohol Use Identification','3 questions · 2 min')">
+      <div style="width:40px;height:40px;border-radius:10px;background:var(--amber-light);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;"><i class="ti ti-droplet" style="font-size:20px;color:var(--amber);"></i></div>
+      <div style="font-size:15px;font-weight:600;margin-bottom:.2rem;">AUDIT-C</div>
+      <div style="font-size:13px;color:var(--text-soft);">Alcohol use identification</div>
+      <div style="font-size:12px;color:var(--amber);margin-top:.5rem;font-weight:600;">3 questions · 2 min</div>
+    </div>
+    <div class="card" style="cursor:pointer;margin-bottom:0;transition:all .15s;" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor=''" onclick="openAssess('ASRS','Adult ADHD Self-Report','18 questions · 8 min')">
+      <div style="width:40px;height:40px;border-radius:10px;background:var(--green-light);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;"><i class="ti ti-bolt" style="font-size:20px;color:var(--green);"></i></div>
+      <div style="font-size:15px;font-weight:600;margin-bottom:.2rem;">ASRS</div>
+      <div style="font-size:13px;color:var(--text-soft);">Adult ADHD self-report</div>
+      <div style="font-size:12px;color:var(--green);margin-top:.5rem;font-weight:600;">18 questions · 8 min</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-history"></i> Recent assessments</div>
+    <div style="overflow-x:auto;"><table class="tbl"><thead><tr><th>Client</th><th>Assessment</th><th>Date</th><th>Score</th><th>Severity</th><th>Clinician</th></tr></thead><tbody>
+      <tr><td>Marcus Johnson</td><td>PHQ-9</td><td>Jun 7, 2026</td><td>12/27</td><td><span class="badge badge-draft">Moderate</span></td><td>Dr. Rivera</td></tr>
+      <tr><td>Tanya Williams</td><td>PHQ-9</td><td>Jun 7, 2026</td><td>18/27</td><td><span class="bdge bx-red">Severe</span></td><td>Sarah Mitchell</td></tr>
+      <tr><td>Kevin Davis</td><td>PCL-5</td><td>Jun 5, 2026</td><td>38/80</td><td><span class="badge badge-draft">Moderate</span></td><td>James Kim</td></tr>
+    </tbody></table></div>
+  </div>
+</div>
+
+<!-- SCHEDULER -->
+<div class="screen" id="screen-scheduler">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;">
+    <div><div style="font-size:20px;font-weight:600;">Appointment Scheduler</div><div style="font-size:13px;color:var(--text-soft);margin-top:3px;">Manage and schedule client sessions</div></div>
+    <button class="btn-primary" onclick="openMod('appt-modal')"><i class="ti ti-plus"></i> New appointment</button>
+  </div>
+  <div class="grid-2">
+    <div class="cal-wrap">
+      <div class="cal-hdr">
+        <button class="cal-nav" onclick="calPrev()">&#8592;</button>
+        <div class="cal-month" id="cal-lbl"></div>
+        <button class="cal-nav" onclick="calNext()">&#8594;</button>
+      </div>
+      <div class="cal-days">
+        <div class="cal-lbl-d">Su</div><div class="cal-lbl-d">Mo</div><div class="cal-lbl-d">Tu</div><div class="cal-lbl-d">We</div><div class="cal-lbl-d">Th</div><div class="cal-lbl-d">Fr</div><div class="cal-lbl-d">Sa</div>
+        <div id="cal-grid" style="display:contents;"></div>
+      </div>
+    </div>
+    <div class="card" style="padding:1.1rem;">
+      <div style="font-size:14px;font-weight:600;margin-bottom:.75rem;" id="appt-lbl">Appointments</div>
+      <div id="appt-list"></div>
+      <button class="cta-btn" style="margin-top:.75rem;" onclick="openMod('appt-modal')"><i class="ti ti-plus"></i> Schedule appointment</button>
+    </div>
+  </div>
+</div>
+
+<!-- COMPLIANCE -->
+<div class="screen" id="screen-compliance">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;">
+    <div><div style="font-size:20px;font-weight:600;">Compliance Center</div><div style="font-size:13px;color:var(--text-soft);margin-top:3px;">Documentation compliance and audit readiness</div></div>
+    <button class="btn-secondary" onclick="showToast('Audit report exported')"><i class="ti ti-download"></i> Export audit report</button>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-box"><div class="stat-v">94%</div><div class="stat-l">Overall compliance</div><div class="pbar" style="margin-top:.4rem;"><div class="pbar-fill pb-green" style="width:94%;"></div></div></div>
+    <div class="stat-box"><div class="stat-v" style="color:var(--green);">42</div><div class="stat-l">Completed on time</div><div class="stat-d delta-up">This week</div></div>
+    <div class="stat-box"><div class="stat-v" style="color:var(--red);">2</div><div class="stat-l">Overdue (&gt;48hr)</div><div class="stat-d" style="color:var(--red);">Immediate action</div></div>
+    <div class="stat-box"><div class="stat-v" style="color:var(--amber);">3</div><div class="stat-l">Pending sign-off</div><div class="stat-d delta-warn">Awaiting supervisor</div></div>
+  </div>
+  <div class="card"><div class="card-title"><i class="ti ti-users"></i> Clinician compliance</div><div id="compliance-rows"></div></div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-alert-circle" style="color:var(--red);"></i> Overdue notes</div>
+    <div style="overflow-x:auto;"><table class="tbl"><thead><tr><th>Client</th><th>Clinician</th><th>Session date</th><th>Hours overdue</th><th></th></tr></thead><tbody>
+      <tr><td>Davis, K.</td><td>James Kim</td><td>Jun 5, 2026</td><td><span style="color:var(--red);font-weight:700;">54 hrs</span></td><td><button class="t-btn danger" onclick="go('new-note',qNav(1));setTimeout(()=>{var n=document.getElementById('n-client');if(n)n.value='Kevin Davis';},200)">Complete now</button></td></tr>
+      <tr><td>Torres, A.</td><td>Aisha Brown</td><td>Jun 5, 2026</td><td><span style="color:var(--red);font-weight:700;">52 hrs</span></td><td><button class="t-btn danger" onclick="go('new-note',qNav(1));setTimeout(()=>{var n=document.getElementById('n-client');if(n)n.value='Angela Torres';},200)">Complete now</button></td></tr>
+    </tbody></table></div>
+  </div>
+</div>
+
+<!-- REPORTS -->
+<div class="screen" id="screen-reports">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;">
+    <div><div style="font-size:20px;font-weight:600;">Performance Reports</div><div style="font-size:13px;color:var(--text-soft);margin-top:3px;">Weekly summaries and downloadable clinician reports</div></div>
+    <button class="btn-primary" onclick="downloadAllReports()"><i class="ti ti-download"></i> Download all</button>
+  </div>
+  <div class="card" style="background:var(--iron);border-color:transparent;">
+    <div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:.85rem;">Weekly summary — June 2–8, 2026</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;">
+      <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:#fff;">47</div><div style="font-size:12px;color:rgba(255,255,255,.35);">Notes done</div></div>
+      <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:#6DC99A;">94%</div><div style="font-size:12px;color:rgba(255,255,255,.35);">On-time</div></div>
+      <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:#fff;">38</div><div style="font-size:12px;color:rgba(255,255,255,.35);">Claims filed</div></div>
+      <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:#D4A855;">3</div><div style="font-size:12px;color:rgba(255,255,255,.35);">Pending</div></div>
+    </div>
+  </div>
+  <div id="report-cards"></div>
+</div>
+
+<!-- REFERRALS -->
+<div class="screen" id="screen-referrals">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;">
+    <div><div style="font-size:20px;font-weight:600;">Referral Management</div><div style="font-size:13px;color:var(--text-soft);margin-top:3px;">Track incoming referrals through your pipeline</div></div>
+    <button class="btn-primary" onclick="showToast('Add referral — coming soon')"><i class="ti ti-plus"></i> Add referral</button>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-box"><div class="stat-v">8</div><div class="stat-l">New</div><div class="stat-d delta-up">This week</div></div>
+    <div class="stat-box"><div class="stat-v">5</div><div class="stat-l">In review</div></div>
+    <div class="stat-box"><div class="stat-v" style="color:var(--green);">12</div><div class="stat-l">Accepted</div></div>
+    <div class="stat-box"><div class="stat-v">2</div><div class="stat-l">Declined</div></div>
+  </div>
+  <div class="pipe-grid">
+    <div class="pipe-col"><div class="pipe-col-hdr">New <span class="badge badge-on">8</span></div>
+      <div class="pipe-card" onclick="showToast('Referral: Michael T.')"><div class="pipe-cname">Michael T.</div><div class="pipe-cmeta">Anxiety · Jun 7</div></div>
+      <div class="pipe-card" onclick="showToast('Referral: Carla M.')"><div class="pipe-cname">Carla M.</div><div class="pipe-cmeta">PTSD · Jun 6</div></div>
+      <div class="pipe-card" onclick="showToast('Referral: Robert S.')"><div class="pipe-cname">Robert S.</div><div class="pipe-cmeta">Depression · Jun 5</div></div>
+    </div>
+    <div class="pipe-col"><div class="pipe-col-hdr">In review <span class="badge badge-draft">5</span></div>
+      <div class="pipe-card" onclick="showToast('Referral: James W.')"><div class="pipe-cname">James W.</div><div class="pipe-cmeta">Depression · Jun 4</div></div>
+      <div class="pipe-card" onclick="showToast('Referral: Nina P.')"><div class="pipe-cname">Nina P.</div><div class="pipe-cmeta">Bipolar II · Jun 3</div></div>
+    </div>
+    <div class="pipe-col"><div class="pipe-col-hdr">Accepted <span class="badge badge-done">12</span></div>
+      <div class="pipe-card" onclick="showToast('Referral: Sarah K.')"><div class="pipe-cname">Sarah K.</div><div class="pipe-cmeta">OCD · Sarah Mitchell</div></div>
+      <div class="pipe-card" onclick="showToast('Referral: David R.')"><div class="pipe-cname">David R.</div><div class="pipe-cmeta">ADHD · Dr. Rivera</div></div>
+    </div>
+    <div class="pipe-col"><div class="pipe-col-hdr">Declined <span class="bdge bx-red">2</span></div>
+      <div class="pipe-card" onclick="showToast('Referral declined — capacity')"><div class="pipe-cname">Anonymous</div><div class="pipe-cmeta">Capacity · Jun 2</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TREATMENT PLANS -->
+<div class="screen" id="screen-treatment-plans">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;">
+    <div><div style="font-size:20px;font-weight:600;">Treatment Plans</div><div style="font-size:13px;color:var(--text-soft);margin-top:3px;">Active plans, goals, and expiration tracking</div></div>
+    <button class="btn-primary" onclick="openMod('tp-modal')"><i class="ti ti-plus"></i> New plan</button>
+  </div>
+  <div class="stat-grid-3">
+    <div class="stat-box"><div class="stat-v">18</div><div class="stat-l">Active plans</div></div>
+    <div class="stat-box"><div class="stat-v" style="color:var(--amber);">5</div><div class="stat-l">Expiring in 30 days</div><div class="stat-d delta-warn">Review needed</div></div>
+    <div class="stat-box"><div class="stat-v">3</div><div class="stat-l">Due for review</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-alert-circle" style="color:var(--amber);"></i> Expiring soon</div>
+    <div class="alert-box ab-amber"><i class="ti ti-clipboard-heart"></i> Marcus Johnson — treatment plan expires June 30, 2026.</div>
+    <div class="alert-box ab-amber"><i class="ti ti-clipboard-heart"></i> Tanya Williams — treatment plan expires July 15, 2026.</div>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-clipboard-heart"></i> Active plans</div>
+    <div style="overflow-x:auto;"><table class="tbl"><thead><tr><th>Client</th><th>Clinician</th><th>Diagnosis</th><th>Start</th><th>Review date</th><th>Status</th></tr></thead><tbody>
+      <tr onclick="showToast('Treatment plan: Marcus Johnson')"><td>Marcus Johnson</td><td>Dr. Rivera</td><td>F41.1 — GAD</td><td>Jan 6, 2026</td><td>Jun 30, 2026</td><td><span class="badge badge-draft">Review due</span></td></tr>
+      <tr onclick="showToast('Treatment plan: Tanya Williams')"><td>Tanya Williams</td><td>Sarah Mitchell</td><td>F32.1 — MDD</td><td>Feb 3, 2026</td><td>Jul 15, 2026</td><td><span class="badge badge-done">On track</span></td></tr>
+      <tr onclick="showToast('Treatment plan: Kevin Davis')"><td>Kevin Davis</td><td>James Kim</td><td>F43.10 — PTSD</td><td>Mar 1, 2026</td><td>Aug 1, 2026</td><td><span class="badge badge-done">On track</span></td></tr>
+    </tbody></table></div>
+  </div>
+</div>
+
+<!-- GROUP NOTES -->
+<div class="screen" id="screen-group-notes">
+  <div style="font-size:20px;font-weight:600;margin-bottom:.3rem;">Group &amp; Family Notes</div>
+  <div style="font-size:13px;color:var(--text-soft);margin-bottom:1.2rem;">Group therapy, family, and couples sessions</div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-users-group"></i> New session note</div>
+    <div class="form-grid-2">
+      <div class="form-field"><label>Session type</label><select class="form-select"><option>Group therapy</option><option>Family therapy</option><option>Couples therapy</option></select></div>
+      <div class="form-field"><label>Session date</label><input type="date" class="form-input"></div>
+      <div class="form-field"><label>Clinician</label><select class="form-select"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option><option>Aisha Brown</option></select></div>
+      <div class="form-field"><label>CPT code</label><select class="form-select"><option>90853 — Group therapy</option><option>90847 — Family with client</option><option>90846 — Family without client</option></select></div>
+    </div>
+    <div style="margin-bottom:.85rem;">
+      <label style="font-size:12px;font-weight:600;color:var(--text-mid);display:block;margin-bottom:.4rem;">Participants</label>
+      <div id="participant-list" style="display:flex;flex-direction:column;gap:.4rem;margin-bottom:.4rem;">
+        <div style="display:flex;gap:.5rem;"><input type="text" class="form-input" placeholder="Client name or ID" style="flex:1;"><button class="t-btn danger" onclick="this.parentElement.remove()">&#10005;</button></div>
+        <div style="display:flex;gap:.5rem;"><input type="text" class="form-input" placeholder="Client name or ID" style="flex:1;"><button class="t-btn danger" onclick="this.parentElement.remove()">&#10005;</button></div>
+      </div>
+      <button class="btn-secondary" style="font-size:12px;padding:7px 14px;" onclick="addParticipant()"><i class="ti ti-plus"></i> Add participant</button>
+    </div>
+    <div class="form-field"><label>Session notes</label><textarea class="form-input form-textarea" rows="4" placeholder="Group focused on coping skills, 6 members present..."></textarea></div>
+    <button class="gen-btn" style="margin-top:.85rem;" onclick="showToast('Group note generated — review and approve')"><i class="ti ti-sparkles"></i> Generate group note</button>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-files"></i> Recent notes</div>
+    <div style="overflow-x:auto;"><table class="tbl"><thead><tr><th>Type</th><th>Clinician</th><th>Date</th><th>Members</th><th>CPT</th><th>Status</th></tr></thead><tbody>
+      <tr><td>Group therapy</td><td>Dr. Rivera</td><td>Jun 5, 2026</td><td>6</td><td>90853</td><td><span class="badge badge-done">Approved</span></td></tr>
+      <tr><td>Family therapy</td><td>Sarah Mitchell</td><td>Jun 4, 2026</td><td>3</td><td>90847</td><td><span class="badge badge-draft">Pending</span></td></tr>
+    </tbody></table></div>
+  </div>
+</div>
+
+<!-- TELEHEALTH -->
+<div class="screen" id="screen-telehealth">
+  <div style="font-size:20px;font-weight:600;margin-bottom:.3rem;">Telehealth Sessions</div>
+  <div style="font-size:13px;color:var(--text-soft);margin-bottom:1.2rem;">HIPAA-compliant video sessions</div>
+  <div class="card" style="background:var(--iron);border-color:transparent;text-align:center;padding:2.5rem;">
+    <div style="width:60px;height:60px;border-radius:50%;background:rgba(58,95,138,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;"><i class="ti ti-video" style="font-size:26px;color:var(--blue-soft);"></i></div>
+    <div style="font-size:1.5rem;font-weight:600;color:#fff;margin-bottom:.5rem;">Telehealth — Coming Q3 2026</div>
+    <div style="font-size:14px;color:rgba(255,255,255,.4);max-width:440px;margin:0 auto 1.5rem;line-height:1.7;">Secure video sessions, virtual waiting rooms, and auto-documentation from session transcripts.</div>
+    <div style="display:inline-block;background:rgba(58,95,138,.2);border:1px solid rgba(138,174,206,.25);color:var(--blue-soft);font-size:11px;font-weight:600;padding:7px 16px;border-radius:30px;letter-spacing:.08em;">COMING Q3 2026</div>
+  </div>
+</div>
+
+<!-- CRM -->
+<div class="screen" id="screen-crm">
+  <div style="font-size:20px;font-weight:600;margin-bottom:.3rem;">Client CRM</div>
+  <div style="font-size:13px;color:var(--text-soft);margin-bottom:1.2rem;">Contacts, communication history, follow-up reminders</div>
+  <div class="grid-2">
+    <div class="card" style="padding:.75rem;">
+      <input type="text" class="form-input" placeholder="Search clients..." style="margin-bottom:.65rem;" oninput="filterCrmList(this.value)">
+      <div id="crm-list"></div>
+    </div>
+    <div class="card" id="crm-detail">
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;">
+        <div class="avatar" id="crm-av" style="width:44px;height:44px;border-radius:11px;font-size:16px;">MJ</div>
+        <div><div style="font-size:16px;font-weight:700;" id="crm-name">Marcus Johnson</div><div style="font-size:13px;color:var(--text-soft);" id="crm-meta">CLT-001 · Dr. Rivera</div></div>
+        <div style="margin-left:auto;display:flex;gap:.4rem;">
+          <button class="t-btn" onclick="go('new-note',qNav(1))"><i class="ti ti-edit"></i> Note</button>
+          <button class="btn-primary" style="padding:7px 13px;font-size:12px;" onclick="openMod('appt-modal')"><i class="ti ti-calendar"></i> Schedule</button>
+        </div>
+      </div>
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-soft);margin-bottom:.5rem;">Emergency contact</div>
+      <div style="background:var(--plaster-warm);border-radius:8px;padding:.65rem .85rem;margin-bottom:.85rem;font-size:14px;">Sarah Johnson — Spouse — (410) 555-0191</div>
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-soft);margin-bottom:.5rem;">Communication history</div>
+      <div style="display:flex;flex-direction:column;gap:.35rem;margin-bottom:.85rem;" id="crm-history">
+        <div style="background:var(--plaster);border-radius:8px;padding:.6rem .85rem;font-size:13px;"><span style="font-weight:600;">Jun 7 — Session note</span><div style="color:var(--text-soft);">SOAP completed · Dr. Rivera</div></div>
+        <div style="background:var(--plaster);border-radius:8px;padding:.6rem .85rem;font-size:13px;"><span style="font-weight:600;">Jun 5 — Reminder</span><div style="color:var(--text-soft);">Appointment reminder sent · Confirmed</div></div>
+      </div>
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-soft);margin-bottom:.5rem;">Follow-up reminder</div>
+      <div style="display:flex;gap:.5rem;"><input type="text" class="form-input" placeholder="Add follow-up note..." id="crm-reminder-inp"><button class="btn-primary" style="padding:10px 16px;font-size:13px;" onclick="saveCrmReminder()"><i class="ti ti-check"></i></button></div>
+    </div>
+  </div>
+</div>
+
+<!-- BILLING -->
+<div class="screen" id="screen-billing">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;">
+    <div><div style="font-size:20px;font-weight:600;">Billing Support</div><div style="font-size:13px;color:var(--text-soft);margin-top:3px;">CPT validation, claim review, denial management</div></div>
+    <button class="btn-primary" onclick="go('claims',qNav(4))"><i class="ti ti-file-invoice"></i> Go to claims</button>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-box"><div class="stat-v" style="color:var(--green);">$24,800</div><div class="stat-l">Revenue this month</div><div class="stat-d delta-up">&#8593; 12%</div></div>
+    <div class="stat-box"><div class="stat-v">38</div><div class="stat-l">Claims submitted</div></div>
+    <div class="stat-box"><div class="stat-v" style="color:var(--amber);">5</div><div class="stat-l">Pending payer</div></div>
+    <div class="stat-box"><div class="stat-v" style="color:var(--red);">2</div><div class="stat-l">Denials</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-alert-circle" style="color:var(--amber);"></i> Documentation mismatches</div>
+    <div class="alert-box ab-red"><i class="ti ti-file-x"></i> Kevin Davis (Jun 5) — Note documents 38 min but CPT 90837 requires 53+ min. Recommend 90834.</div>
+    <div class="alert-box ab-amber"><i class="ti ti-file-x"></i> Angela Torres (Jun 3) — Missing diagnosis code on CMS-1500.</div>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-receipt"></i> Claims queue</div>
+    <div style="overflow-x:auto;"><table class="tbl"><thead><tr><th>Client</th><th>Date</th><th>CPT</th><th>Payer</th><th>Amount</th><th>Status</th><th></th></tr></thead><tbody>
+      <tr><td>Marcus Johnson</td><td>Jun 7</td><td>90837</td><td>BlueCross</td><td>$185</td><td><span class="badge badge-done">Approved</span></td><td><button class="t-btn">View EOB</button></td></tr>
+      <tr><td>Kevin Davis</td><td>Jun 5</td><td>90837</td><td>Aetna</td><td>$185</td><td><span class="bdge bx-red">Denied</span></td><td><button class="t-btn danger" onclick="showToast('Appeal filed for Kevin Davis')">Appeal</button></td></tr>
+    </tbody></table></div>
+  </div>
+</div>
+
+<!-- INSURANCE -->
+<div class="screen" id="screen-insurance">
+  <div style="font-size:20px;font-weight:600;margin-bottom:.3rem;">Insurance Verification</div>
+  <div style="font-size:13px;color:var(--text-soft);margin-bottom:1.2rem;">Verify client eligibility before sessions</div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-building-bank"></i> Eligibility check</div>
+    <div class="form-grid-3">
+      <div class="form-field"><label>Client name</label><input type="text" class="form-input" id="ins-name" placeholder="Client full name"></div>
+      <div class="form-field"><label>Member ID</label><input type="text" class="form-input" id="ins-mid" placeholder="Member ID"></div>
+      <div class="form-field"><label>Insurance provider</label><select class="form-select"><option>BlueCross BlueShield</option><option>Aetna</option><option>United Healthcare</option><option>Medicaid</option><option>Medicare</option></select></div>
+    </div>
+    <button class="btn-primary" onclick="verifyIns()"><i class="ti ti-search"></i> Check eligibility</button>
+    <div id="ins-result" style="display:none;margin-top:1rem;background:var(--green-light);border:1px solid #B8DFC9;border-radius:12px;padding:1rem;">
+      <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:.6rem;">&#10003; Active coverage verified</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;font-size:13px;">
+        <div><span style="color:var(--text-soft);">Plan type:</span> <strong>PPO</strong></div>
+        <div><span style="color:var(--text-soft);">Deductible met:</span> <strong>$750/$1,500</strong></div>
+        <div><span style="color:var(--text-soft);">Copay:</span> <strong>$25/session</strong></div>
+        <div><span style="color:var(--text-soft);">Sessions remaining:</span> <strong>18 of 30</strong></div>
+        <div><span style="color:var(--text-soft);">Auth required:</span> <strong>No</strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-history"></i> Recent verifications</div>
+    <div style="overflow-x:auto;"><table class="tbl"><thead><tr><th>Client</th><th>Payer</th><th>Verified</th><th>Status</th><th>Copay</th></tr></thead><tbody>
+      <tr><td>Marcus Johnson</td><td>BlueCross</td><td>Jun 7, 2026</td><td><span class="badge badge-done">Active</span></td><td>$25</td></tr>
+      <tr><td>Tanya Williams</td><td>Medicaid</td><td>Jun 7, 2026</td><td><span class="badge badge-done">Active</span></td><td>$0</td></tr>
+      <tr><td>Kevin Davis</td><td>Aetna</td><td>Jun 5, 2026</td><td><span class="badge badge-draft">Needs auth</span></td><td>$40</td></tr>
+    </tbody></table></div>
+  </div>
+</div>
+
+<!-- AUTHORIZATIONS -->
+<div class="screen" id="screen-authorizations">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;">
+    <div><div style="font-size:20px;font-weight:600;">Authorization Tracking</div><div style="font-size:13px;color:var(--text-soft);margin-top:3px;">Prior auths, renewal tracking, session limits</div></div>
+    <button class="btn-primary" onclick="showToast('Authorization request submitted')"><i class="ti ti-plus"></i> Request auth</button>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-box"><div class="stat-v">12</div><div class="stat-l">Active</div></div>
+    <div class="stat-box"><div class="stat-v" style="color:var(--amber);">3</div><div class="stat-l">Expiring in 30 days</div><div class="stat-d delta-warn">Renew now</div></div>
+    <div class="stat-box"><div class="stat-v" style="color:var(--red);">1</div><div class="stat-l">Expired</div></div>
+    <div class="stat-box"><div class="stat-v">2</div><div class="stat-l">Pending approval</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-alert-circle" style="color:var(--amber);"></i> Renewal alerts</div>
+    <div class="alert-box ab-red"><i class="ti ti-license"></i> Kevin Davis (Aetna) — expires June 15. 2 sessions remaining. Request renewal immediately.</div>
+    <div class="alert-box ab-amber"><i class="ti ti-license"></i> Angela Torres (United) — expires July 1. Begin renewal process.</div>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-license"></i> Active authorizations</div>
+    <div style="overflow-x:auto;"><table class="tbl"><thead><tr><th>Client</th><th>Payer</th><th>Auth #</th><th>Approved</th><th>Used</th><th>Expiration</th><th>Status</th></tr></thead><tbody>
+      <tr><td>Marcus Johnson</td><td>BlueCross</td><td>AUTH-88421</td><td>30</td><td>12</td><td>Dec 31, 2026</td><td><span class="badge badge-done">Active</span></td></tr>
+      <tr><td>Kevin Davis</td><td>Aetna</td><td>AUTH-44219</td><td>20</td><td>18</td><td>Jun 15, 2026</td><td><span class="bdge bx-red">Expiring</span></td></tr>
+      <tr><td>Angela Torres</td><td>United</td><td>AUTH-55901</td><td>24</td><td>10</td><td>Jul 1, 2026</td><td><span class="badge badge-draft">Renew soon</span></td></tr>
+    </tbody></table></div>
+  </div>
+</div>
+
+<!-- ANALYTICS -->
+<div class="screen" id="screen-analytics">
+  <div style="font-size:20px;font-weight:600;margin-bottom:.3rem;">Practice Analytics</div>
+  <div style="font-size:13px;color:var(--text-soft);margin-bottom:1.2rem;">Revenue, clinical outcomes, practice insights</div>
+  <div class="stat-grid">
+    <div class="stat-box"><div class="stat-v" style="color:var(--green);">$24,800</div><div class="stat-l">Revenue this month</div><div class="stat-d delta-up">&#8593; 12%</div></div>
+    <div class="stat-box"><div class="stat-v">186</div><div class="stat-l">Sessions this month</div><div class="stat-d delta-up">&#8593; 8%</div></div>
+    <div class="stat-box"><div class="stat-v">94%</div><div class="stat-l">Compliance rate</div><div class="stat-d delta-up">&#8593; 3%</div></div>
+    <div class="stat-box"><div class="stat-v">4.8</div><div class="stat-l">Avg sessions / client</div></div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-chart-bar"></i> Revenue trend — monthly</div>
+      <div style="display:flex;align-items:flex-end;gap:.4rem;height:110px;padding:.5rem 0 0;">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="background:var(--blue-pale);border-radius:4px 4px 0 0;width:100%;height:55%;"></div><div style="font-size:11px;color:var(--text-soft);">Feb</div></div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="background:var(--blue-pale);border-radius:4px 4px 0 0;width:100%;height:65%;"></div><div style="font-size:11px;color:var(--text-soft);">Mar</div></div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="background:var(--blue-pale);border-radius:4px 4px 0 0;width:100%;height:70%;"></div><div style="font-size:11px;color:var(--text-soft);">Apr</div></div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="background:var(--blue-mid);border-radius:4px 4px 0 0;width:100%;height:82%;"></div><div style="font-size:11px;color:var(--text-soft);">May</div></div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="background:var(--blue-deep);border-radius:4px 4px 0 0;width:100%;height:100%;"></div><div style="font-size:11px;color:var(--text-soft);font-weight:700;">Jun</div></div>
+      </div>
+      <div style="text-align:center;font-size:12px;color:var(--text-soft);margin-top:.6rem;">Up 12% month-over-month</div>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-chart-bar"></i> Sessions by clinician</div>
+      <div style="display:flex;flex-direction:column;gap:.6rem;">
+        <div><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;"><span>Sarah Mitchell</span><span style="font-weight:700;">54</span></div><div class="pbar"><div class="pbar-fill pb-blue" style="width:100%;"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;"><span>Dr. Rivera</span><span style="font-weight:700;">48</span></div><div class="pbar"><div class="pbar-fill pb-blue" style="width:89%;"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;"><span>James Kim</span><span style="font-weight:700;">44</span></div><div class="pbar"><div class="pbar-fill pb-blue" style="width:81%;"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;"><span>Aisha Brown</span><span style="font-weight:700;">40</span></div><div class="pbar"><div class="pbar-fill pb-blue" style="width:74%;"></div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DISCHARGE -->
+<div class="screen" id="screen-discharge">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;">
+    <div><div style="font-size:20px;font-weight:600;">Discharge Summaries</div><div style="font-size:13px;color:var(--text-soft);margin-top:3px;">Document discharges and treatment outcomes</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-door-exit"></i> New discharge summary</div>
+    <div class="form-grid-2">
+      <div class="form-field"><label>Client name <span class="req">*</span></label><input type="text" class="form-input" id="ds-client" placeholder="Client name"></div>
+      <div class="form-field"><label>Discharge type</label><select class="form-select"><option>Successful completion</option><option>Client request</option><option>Transfer to higher care</option><option>Administrative</option></select></div>
+      <div class="form-field"><label>Admission date</label><input type="date" class="form-input"></div>
+      <div class="form-field"><label>Discharge date</label><input type="date" class="form-input"></div>
+      <div class="form-field"><label>Clinician</label><select class="form-select"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option><option>Aisha Brown</option></select></div>
+    </div>
+    <div class="form-field"><label>Treatment summary</label><textarea class="form-input form-textarea" rows="4" placeholder="Summarize treatment course, goals addressed, and outcomes..."></textarea></div>
+    <div class="form-field"><label>Discharge plan and aftercare</label><textarea class="form-input form-textarea" rows="3" placeholder="Aftercare plan, referrals, follow-up appointments..."></textarea></div>
+    <button class="gen-btn" style="margin-top:.85rem;" onclick="showToast('Discharge summary generated — review and approve')"><i class="ti ti-sparkles"></i> Generate discharge summary</button>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-files"></i> Recent discharges</div>
+    <div style="overflow-x:auto;"><table class="tbl"><thead><tr><th>Client</th><th>Clinician</th><th>Date</th><th>Type</th><th>Status</th></tr></thead><tbody>
+      <tr><td>Robert Chen</td><td>Dr. Rivera</td><td>May 30, 2026</td><td>Successful completion</td><td><span class="badge badge-done">Approved</span></td></tr>
+    </tbody></table></div>
+  </div>
+</div>
+
+<!-- CEO EXECUTIVE VIEW -->
+<div class="screen" id="screen-ceo">
+  <div style="font-size:20px;font-weight:600;margin-bottom:.3rem;">Executive Dashboard</div>
+  <div style="font-size:13px;color:var(--text-soft);margin-bottom:1.2rem;">Practice-wide overview — real time</div>
+  <div class="stat-grid">
+    <div class="stat-box" style="border-left:3px solid var(--blue-deep);"><div style="font-size:13px;color:var(--text-soft);margin-bottom:.2rem;">Compliance</div><div class="stat-v">94%</div><div class="pbar" style="margin-top:.4rem;"><div class="pbar-fill pb-blue" style="width:94%;"></div></div><div class="stat-d delta-up">&#8593; 3% vs last week</div></div>
+    <div class="stat-box" style="border-left:3px solid var(--amber);"><div style="font-size:13px;color:var(--text-soft);margin-bottom:.2rem;">Late notes</div><div class="stat-v">2</div><div class="stat-d delta-warn">Past 48-hour window</div></div>
+    <div class="stat-box" style="border-left:3px solid var(--green);"><div style="font-size:13px;color:var(--text-soft);margin-bottom:.2rem;">Pending approvals</div><div class="stat-v">3</div></div>
+    <div class="stat-box" style="border-left:3px solid var(--blue-deep);"><div style="font-size:13px;color:var(--text-soft);margin-bottom:.2rem;">Active clinicians</div><div class="stat-v">4</div><div class="stat-d delta-up">All active today</div></div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-users"></i> Clinician productivity</div>
+      <div style="overflow-x:auto;"><table class="tbl"><thead><tr><th>Clinician</th><th>Notes</th><th>Compliance</th><th>Status</th></tr></thead><tbody>
+        <tr onclick="openClinMod('Sarah Mitchell')"><td>Sarah Mitchell, LCSW</td><td>24</td><td style="color:var(--green);font-weight:700;">100%</td><td><span class="badge badge-done">Compliant</span></td></tr>
+        <tr onclick="openClinMod('Dr. Rivera')"><td>Dr. Rivera, PsyD</td><td>18</td><td style="color:var(--green);font-weight:700;">96%</td><td><span class="badge badge-done">Compliant</span></td></tr>
+        <tr onclick="openClinMod('James Kim')"><td>James Kim, LPC</td><td>15</td><td style="color:var(--amber);font-weight:700;">83%</td><td><span class="badge badge-draft">1 overdue</span></td></tr>
+        <tr onclick="openClinMod('Aisha Brown')"><td>Aisha Brown, LCPC</td><td>12</td><td style="color:var(--red);font-weight:700;">71%</td><td><span class="bdge bx-red">2 overdue</span></td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="card" style="background:var(--iron);border-color:transparent;">
+      <div class="card-title" style="color:#fff;"><i class="ti ti-sparkles" style="color:var(--blue-soft);"></i> AI insights</div>
+      <div style="display:flex;flex-direction:column;gap:.4rem;">
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.65rem .85rem;font-size:13px;color:rgba(255,255,255,.65);">3 notes due today across your team.</div>
+        <div style="background:rgba(196,148,26,.12);border:1px solid rgba(196,148,26,.25);border-radius:8px;padding:.65rem .85rem;font-size:13px;color:#D4A855;">Aisha Brown dropped to 71% compliance.</div>
+        <div style="background:rgba(58,95,138,.15);border:1px solid rgba(58,95,138,.25);border-radius:8px;padding:.65rem .85rem;font-size:13px;color:var(--blue-soft);">5 treatment plans expire within 30 days.</div>
+        <div style="background:rgba(163,45,45,.12);border:1px solid rgba(163,45,45,.25);border-radius:8px;padding:.65rem .85rem;font-size:13px;color:#E07070;">2 notes may not support selected CPT code.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CREDENTIALING -->
+<div class="screen" id="screen-credentialing">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;">
+    <div><div style="font-size:20px;font-weight:600;">Provider Credentialing</div><div style="font-size:13px;color:var(--text-soft);margin-top:3px;">License tracking and renewal alerts</div></div>
+    <button class="btn-primary" onclick="openMod('cred-modal')"><i class="ti ti-plus"></i> Add credential</button>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-alert-circle" style="color:var(--red);"></i> Renewal alerts</div>
+    <div class="alert-box ab-red"><i class="ti ti-certificate"></i> Sarah Mitchell — LCSW license expires June 30, 2026. Renewal required.</div>
+    <div class="alert-box ab-amber"><i class="ti ti-certificate"></i> James Kim — LPC license expires September 30, 2026.</div>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-certificate"></i> Active credentials</div>
+    <div style="overflow-x:auto;"><table class="tbl"><thead><tr><th>Clinician</th><th>License type</th><th>License #</th><th>State</th><th>Expiration</th><th>Status</th></tr></thead><tbody>
+      <tr><td>Dr. Rivera</td><td>Licensed Psychologist</td><td>MD-PSY-12345</td><td>MD</td><td>Dec 31, 2026</td><td><span class="badge badge-done">Current</span></td></tr>
+      <tr><td>Sarah Mitchell</td><td>LCSW</td><td>MD-LCSW-44821</td><td>MD</td><td>Jun 30, 2026</td><td><span class="bdge bx-red">Expires soon</span></td></tr>
+      <tr><td>James Kim</td><td>LPC</td><td>MD-LPC-38291</td><td>MD</td><td>Sep 30, 2026</td><td><span class="badge badge-draft">Renewal due</span></td></tr>
+      <tr><td>Aisha Brown</td><td>LCPC</td><td>MD-LCPC-99102</td><td>MD</td><td>Mar 31, 2027</td><td><span class="badge badge-done">Current</span></td></tr>
+    </tbody></table></div>
+  </div>
+</div>
+
+<div class="footer">NarraScribe &nbsp;·&nbsp; <span>HIPAA-compliant behavioral health documentation</span> &nbsp;·&nbsp; narrascribe.com</div>
+</div>
 <script>
+
 // ── AUTH GUARD ──
 (function(){
   try {
@@ -1008,44 +1794,17 @@ function updateCount(){document.getElementById('char-count').textContent=documen
 function selectFmt(el,fmt){document.querySelectorAll('.fmt-card').forEach(c=>c.classList.remove('selected'));el.classList.add('selected');selectedFmt=fmt;}
 function toggleRec(){
   if(!isRec){
-    navigator.mediaDevices.getUserMedia({audio:true}).then(stream=>{
-      mediaStream=stream;
-      mediaRecorder=new MediaRecorder(stream,{mimeType:'audio/webm'});
-      audioChunks=[];
-      mediaRecorder.ondataavailable=e=>{if(e.data.size>0)audioChunks.push(e.data);};
-      mediaRecorder.onstop=async()=>{
-        const blob=new Blob(audioChunks,{type:'audio/webm'});
-        document.getElementById('rec-label').textContent='Transcribing...';
-        try{
-          const resp=await fetch('https://api.deepgram.com/v1/listen?model=nova-2-medical&smart_format=true',{
-            method:'POST',
-            headers:{'Authorization':'Token 749b17697c24e7bb7c2b8bf061a88b26cf67eabf','Content-Type':'audio/webm'},
-            body:blob
-          });
-          const result=await resp.json();
-          const transcript=result?.results?.channels?.[0]?.alternatives?.[0]?.transcript||'';
-          if(transcript){
-            document.getElementById('voice-text').value=transcript;
-            document.getElementById('voice-preview').style.display='block';
-            document.getElementById('rec-label').textContent='Transcription complete — review below';
-          }else{
-            document.getElementById('rec-label').textContent='No speech detected. Try again.';
-          }
-        }catch(err){
-          document.getElementById('rec-label').textContent='Transcription failed. Check connection.';
-        }
-        mediaStream.getTracks().forEach(t=>t.stop());
-      };
-      mediaRecorder.start();
-      isRec=true;
+    const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+    if(SR){
+      recog=new SR();recog.continuous=true;recog.interimResults=true;
+      recog.onresult=e=>{let t='';for(let i=0;i<e.results.length;i++)t+=e.results[i][0].transcript;document.getElementById('voice-text').value=t;document.getElementById('voice-preview').style.display='block';};
+      recog.start();isRec=true;
       document.getElementById('rec-btn').classList.add('rec');
       document.getElementById('mic-ico').className='ti ti-player-stop';
       document.getElementById('rec-label').textContent='Recording — tap to stop';
-    }).catch(()=>{
-      document.getElementById('rec-label').textContent='Microphone access denied. Please allow mic access.';
-    });
+    }else{document.getElementById('rec-label').textContent='Voice not supported. Please use Chrome.';}
   }else{
-    if(mediaRecorder&&mediaRecorder.state!=='inactive')mediaRecorder.stop();isRec=false;
+    if(recog)recog.stop();isRec=false;
     document.getElementById('rec-btn').classList.remove('rec');
     document.getElementById('mic-ico').className='ti ti-microphone';
     document.getElementById('rec-label').textContent='Tap to start recording your session notes';
@@ -1078,25 +1837,10 @@ async function generateNote(){
   let mi=0;
   const lt=setInterval(()=>{mi=(mi+1)%msgs.length;document.getElementById('loading-text').textContent=msgs[mi];},1800);
   try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'x-api-key':'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',
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-direct-browser-access':'true'
-      },
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:1200,
-        system:`You are NarraScribe, a clinical documentation assistant for licensed mental health therapists. Expand shorthand therapy session notes into complete professional clinical documentation in ${selectedFmt} format. Return ONLY a valid JSON object with section names as keys and paragraph text as values. No markdown, no explanation.`,
-        messages:[{role:'user',content:`Expand into complete ${selectedFmt} clinical note:\n\n${txt}`}]
-      })
-    });
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1200,system:`You are NarraScribe, a clinical documentation assistant for licensed mental health therapists. Expand shorthand therapy session notes into complete, professional clinical documentation.\nRULES:\n- Expand ONLY what is clearly implied. NEVER invent clinical details.\n- Use professional third-person clinical language.\n- Structure strictly in ${selectedFmt} format with sections: ${sectionMap[selectedFmt]}.\n- Each section: 2-5 complete sentences sufficient for insurance submission and legal audit.\n- Return ONLY valid JSON object. No markdown, no preamble.\n- Keys = exact section names, values = plain text strings.`,messages:[{role:'user',content:`Expand into complete professional ${selectedFmt} clinical note:\n\n${input}`}]})});
     clearInterval(lt);
     const data=await res.json();
-    if(!res.ok) throw new Error(data.error?.message||'API error');
-    const raw=data.content?.[0]?.text||'';
+    const raw=data.content[0].text;
     let parsed;
     try{parsed=JSON.parse(raw.replace(/```json|```/g,'').trim());}catch(e){parsed={Note:raw};}
     document.getElementById('loading').classList.remove('show');
@@ -1402,6 +2146,163 @@ function showToast(msg){
   t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),3000);
 }
+
+
+// ── EXTENDED STATE ──
+var calY=new Date().getFullYear(),calM=new Date().getMonth(),selDay=null;
+var appointments=[];try{appointments=JSON.parse(localStorage.getItem('ns_appts')||'[]');}catch(e){}
+var clientsList=[
+  {id:'CLT-001',name:'Marcus Johnson',dob:'Mar 14, 1988',ins:'BlueCross',clin:'Dr. Rivera',status:'Active'},
+  {id:'CLT-002',name:'Tanya Williams',dob:'Jul 22, 1995',ins:'Medicaid',clin:'Sarah Mitchell',status:'Active'},
+  {id:'CLT-003',name:'Kevin Davis',dob:'Nov 5, 1979',ins:'Aetna',clin:'James Kim',status:'Active'},
+  {id:'CLT-004',name:'Angela Torres',dob:'Feb 18, 2001',ins:'United',clin:'Aisha Brown',status:'Inactive'}
+];
+try{var sc=JSON.parse(localStorage.getItem('ns_clients'));if(sc&&sc.length)clientsList=sc;}catch(e){}
+var clinData=[
+  {name:'Sarah Mitchell, LCSW',notes:24,pct:100,claims:20,pending:0,bar:'pb-green'},
+  {name:'Dr. Rivera, PsyD',notes:18,pct:96,claims:16,pending:0,bar:'pb-green'},
+  {name:'James Kim, LPC',notes:15,pct:83,claims:12,pending:2,bar:'pb-amber'},
+  {name:'Aisha Brown, LCPC',notes:12,pct:71,claims:9,pending:1,bar:'pb-red'}
+];
+
+function qNav(i){return document.querySelectorAll('.nav-tab')[i];}
+function showMoreMenu(btn){toggleDrop('more-menu');}
+
+// ── DROPDOWNS ──
+function toggleDrop(id){var p=document.getElementById(id);var was=p.classList.contains('open');closeDrops();if(!was)p.classList.add('open');}
+function closeDrops(){document.querySelectorAll('.drop-panel').forEach(p=>p.classList.remove('open'));}
+document.addEventListener('click',function(e){if(!e.target.closest('.drop-panel')&&!e.target.closest('#notif-btn')&&!e.target.closest('.nav-user')&&!e.target.closest('.nav-tab'))closeDrops();});
+
+// ── SEARCH ──
+function openSearch(){openMod('search-modal');document.getElementById('search-inp').value='';initSR();setTimeout(()=>document.getElementById('search-inp').focus(),100);}
+function initSR(){document.getElementById('search-res').innerHTML='<div class="sr-sec">Quick access</div>'+[['screen-dashboard','ti-layout-dashboard','Dashboard','dashboard',0],['screen-new-note','ti-edit','New Note','new-note',1],['screen-therapists','ti-users','Therapists','therapists',2],['screen-settings','ti-settings','Settings','settings',3],['screen-claims','ti-file-invoice','Claims','claims',4],['screen-compliance','ti-shield-check','Compliance','compliance',null],['screen-reports','ti-chart-bar','Reports','reports',null],['screen-analytics','ti-chart-line','Analytics','analytics',null]].map(x=>`<div class="sr-item" onclick="go('${x[3]}',${x[4]!==null?'qNav('+x[4]+')':'null'});closeMod('search-modal')"><i class="ti ${x[1]}"></i> ${x[2]}</div>`).join('');}
+function liveSearch(q){var res=document.getElementById('search-res');if(!q.trim()){initSR();return;}var cl=clientsList.filter(c=>c.name.toLowerCase().includes(q.toLowerCase())||c.id.toLowerCase().includes(q.toLowerCase()));var screens=[['dashboard','ti-layout-dashboard','Dashboard',0],['new-note','ti-edit','New Note',1],['notes','ti-files','All Notes',null],['clients','ti-users','Clients',null],['compliance','ti-shield-check','Compliance',null],['reports','ti-chart-bar','Reports',null],['scheduler','ti-calendar','Scheduler',null],['analytics','ti-chart-line','Analytics',null],['treatment-plans','ti-clipboard-heart','Treatment Plans',null],['referrals','ti-git-branch','Referrals',null]].filter(s=>s[2].toLowerCase().includes(q.toLowerCase()));var h='';if(cl.length){h+='<div class="sr-sec">Clients</div>'+cl.map(c=>`<div class="sr-item" onclick="closeMod('search-modal');showToast('Client: ${c.name}')"><i class="ti ti-user"></i> ${c.name} <span style="color:var(--text-light);font-size:12px;margin-left:.5rem;">${c.id}</span></div>`).join('');}if(screens.length){h+='<div class="sr-sec">Screens</div>'+screens.map(s=>`<div class="sr-item" onclick="go('${s[0]}',${s[3]!==null?'qNav('+s[3]+')':'null'});closeMod('search-modal')"><i class="ti ${s[1]}"></i> ${s[2]}</div>`).join('');}if(!h)h='<div style="text-align:center;padding:1.5rem;color:var(--text-light);font-size:14px;">No results for "'+q+'"</div>';res.innerHTML=h;}
+
+// ── MODALS ──
+function openMod(id){var m=document.getElementById(id);if(m)m.classList.add('open');}
+function closeMod(id){var m=document.getElementById(id);if(m)m.classList.remove('open');}
+document.addEventListener('click',function(e){if(e.target.classList.contains('modal-ov'))e.target.classList.remove('open');});
+function clearNotifs(){document.querySelectorAll('.ni').forEach(n=>n.style.opacity='.4');showToast('All notifications marked as read');}
+
+// ── GO FUNCTION OVERRIDE — add new screens ──
+var _origGo=go;
+go=function(name,el){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(n=>n.classList.remove('active'));
+  // Map new-note -> original notedetail screen
+  var screenName = (name==='new-note') ? 'notedetail' : name;
+  var scr=document.getElementById('screen-'+screenName);if(scr)scr.classList.add('active');
+  if(el&&el.classList)el.classList.add('active');
+  closeDrops();
+  // Screen inits
+  if(name==='dashboard')initDashboard();
+  if(name==='scheduler')setTimeout(renderCal,80);
+  if(name==='reports')renderReports();
+  if(name==='notes')renderNotes();
+  if(name==='clients')renderClients();
+  if(name==='compliance')renderCompliance();
+  if(name==='crm')initCrm();
+  if(name==='new-note'){
+    var ts=document.getElementById('note-ts-ext');
+    if(!ts){
+      // Set date on new note form if it has n-date
+      var d=document.getElementById('n-date');if(d&&!d.value)d.valueAsDate=new Date();
+    }
+  }
+};
+
+// ── EXTENDED INIT: dashboard ──
+function initDashboard(){
+  var now=new Date();var h=now.getHours();
+  var g=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
+  var el=document.getElementById('greeting-title');if(el)el.textContent=g+', Dr. Rivera.';
+  var de=document.getElementById('todays-date');if(de)de.textContent=now.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+}
+
+// ── NOTES ──
+function getNotes(){try{return JSON.parse(localStorage.getItem('ns_notes')||'[]');}catch(e){return[];}}
+function renderNotes(q,st){
+  var tbody=document.getElementById('notes-tbody');if(!tbody)return;
+  var notes=getNotes();
+  var demo=[{client:'Johnson, M.',clin:'Dr. Rivera',date:'Jun 7, 2026',fmt:'SOAP',dsm:'F41.1',st:'Pending review',badge:'badge-draft'},{client:'Williams, T.',clin:'Sarah Mitchell',date:'Jun 7, 2026',fmt:'DAP',dsm:'F32.1',st:'Approved',badge:'badge-done'},{client:'Davis, K.',clin:'James Kim',date:'Jun 5, 2026',fmt:'BIRP',dsm:'F43.10',st:'Overdue',badge:'bdge bx-red'}];
+  var disp=notes.length?notes.map(n=>({client:n.client,clin:'Dr. Rivera',date:n.date||'Jun 7, 2026',fmt:n.format||'SOAP',dsm:n.dsm||'—',st:'Approved',badge:'badge-done'})):demo;
+  if(q)disp=disp.filter(n=>n.client.toLowerCase().includes(q.toLowerCase()));
+  if(st)disp=disp.filter(n=>n.st===st);
+  tbody.innerHTML=disp.length?disp.map(n=>`<tr onclick="openViewNote('${n.client}','${n.fmt}','${n.dsm}')"><td>${n.client}</td><td>${n.clin}</td><td>${n.date}</td><td>${n.fmt}</td><td>${n.dsm}</td><td><span class="${n.badge}">${n.st}</span></td><td><button class="t-btn" onclick="event.stopPropagation();openViewNote('${n.client}','${n.fmt}','${n.dsm}')">View</button></td></tr>`).join(''):'<tr><td colspan="7" style="text-align:center;padding:2rem;color:var(--text-light);">No notes found.</td></tr>';}
+function renderNotesSt(st){renderNotes('',st);}
+function openViewNote(client,fmt,dsm){
+  document.getElementById('view-note-body').innerHTML=`<div style="background:var(--plaster);border-radius:10px;padding:.85rem 1rem;margin-bottom:1rem;font-size:13px;display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;"><div><span style="color:var(--text-soft);">Client:</span> <strong>${client}</strong></div><div><span style="color:var(--text-soft);">Format:</span> <strong>${fmt}</strong></div><div><span style="color:var(--text-soft);">Diagnosis:</span> <strong>${dsm}</strong></div></div><div class="nfb-lbl">Subjective</div><div class="nfb-txt">Client presented with symptoms consistent with diagnosis. Client denied suicidal or homicidal ideation and reported moderate improvement since the previous session.</div><div class="nfb-lbl">Objective</div><div class="nfb-txt">Client was cooperative and engaged throughout the session. Affect was congruent with reported mood. Speech was clear and goal-directed.</div><div class="nfb-lbl">Assessment</div><div class="nfb-txt">Client demonstrated measurable progress toward treatment goals. Therapeutic interventions were effective.</div><div class="nfb-lbl">Plan</div><div class="nfb-txt">Continue current treatment plan. Homework assigned. Follow-up scheduled in two weeks.</div>`;
+  openMod('view-note-modal');
+}
+
+// ── CLIENTS ──
+function renderClients(q){
+  var tbody=document.getElementById('clients-tbody');if(!tbody)return;
+  var disp=q?clientsList.filter(c=>c.name.toLowerCase().includes(q.toLowerCase())||c.id.toLowerCase().includes(q.toLowerCase())):clientsList;
+  tbody.innerHTML=disp.map(c=>`<tr onclick="showToast('Client record: ${c.name}')"><td>${c.name}</td><td>${c.id}</td><td>${c.dob}</td><td>${c.ins}</td><td>${c.clin}</td><td>Jun 7, 2026</td><td><span class="badge badge-${c.status==='Active'?'done':'off'}">${c.status}</span></td></tr>`).join('');
+}
+function saveNewClient(){
+  var f=document.getElementById('nc-first')?.value?.trim();var l=document.getElementById('nc-last')?.value?.trim();
+  if(!f||!l){showToast('Please enter first and last name');return;}
+  var id='CLT-'+(100+clientsList.length+1);
+  var c={id,name:f+' '+l,dob:document.getElementById('nc-dob')?.value||'—',ins:document.getElementById('nc-ins')?.value||'—',clin:document.getElementById('nc-clin')?.value,status:'Active'};
+  clientsList.push(c);try{localStorage.setItem('ns_clients',JSON.stringify(clientsList));}catch(e){}
+  closeMod('new-client-modal');renderClients();showToast(c.name+' added ('+id+')');
+}
+
+// ── COMPLIANCE ──
+function renderCompliance(){
+  var el=document.getElementById('compliance-rows');if(!el)return;
+  el.innerHTML=clinData.map(d=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:10px;margin-bottom:6px;background:var(--plaster);border:1px solid var(--stone-pale);"><span style="font-weight:600;font-size:14px;">${d.name}</span><div style="display:flex;align-items:center;gap:.75rem;"><span style="font-size:14px;font-weight:700;color:${d.pct>=90?'var(--green)':d.pct>=80?'var(--amber)':'var(--red)'};">${d.pct}%</span><div class="prog-bar-bg" style="width:130px;"><div class="prog-bar ${d.bar}" style="width:${d.pct}%;"></div></div><span class="badge ${d.pct>=90?'badge-done':d.pct>=80?'badge-draft':'bdge bx-red'}">${d.pct>=90?'Compliant':d.pct>=80?'1 overdue':'2 overdue'}</span></div></div>`).join('');
+}
+
+// ── REPORTS ──
+function renderReports(){
+  var el=document.getElementById('report-cards');if(!el)return;
+  el.innerHTML=clinData.map(c=>`<div class="card"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem;"><div><div style="font-size:15px;font-weight:700;">${c.name}</div><div style="font-size:13px;color:var(--text-soft);">June 2026</div></div><div style="display:flex;gap:.6rem;align-items:center;"><button class="btn-secondary" style="padding:8px 14px;font-size:13px;" onclick="downloadReport('${c.name}')"><i class="ti ti-download"></i> PDF</button><span class="badge ${c.pct>=90?'badge-done':c.pct>=80?'badge-draft':'bdge bx-red'}">${c.pct}%</span></div></div><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.75rem;">${['Notes:'+c.notes,'On-time:'+c.pct+'%','Claims:'+c.claims,'Pending:'+c.pending].map(v=>`<div style="background:var(--plaster);border-radius:8px;padding:.6rem .75rem;text-align:center;"><div style="font-size:1.2rem;font-weight:700;">${v.split(':')[1]}</div><div style="font-size:11px;color:var(--text-soft);margin-top:2px;">${v.split(':')[0]}</div></div>`).join('')}</div><div class="prog-bar-bg"><div class="prog-bar ${c.bar}" style="width:${c.pct}%;"></div></div></div>`).join('');
+}
+function downloadReport(name){var c=clinData.find(x=>x.name.includes(name.split(' ')[0]))||clinData[0];var w=window.open('','_blank');var today=new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});w.document.write('<!DOCTYPE html><html><head><title>Report</title><style>body{font-family:Arial,sans-serif;padding:28px;font-size:13px;}h1{font-size:18px;}table{width:100%;border-collapse:collapse;margin-top:16px;}th{background:#F6F4F0;border:1px solid #D8D4CC;padding:7px 9px;text-align:left;}td{border:1px solid #D8D4CC;padding:7px 9px;}.np{text-align:center;margin-top:20px;}</style></head><body><h1>NarraScribe — Performance Report</h1><p>Clinician: <strong>'+name+'</strong> · '+today+'</p><table><thead><tr><th>Date</th><th>Client</th><th>Format</th><th>On time</th><th>Status</th></tr></thead><tbody><tr><td>Jun 7, 2026</td><td>CLT-001</td><td>SOAP</td><td>Yes — 4 hrs</td><td>Approved</td></tr><tr><td>Jun 5, 2026</td><td>CLT-002</td><td>DAP</td><td>Yes — 2 hrs</td><td>Approved</td></tr></tbody></table><div class="np"><button onclick="window.print()" style="padding:12px 26px;background:#1E1C18;color:#8AAECE;border:none;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;">Print / Save PDF</button></div></body></html>');w.document.close();}
+function downloadAllReports(){showToast('Generating all reports...');clinData.forEach((c,i)=>setTimeout(()=>downloadReport(c.name),i*600));}
+
+// ── CALENDAR ──
+function renderCal(){var months=['January','February','March','April','May','June','July','August','September','October','November','December'];var lbl=document.getElementById('cal-lbl');if(lbl)lbl.textContent=months[calM]+' '+calY;var grid=document.getElementById('cal-grid');if(!grid)return;var first=new Date(calY,calM,1).getDay();var days=new Date(calY,calM+1,0).getDate();var today=new Date();var html='';for(var i=0;i<first;i++)html+='<div class="cal-cell other-m"></div>';for(var d=1;d<=days;d++){var ds=calY+'-'+String(calM+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');var cls='cal-cell'+(d===today.getDate()&&calM===today.getMonth()&&calY===today.getFullYear()?' today':'')+(selDay===d?' selected':'')+(appointments.some(a=>a.date===ds)&&selDay!==d?' has-appt':'');html+=`<div class="${cls}" onclick="selCalDay(${d})">${d}</div>`;}grid.innerHTML=html;renderApptList();}
+function calPrev(){calM--;if(calM<0){calM=11;calY--;}renderCal();}
+function calNext(){calM++;if(calM>11){calM=0;calY++;}renderCal();}
+function selCalDay(d){selDay=d;renderCal();}
+function renderApptList(){var list=document.getElementById('appt-list');var lbl=document.getElementById('appt-lbl');if(!list)return;var ds=selDay?calY+'-'+String(calM+1).padStart(2,'0')+'-'+String(selDay).padStart(2,'0'):new Date().toISOString().split('T')[0];var filtered=appointments.filter(a=>a.date===ds);if(lbl)lbl.textContent='Appointments — '+(selDay?new Date(ds+'T12:00').toLocaleDateString('en-US',{month:'short',day:'numeric'}):'Today');list.innerHTML=filtered.length?filtered.map(a=>`<div class="n-row" style="margin-bottom:.4rem;"><div style="font-size:11px;font-weight:700;color:var(--blue-deep);">${a.time||'—'}</div><div style="flex:1;margin-left:.5rem;"><div class="row-name">${a.name}</div><div class="row-meta">${a.clin||'Dr. Rivera'}</div></div></div>`).join(''):'<div style="text-align:center;padding:1.5rem;color:var(--text-light);font-size:14px;">No appointments.<br><span style="color:var(--blue-deep);cursor:pointer;font-weight:600;" onclick="openMod('appt-modal')">Schedule one</span></div>';}
+function saveAppt(){var name=document.getElementById('appt-name')?.value?.trim();var date=document.getElementById('appt-date')?.value;if(!name||!date){showToast('Enter client name and date');return;}var a={id:'a'+Date.now(),name,date,time:document.getElementById('appt-time')?.value,clin:document.getElementById('appt-clin')?.value};appointments.push(a);try{localStorage.setItem('ns_appts',JSON.stringify(appointments));}catch(e){}closeMod('appt-modal');renderCal();showToast('Appointment scheduled for '+name);document.getElementById('appt-name').value='';}
+
+// ── CLINICIAN MODAL ──
+function openClinMod(name){var c=clinData.find(x=>x.name.includes(name.split(' ')[0]))||clinData[1];document.getElementById('clin-modal-body').innerHTML=`<div style="display:flex;align-items:center;gap:.85rem;margin-bottom:1.1rem;padding:.9rem;background:var(--plaster);border-radius:10px;"><div class="avatar" style="width:46px;height:46px;border-radius:12px;font-size:17px;">${name.split(' ').map(n=>n[0]).join('').slice(0,2)}</div><div><div style="font-size:16px;font-weight:700;">${c.name}</div><div style="font-size:13px;color:var(--text-soft);">Active clinician</div></div><span class="badge ${c.pct>=90?'badge-done':'badge-draft'}" style="margin-left:auto;">${c.pct}%</span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;font-size:13px;"><div style="background:var(--plaster);border-radius:8px;padding:.65rem .9rem;"><span style="color:var(--text-soft);">Notes:</span> <strong>${c.notes}</strong></div><div style="background:var(--plaster);border-radius:8px;padding:.65rem .9rem;"><span style="color:var(--text-soft);">Claims:</span> <strong>${c.claims}</strong></div><div style="background:var(--plaster);border-radius:8px;padding:.65rem .9rem;"><span style="color:var(--text-soft);">On-time:</span> <strong>${c.pct}%</strong></div><div style="background:var(--plaster);border-radius:8px;padding:.65rem .9rem;"><span style="color:var(--text-soft);">Pending:</span> <strong>${c.pending}</strong></div></div>`;openMod('clin-modal');}
+
+// ── ASSESSMENTS ──
+function openAssess(name,full,desc){document.getElementById('assess-title').innerHTML=name+' — '+full+' <button class="modal-x" onclick="closeMod('assess-modal')">&#10005;</button>';var qs=[{q:'Little interest or pleasure in doing things'},{q:'Feeling down, depressed, or hopeless'},{q:'Trouble falling or staying asleep'},{q:'Feeling tired or having little energy'},{q:'Poor appetite or overeating'}];var opts=['Not at all','Several days','More than half the days','Nearly every day'];document.getElementById('assess-qs').innerHTML='<div style="font-size:13px;color:var(--text-soft);margin-bottom:1rem;">'+desc+'</div>'+qs.map((q,i)=>`<div style="margin-bottom:1rem;"><div style="font-size:14px;font-weight:600;margin-bottom:.5rem;">${i+1}. ${q.q}</div><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:.35rem;">${opts.map((r,j)=>`<label style="display:flex;align-items:center;gap:7px;font-size:13px;cursor:pointer;padding:.4rem .55rem;border-radius:7px;border:1px solid var(--stone-pale);"><input type="radio" name="q${i}" value="${j}" style="accent-color:var(--blue-deep);"> ${r}</label>`).join('')}</div></div>`).join('');openMod('assess-modal');}
+function submitAssess(){closeMod('assess-modal');showToast('Assessment submitted and scored');}
+
+// ── INTAKE / DISCHARGE / MISC ──
+function saveIntake(){var f=document.getElementById('in-first')?.value?.trim();var l=document.getElementById('in-last')?.value?.trim();if(!f||!l){showToast('Please enter client name');return;}showToast('Intake saved for '+f+' '+l);}
+function clearIntake(){document.querySelectorAll('#screen-intake input,#screen-intake select,#screen-intake textarea').forEach(el=>{if(el.type==='checkbox')el.checked=false;else if(el.tagName==='SELECT')el.selectedIndex=0;else el.value='';});showToast('Form cleared');}
+function saveTP(){var c=document.getElementById('tp-client')?.value?.trim();if(!c){showToast('Please enter client name');return;}closeMod('tp-modal');showToast('Treatment plan created for '+c);}
+function addParticipant(){var list=document.getElementById('participant-list');if(!list)return;var row=document.createElement('div');row.style.cssText='display:flex;gap:.5rem;';row.innerHTML='<input type="text" class="form-input" placeholder="Client name or ID" style="flex:1;"><button class="t-btn danger" onclick="this.parentElement.remove()">&#10005;</button>';list.appendChild(row);row.querySelector('input').focus();}
+function verifyIns(){var name=document.getElementById('ins-name')?.value?.trim();var mid=document.getElementById('ins-mid')?.value?.trim();if(!name||!mid){showToast('Enter client name and member ID');return;}showToast('Checking eligibility for '+name+'...');setTimeout(()=>{var r=document.getElementById('ins-result');if(r){r.style.display='block';r.scrollIntoView({behavior:'smooth',block:'nearest'});}showToast('Coverage verified for '+name);},1500);}
+
+// ── CRM ──
+function initCrm(){var list=document.getElementById('crm-list');if(!list)return;list.innerHTML=clientsList.map((c,i)=>`<div onclick="selCrm(this,'${c.name}','${c.id}')" style="padding:.7rem .85rem;border-radius:9px;cursor:pointer;border:1px solid ${i===0?'var(--blue-soft)':'transparent'};background:${i===0?'var(--blue-faint)':'transparent'};margin-bottom:.3rem;transition:all .12s;" onmouseover="if(this.style.borderColor!='rgb(90, 127, 168)')this.style.background='var(--plaster)'" onmouseout="if(this.style.borderColor!='rgb(90, 127, 168)')this.style.background='transparent'"><div style="font-size:14px;font-weight:600;">${c.name}</div><div style="font-size:12px;color:var(--text-soft);">${c.id}</div></div>`).join('');}
+function filterCrmList(q){var list=document.getElementById('crm-list');if(!list)return;var fl=q?clientsList.filter(c=>c.name.toLowerCase().includes(q.toLowerCase())):clientsList;list.innerHTML=fl.map((c,i)=>`<div onclick="selCrm(this,'${c.name}','${c.id}')" style="padding:.7rem .85rem;border-radius:9px;cursor:pointer;border:1px solid transparent;margin-bottom:.3rem;" onmouseover="this.style.background='var(--plaster)'" onmouseout="this.style.background='transparent'"><div style="font-size:14px;font-weight:600;">${c.name}</div><div style="font-size:12px;color:var(--text-soft);">${c.id}</div></div>`).join('');}
+function selCrm(el,name,id){document.querySelectorAll('#crm-list > div').forEach(d=>{d.style.border='1px solid transparent';d.style.background='transparent';});el.style.border='1px solid var(--blue-soft)';el.style.background='var(--blue-faint)';document.getElementById('crm-av').textContent=name.split(' ').map(n=>n[0]).join('');document.getElementById('crm-name').textContent=name;document.getElementById('crm-meta').textContent=id+' · Dr. Rivera';}
+function saveCrmReminder(){var inp=document.getElementById('crm-reminder-inp');if(!inp||!inp.value.trim()){showToast('Please enter a reminder');return;}var hist=document.getElementById('crm-history');if(hist){var div=document.createElement('div');div.style.cssText='background:var(--blue-mist);border-radius:8px;padding:.6rem .85rem;font-size:13px;border:1px solid var(--blue-pale);';div.innerHTML='<span style="font-weight:600;">Follow-up reminder</span><div style="color:var(--text-soft);">'+inp.value+'</div>';hist.insertBefore(div,hist.firstChild);}showToast('Reminder saved');inp.value='';}
+
+// ── KEYBOARD ──
+document.addEventListener('keydown',function(e){if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();openSearch();}if(e.key==='Escape'){document.querySelectorAll('.modal-ov').forEach(m=>m.classList.remove('open'));closeDrops();}});
+
+// ── INIT ──
+document.addEventListener('DOMContentLoaded',function(){
+  initDashboard();
+  renderClients();
+  renderNotes();
+  renderCompliance();
+  renderReports();
+});
 </script>
 </body>
 </html>
