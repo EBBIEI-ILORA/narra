@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>NarraScribe — Behavioral Health Platform</title>
+<title>NarraScribe</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
 <style>
 
@@ -267,10 +267,9 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
 .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(10px);background:var(--iron);color:var(--blue-soft);padding:12px 24px;border-radius:10px;font-size:13px;font-weight:600;opacity:0;transition:all .3s;pointer-events:none;z-index:999;display:flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(0,0,0,.3);}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
-
-/* ── EXTENDED STYLES ── */
-.form-input,.form-select{width:100%;padding:10px 13px;border-radius:9px;border:1px solid var(--stone-pale);font-size:13px;background:var(--white);color:var(--text-dark);font-family:inherit;transition:border-color .15s;}
-.form-input:focus,.form-select:focus{outline:none;border-color:var(--blue-mid);box-shadow:0 0 0 3px rgba(58,95,138,.09);}
+/* EXTENDED */
+.form-input,.form-select{width:100%;padding:10px 13px;border-radius:9px;border:1px solid var(--stone-pale);font-size:14px;background:var(--white);color:var(--text-dark);font-family:inherit;}
+.form-input:focus,.form-select:focus{outline:none;border-color:var(--blue-mid);}
 .form-textarea{resize:vertical;min-height:90px;line-height:1.6;}
 .form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .form-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
@@ -292,17 +291,14 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
 .stat-d{font-size:12px;margin-top:6px;}
 .bdge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:500;}
 .bx-red{background:var(--red-light);color:var(--red);border:1px solid #F0C0C0;}
-.bx-amber{background:var(--amber-light);color:var(--amber);border:1px solid #F0D898;}
-.bx-blue{background:var(--blue-mist);color:var(--blue-deep);border:1px solid var(--blue-pale);}
-.alert-box{display:flex;align-items:center;gap:.65rem;padding:.7rem 1rem;border-radius:9px;margin-bottom:.45rem;font-size:13px;}
-.alert-box i{font-size:15px;flex-shrink:0;}
 .ab-red{background:var(--red-light);border:1px solid #F0C0C0;color:var(--red);}
 .ab-amber{background:var(--amber-light);border:1px solid #F0D898;color:var(--amber);}
-.ab-blue{background:var(--blue-mist);border:1px solid var(--blue-pale);color:var(--blue-deep);}
 .ab-green{background:var(--green-light);border:1px solid #B8DFC9;color:var(--green);}
+.alert-box{display:flex;align-items:center;gap:.65rem;padding:.7rem 1rem;border-radius:9px;margin-bottom:.45rem;font-size:13px;}
+.alert-box i{font-size:15px;flex-shrink:0;}
 .pipe-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;}
 .pipe-col{background:var(--white);border:1px solid var(--stone-pale);border-radius:12px;padding:.9rem;}
-.pipe-col-hdr{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-soft);margin-bottom:.65rem;display:flex;align-items:center;justify-content:space-between;}
+.pipe-col-hdr{font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-soft);margin-bottom:.65rem;display:flex;align-items:center;justify-content:space-between;}
 .pipe-card{background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.65rem .8rem;margin-bottom:.45rem;cursor:pointer;transition:all .12s;}
 .pipe-card:hover{border-color:var(--blue-soft);background:var(--blue-faint);}
 .pipe-cname{font-size:14px;font-weight:600;color:var(--text-dark);}
@@ -312,11 +308,10 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
 .modal{background:var(--white);border-radius:16px;padding:1.75rem;width:520px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.15);}
 .modal-hdr{font-size:16px;font-weight:700;color:var(--text-dark);margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between;}
 .modal-x{background:none;border:none;cursor:pointer;font-size:20px;color:var(--text-soft);padding:2px;line-height:1;}
-.modal-x:hover{color:var(--text-dark);}
 .drop-panel{position:fixed;top:72px;background:var(--white);border:1px solid var(--stone-pale);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.12);z-index:150;display:none;}
 .drop-panel.open{display:block;}
 .dp-hdr{padding:.75rem 1rem;border-bottom:1px solid var(--stone-faint);display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:700;}
-.dp-item{display:flex;align-items:center;gap:.7rem;padding:.6rem 1rem;font-size:13px;color:var(--text-mid);cursor:pointer;transition:background .12s;}
+.dp-item{display:flex;align-items:center;gap:.7rem;padding:.65rem 1rem;font-size:13px;color:var(--text-mid);cursor:pointer;transition:background .12s;}
 .dp-item:hover{background:var(--plaster);}
 .dp-item i{font-size:15px;color:var(--stone-light);}
 .notif-dot{position:absolute;top:4px;right:4px;width:8px;height:8px;border-radius:50%;background:var(--amber);border:2px solid var(--iron);}
@@ -325,14 +320,11 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
 .ni:hover{background:var(--plaster);}
 .ni-t{font-size:12px;font-weight:600;color:var(--text-dark);}
 .ni-s{font-size:11px;color:var(--text-soft);margin-top:1px;}
-.ni.ur{border-left-color:var(--red);}
-.ni.ua{border-left-color:var(--amber);}
-.ni.ub{border-left-color:var(--blue-deep);}
-.ni.ug{border-left-color:var(--green);}
+.ni.ur{border-left-color:var(--red);}.ni.ua{border-left-color:var(--amber);}.ni.ub{border-left-color:var(--blue-deep);}.ni.ug{border-left-color:var(--green);}
 .cal-wrap{background:var(--white);border:1px solid var(--stone-pale);border-radius:14px;padding:1.2rem;}
 .cal-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:.85rem;}
 .cal-month{font-size:15px;font-weight:700;color:var(--text-dark);}
-.cal-nav{width:28px;height:28px;border-radius:7px;border:1px solid var(--stone-pale);background:var(--plaster);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;}
+.cal-nav{width:28px;height:28px;border-radius:7px;border:1px solid var(--stone-pale);background:var(--plaster);cursor:pointer;display:flex;align-items:center;justify-content:center;}
 .cal-nav:hover{background:var(--blue-mist);}
 .cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
 .cal-lbl-d{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text-light);text-align:center;padding:3px 0;}
@@ -346,15 +338,10 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
 .sr-item:hover{background:var(--blue-mist);color:var(--blue-deep);}
 .sr-item i{font-size:15px;color:var(--text-light);}
 .sr-sec{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-light);padding:.5rem .85rem .2rem;}
-.fill-green{background:var(--green);}
-.fill-amber{background:var(--amber);}
-.fill-red{background:var(--red);}
-
 </style>
 </head>
 <body>
 <div class="shell">
-
 <nav class="nav">
   <div class="nav-brand">
     <div class="nav-logo"><i class="ti ti-notes"></i></div>
@@ -366,186 +353,133 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
     <button class="nav-tab" onclick="go('therapists',this)"><i class="ti ti-users"></i> Therapists</button>
     <button class="nav-tab" onclick="go('settings',this)"><i class="ti ti-settings"></i> Settings</button>
     <button class="nav-tab" onclick="go('claims',this)"><i class="ti ti-file-invoice"></i> Claims</button>
-    <button class="nav-tab" onclick="showMoreMenu()"><i class="ti ti-grid-dots"></i> More</button>
+    <button class="nav-tab" onclick="toggleMoreMenu('more-menu')"><i class="ti ti-grid-dots"></i> More</button>
   </div>
   <div style="display:flex;align-items:center;gap:8px;">
     <div style="position:relative;">
-      <button style="background:transparent;border:none;cursor:pointer;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;" id="notif-btn" onclick="toggleDrop('notif-drop')">
+      <button id="notif-btn" onclick="toggleMoreMenu('notif-drop')" style="background:transparent;border:none;cursor:pointer;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;">
         <i class="ti ti-bell" style="font-size:18px;color:var(--stone-light);"></i>
         <div class="notif-dot"></div>
       </button>
     </div>
-    <div class="nav-user" onclick="toggleDrop('user-drop')">
+    <div class="nav-user" onclick="toggleMoreMenu('user-drop')" style="cursor:pointer;">
       <div class="nav-avatar">DR</div>
       <span class="nav-uname">Dr. Rivera</span>
     </div>
   </div>
 </nav>
-
-<!-- MORE MENU -->
 <div class="drop-panel" id="more-menu" style="left:50%;transform:translateX(-50%);width:660px;padding:.85rem 1rem;">
   <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-soft);margin-bottom:.7rem;">All screens</div>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;">
-    <button onclick="go('notes',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-files" style="font-size:14px;color:var(--blue-mid);"></i> All Notes</button>
-    <button onclick="go('clients',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-users" style="font-size:14px;color:var(--blue-mid);"></i> Clients</button>
-    <button onclick="go('intake',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-clipboard-list" style="font-size:14px;color:var(--blue-mid);"></i> Patient Intake</button>
-    <button onclick="go('assessments',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-checklist" style="font-size:14px;color:var(--blue-mid);"></i> Assessments</button>
-    <button onclick="go('scheduler',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-calendar" style="font-size:14px;color:var(--blue-mid);"></i> Scheduler</button>
-    <button onclick="go('compliance',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-shield-check" style="font-size:14px;color:var(--blue-mid);"></i> Compliance</button>
-    <button onclick="go('reports',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-chart-bar" style="font-size:14px;color:var(--blue-mid);"></i> Reports</button>
-    <button onclick="go('referrals',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-git-branch" style="font-size:14px;color:var(--blue-mid);"></i> Referrals</button>
-    <button onclick="go('treatment-plans',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-clipboard-heart" style="font-size:14px;color:var(--blue-mid);"></i> Treatment Plans</button>
-    <button onclick="go('group-notes',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-users-group" style="font-size:14px;color:var(--blue-mid);"></i> Group Notes</button>
-    <button onclick="go('telehealth',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-video" style="font-size:14px;color:var(--blue-mid);"></i> Telehealth</button>
-    <button onclick="go('crm',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-address-book" style="font-size:14px;color:var(--blue-mid);"></i> CRM</button>
-    <button onclick="go('billing',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-cash" style="font-size:14px;color:var(--blue-mid);"></i> Billing</button>
-    <button onclick="go('insurance',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-building-bank" style="font-size:14px;color:var(--blue-mid);"></i> Insurance</button>
-    <button onclick="go('authorizations',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-license" style="font-size:14px;color:var(--blue-mid);"></i> Authorizations</button>
-    <button onclick="go('analytics',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-chart-line" style="font-size:14px;color:var(--blue-mid);"></i> Analytics</button>
-    <button onclick="go('discharge',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-door-exit" style="font-size:14px;color:var(--blue-mid);"></i> Discharge</button>
-    <button onclick="go('ceo',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-chart-pie" style="font-size:14px;color:var(--blue-mid);"></i> Exec View</button>
-    <button onclick="go('credentialing',null);closeAllDrops()" style="background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .75rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;transition:all .12s;text-align:left;" onmouseover="this.style.background='var(--blue-mist)';this.style.color='var(--blue-deep)'" onmouseout="this.style.background='var(--plaster)';this.style.color='var(--text-mid)'"><i class="ti ti-certificate" style="font-size:14px;color:var(--blue-mid);"></i> Credentialing</button>
+    <button onclick="go('notes',null)" class="more-btn"><i class="ti ti-files"></i> All Notes</button>
+    <button onclick="go('clients',null)" class="more-btn"><i class="ti ti-users"></i> Clients</button>
+    <button onclick="go('intake',null)" class="more-btn"><i class="ti ti-clipboard-list"></i> Patient Intake</button>
+    <button onclick="go('assessments',null)" class="more-btn"><i class="ti ti-checklist"></i> Assessments</button>
+    <button onclick="go('scheduler',null)" class="more-btn"><i class="ti ti-calendar"></i> Scheduler</button>
+    <button onclick="go('compliance',null)" class="more-btn"><i class="ti ti-shield-check"></i> Compliance</button>
+    <button onclick="go('reports',null)" class="more-btn"><i class="ti ti-chart-bar"></i> Reports</button>
+    <button onclick="go('referrals',null)" class="more-btn"><i class="ti ti-git-branch"></i> Referrals</button>
+    <button onclick="go('treatment-plans',null)" class="more-btn"><i class="ti ti-clipboard-heart"></i> Treatment Plans</button>
+    <button onclick="go('group-notes',null)" class="more-btn"><i class="ti ti-users-group"></i> Group Notes</button>
+    <button onclick="go('telehealth',null)" class="more-btn"><i class="ti ti-video"></i> Telehealth</button>
+    <button onclick="go('crm',null)" class="more-btn"><i class="ti ti-address-book"></i> CRM</button>
+    <button onclick="go('billing',null)" class="more-btn"><i class="ti ti-cash"></i> Billing</button>
+    <button onclick="go('insurance',null)" class="more-btn"><i class="ti ti-building-bank"></i> Insurance</button>
+    <button onclick="go('authorizations',null)" class="more-btn"><i class="ti ti-license"></i> Authorizations</button>
+    <button onclick="go('analytics',null)" class="more-btn"><i class="ti ti-chart-line"></i> Analytics</button>
+    <button onclick="go('discharge',null)" class="more-btn"><i class="ti ti-door-exit"></i> Discharge</button>
+    <button onclick="go('ceo',null)" class="more-btn"><i class="ti ti-chart-pie"></i> Exec View</button>
+    <button onclick="go('credentialing',null)" class="more-btn"><i class="ti ti-certificate"></i> Credentialing</button>
   </div>
 </div>
-
-<!-- NOTIFICATIONS -->
+<style>
+.more-btn{background:var(--plaster);border:1px solid var(--stone-pale);border-radius:8px;padding:.6rem .8rem;font-size:13px;font-weight:500;color:var(--text-mid);cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;text-align:left;transition:all .12s;width:100%;}
+.more-btn:hover{background:var(--blue-mist);color:var(--blue-deep);}
+.more-btn i{font-size:14px;color:var(--blue-mid);}
+</style>
 <div class="drop-panel" id="notif-drop" style="right:120px;width:310px;">
-  <div class="dp-hdr"><span>Notifications</span><button onclick="clearNotifs()" style="font-size:11px;color:var(--blue-deep);background:none;border:none;cursor:pointer;font-weight:600;">Mark all read</button></div>
-  <div class="ni ur" onclick="go('compliance',null);closeAllDrops()"><div class="ni-t">2 notes near 48-hour deadline</div><div class="ni-s">Complete by 6:00 PM today</div></div>
-  <div class="ni ua" onclick="go('compliance',null);closeAllDrops()"><div class="ni-t">3 notes pending supervisor sign-off</div><div class="ni-s">James Kim · awaiting review</div></div>
-  <div class="ni ub" onclick="go('treatment-plans',null);closeAllDrops()"><div class="ni-t">5 treatment plans expiring soon</div><div class="ni-s">Within the next 30 days</div></div>
-  <div class="ni ug" onclick="closeAllDrops()"><div class="ni-t">Sarah Mitchell — 100% compliance</div><div class="ni-s">Excellent documentation this week</div></div>
+  <div class="dp-hdr"><span>Notifications</span><button onclick="document.querySelectorAll('.ni').forEach(function(n){n.style.opacity='.4';});showToast('All marked as read')" style="font-size:11px;color:var(--blue-deep);background:none;border:none;cursor:pointer;font-weight:600;">Mark all read</button></div>
+  <div class="ni ur" onclick="go('compliance',null);closeMenus()"><div class="ni-t">2 notes near 48-hour deadline</div><div class="ni-s">Complete by 6:00 PM today</div></div>
+  <div class="ni ua" onclick="go('compliance',null);closeMenus()"><div class="ni-t">3 notes pending sign-off</div><div class="ni-s">James Kim · awaiting review</div></div>
+  <div class="ni ub" onclick="go('treatment-plans',null);closeMenus()"><div class="ni-t">5 treatment plans expiring soon</div><div class="ni-s">Within 30 days</div></div>
+  <div class="ni ug" onclick="closeMenus()"><div class="ni-t">Sarah Mitchell — 100% compliance</div><div class="ni-s">Excellent documentation this week</div></div>
 </div>
-
-<!-- USER MENU -->
 <div class="drop-panel" id="user-drop" style="right:8px;width:195px;">
   <div class="dp-hdr">Dr. Rivera</div>
-  <div class="dp-item" onclick="go('settings',document.querySelectorAll('.nav-tab')[3]);closeAllDrops()"><i class="ti ti-adjustments"></i> Settings</div>
-  <div class="dp-item" onclick="go('credentialing',null);closeAllDrops()"><i class="ti ti-certificate"></i> My credentials</div>
-  <div class="dp-item" onclick="go('reports',null);closeAllDrops()"><i class="ti ti-chart-bar"></i> My reports</div>
+  <div class="dp-item" onclick="go('settings',document.querySelectorAll('.nav-tab')[3]);closeMenus()"><i class="ti ti-adjustments"></i> Settings</div>
+  <div class="dp-item" onclick="go('credentialing',null);closeMenus()"><i class="ti ti-certificate"></i> My credentials</div>
+  <div class="dp-item" onclick="go('reports',null);closeMenus()"><i class="ti ti-chart-bar"></i> My reports</div>
   <div style="border-top:1px solid var(--stone-faint);"></div>
   <div class="dp-item" style="color:var(--red);" onclick="signOut()"><i class="ti ti-logout" style="color:var(--red);"></i> Sign out</div>
 </div>
-
-<!-- SEARCH MODAL -->
+<div class="modal-ov" id="appt-modal">
+  <div class="modal"><div class="modal-hdr">Schedule appointment <button class="modal-x" onclick="closeMod('appt-modal')">&#10005;</button></div>
+  <div class="form-grid-2" style="margin-bottom:.75rem;">
+    <div class="form-field"><label>Client name *</label><input type="text" class="form-input" id="appt-name" placeholder="Full name"></div>
+    <div class="form-field"><label>Date *</label><input type="date" class="form-input" id="appt-date"></div>
+    <div class="form-field"><label>Time</label><input type="time" class="form-input" id="appt-time"></div>
+    <div class="form-field"><label>Clinician</label><select class="form-select" id="appt-clin"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option><option>Aisha Brown</option></select></div>
+  </div>
+  <div style="display:flex;gap:.6rem;"><button class="btn-primary" style="flex:1;" onclick="saveAppt()"><i class="ti ti-check"></i> Schedule</button><button class="btn-secondary" onclick="closeMod('appt-modal')">Cancel</button></div>
+  </div>
+</div>
+<div class="modal-ov" id="new-client-modal">
+  <div class="modal"><div class="modal-hdr">Add new client <button class="modal-x" onclick="closeMod('new-client-modal')">&#10005;</button></div>
+  <div class="form-grid-2" style="margin-bottom:.75rem;">
+    <div class="form-field"><label>First name *</label><input type="text" class="form-input" id="nc-first" placeholder="First name"></div>
+    <div class="form-field"><label>Last name *</label><input type="text" class="form-input" id="nc-last" placeholder="Last name"></div>
+    <div class="form-field"><label>Date of birth</label><input type="date" class="form-input" id="nc-dob"></div>
+    <div class="form-field"><label>Insurance</label><input type="text" class="form-input" id="nc-ins" placeholder="Provider"></div>
+    <div class="form-field"><label>Clinician</label><select class="form-select" id="nc-clin"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option><option>Aisha Brown</option></select></div>
+  </div>
+  <div style="display:flex;gap:.6rem;"><button class="btn-primary" style="flex:1;" onclick="saveNewClient()"><i class="ti ti-check"></i> Add client</button><button class="btn-secondary" onclick="closeMod('new-client-modal')">Cancel</button></div>
+  </div>
+</div>
+<div class="modal-ov" id="clin-modal"><div class="modal"><div class="modal-hdr">Clinician profile <button class="modal-x" onclick="closeMod('clin-modal')">&#10005;</button></div><div id="clin-modal-body"></div></div></div>
+<div class="modal-ov" id="assess-modal">
+  <div class="modal" style="width:560px;"><div class="modal-hdr" id="assess-title">Assessment <button class="modal-x" onclick="closeMod('assess-modal')">&#10005;</button></div>
+  <div class="form-grid-2" style="margin-bottom:.85rem;"><div class="form-field"><label>Client name</label><input type="text" class="form-input" placeholder="Client name"></div><div class="form-field"><label>Clinician</label><select class="form-select"><option>Dr. Rivera</option></select></div></div>
+  <div id="assess-qs"></div>
+  <div style="display:flex;gap:.6rem;margin-top:1rem;"><button class="btn-primary" style="flex:1;" onclick="submitAssess()"><i class="ti ti-check"></i> Submit</button><button class="btn-secondary" onclick="closeMod('assess-modal')">Cancel</button></div>
+  </div>
+</div>
+<div class="modal-ov" id="tp-modal">
+  <div class="modal"><div class="modal-hdr">New treatment plan <button class="modal-x" onclick="closeMod('tp-modal')">&#10005;</button></div>
+  <div class="form-grid-2" style="margin-bottom:.75rem;">
+    <div class="form-field"><label>Client name *</label><input type="text" class="form-input" id="tp-client" placeholder="Client name"></div>
+    <div class="form-field"><label>Diagnosis</label><select class="form-select"><option>F41.1 — GAD</option><option>F32.1 — MDD</option><option>F43.10 — PTSD</option></select></div>
+    <div class="form-field"><label>Clinician</label><select class="form-select"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option></select></div>
+    <div class="form-field"><label>Review date</label><input type="date" class="form-input"></div>
+  </div>
+  <div class="form-field"><label>Goals</label><textarea class="form-input form-textarea" id="tp-goals" placeholder="Measurable goals..."></textarea></div>
+  <div style="display:flex;gap:.6rem;margin-top:.5rem;"><button class="btn-primary" style="flex:1;" onclick="saveTP()"><i class="ti ti-check"></i> Save plan</button><button class="btn-secondary" onclick="closeMod('tp-modal')">Cancel</button></div>
+  </div>
+</div>
+<div class="modal-ov" id="view-note-modal">
+  <div class="modal" style="width:580px;"><div class="modal-hdr">Clinical note <button class="modal-x" onclick="closeMod('view-note-modal')">&#10005;</button></div>
+  <div id="view-note-body"></div>
+  <div style="display:flex;gap:.6rem;margin-top:1.25rem;"><button class="btn-secondary" onclick="try{navigator.clipboard.writeText(document.getElementById('view-note-body').innerText);}catch(e){}showToast('Copied')"><i class="ti ti-copy"></i> Copy</button><button class="btn-primary" onclick="closeMod('view-note-modal');showToast('Note approved')"><i class="ti ti-circle-check"></i> Approve</button></div>
+  </div>
+</div>
+<div class="modal-ov" id="cred-modal">
+  <div class="modal"><div class="modal-hdr">Add credential <button class="modal-x" onclick="closeMod('cred-modal')">&#10005;</button></div>
+  <div class="form-grid-2" style="margin-bottom:.75rem;">
+    <div class="form-field"><label>Clinician</label><select class="form-select"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option></select></div>
+    <div class="form-field"><label>License type</label><input type="text" class="form-input" placeholder="LCSW, LPC..."></div>
+    <div class="form-field"><label>License #</label><input type="text" class="form-input" placeholder="MD-LCSW-XXXXX"></div>
+    <div class="form-field"><label>Expiration</label><input type="date" class="form-input"></div>
+  </div>
+  <div style="display:flex;gap:.6rem;"><button class="btn-primary" style="flex:1;" onclick="closeMod('cred-modal');showToast('Credential saved')"><i class="ti ti-check"></i> Save</button><button class="btn-secondary" onclick="closeMod('cred-modal')">Cancel</button></div>
+  </div>
+</div>
 <div class="modal-ov" id="search-modal">
   <div class="modal" style="width:560px;">
-    <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;">
-      <i class="ti ti-search" style="font-size:18px;color:var(--text-soft);"></i>
-      <input type="text" id="search-inp" style="flex:1;border:none;font-size:15px;color:var(--text-dark);font-family:inherit;background:transparent;outline:none;" placeholder="Search clients, notes, screens..." oninput="liveSearch(this.value)">
-      <button class="modal-x" onclick="closeMod('search-modal')">&#10005;</button>
-    </div>
-    <div id="search-res"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;"><i class="ti ti-search" style="font-size:18px;color:var(--text-soft);"></i><input type="text" id="search-inp" style="flex:1;border:none;font-size:15px;color:var(--text-dark);font-family:inherit;background:transparent;outline:none;" placeholder="Search screens, clients..." oninput="liveSearch(this.value)"><button class="modal-x" onclick="closeMod('search-modal')">&#10005;</button></div>
+  <div id="search-res"></div>
   </div>
 </div>
-
-<!-- APPOINTMENT MODAL -->
-<div class="modal-ov" id="appt-modal">
-  <div class="modal">
-    <div class="modal-hdr">Schedule appointment <button class="modal-x" onclick="closeMod('appt-modal')">&#10005;</button></div>
-    <div class="form-grid-2">
-      <div class="form-field"><label>Client name <span class="req">*</span></label><input type="text" class="form-input" id="appt-name" placeholder="Full name"></div>
-      <div class="form-field"><label>Date <span class="req">*</span></label><input type="date" class="form-input" id="appt-date"></div>
-      <div class="form-field"><label>Time</label><input type="time" class="form-input" id="appt-time"></div>
-      <div class="form-field"><label>Clinician</label><select class="form-select" id="appt-clin"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option><option>Aisha Brown</option></select></div>
-    </div>
-    <div style="display:flex;gap:.6rem;margin-top:.5rem;">
-      <button class="btn-primary" style="flex:1;" onclick="saveAppt()"><i class="ti ti-check"></i> Schedule</button>
-      <button class="btn-secondary" onclick="closeMod('appt-modal')">Cancel</button>
-    </div>
-  </div>
-</div>
-
-<!-- NEW CLIENT MODAL -->
-<div class="modal-ov" id="new-client-modal">
-  <div class="modal">
-    <div class="modal-hdr">Add new client <button class="modal-x" onclick="closeMod('new-client-modal')">&#10005;</button></div>
-    <div class="form-grid-2">
-      <div class="form-field"><label>First name <span class="req">*</span></label><input type="text" class="form-input" id="nc-first" placeholder="First name"></div>
-      <div class="form-field"><label>Last name <span class="req">*</span></label><input type="text" class="form-input" id="nc-last" placeholder="Last name"></div>
-      <div class="form-field"><label>Date of birth</label><input type="date" class="form-input" id="nc-dob"></div>
-      <div class="form-field"><label>Insurance</label><input type="text" class="form-input" id="nc-ins" placeholder="Provider"></div>
-      <div class="form-field"><label>Clinician</label><select class="form-select" id="nc-clin"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option><option>Aisha Brown</option></select></div>
-    </div>
-    <div style="display:flex;gap:.6rem;margin-top:.5rem;">
-      <button class="btn-primary" style="flex:1;" onclick="saveNewClient()"><i class="ti ti-check"></i> Add client</button>
-      <button class="btn-secondary" onclick="closeMod('new-client-modal')">Cancel</button>
-    </div>
-  </div>
-</div>
-
-<!-- CLINICIAN DETAIL MODAL -->
-<div class="modal-ov" id="clin-modal">
-  <div class="modal">
-    <div class="modal-hdr">Clinician profile <button class="modal-x" onclick="closeMod('clin-modal')">&#10005;</button></div>
-    <div id="clin-modal-body"></div>
-  </div>
-</div>
-
-<!-- ASSESSMENT MODAL -->
-<div class="modal-ov" id="assess-modal">
-  <div class="modal" style="width:560px;">
-    <div class="modal-hdr" id="assess-title">Assessment <button class="modal-x" onclick="closeMod('assess-modal')">&#10005;</button></div>
-    <div class="form-grid-2" style="margin-bottom:.85rem;">
-      <div class="form-field"><label>Client name</label><input type="text" class="form-input" placeholder="Client name"></div>
-      <div class="form-field"><label>Clinician</label><select class="form-select"><option>Dr. Rivera</option><option>Sarah Mitchell</option></select></div>
-    </div>
-    <div id="assess-qs"></div>
-    <div style="display:flex;gap:.6rem;margin-top:1.1rem;">
-      <button class="btn-primary" style="flex:1;" onclick="submitAssess()"><i class="ti ti-check"></i> Submit</button>
-      <button class="btn-secondary" onclick="closeMod('assess-modal')">Cancel</button>
-    </div>
-  </div>
-</div>
-
-<!-- TREATMENT PLAN MODAL -->
-<div class="modal-ov" id="tp-modal">
-  <div class="modal">
-    <div class="modal-hdr">New treatment plan <button class="modal-x" onclick="closeMod('tp-modal')">&#10005;</button></div>
-    <div class="form-grid-2">
-      <div class="form-field"><label>Client name <span class="req">*</span></label><input type="text" class="form-input" id="tp-client" placeholder="Client name"></div>
-      <div class="form-field"><label>Primary diagnosis</label><select class="form-select"><option>F41.1 — GAD</option><option>F32.1 — MDD</option><option>F43.10 — PTSD</option></select></div>
-      <div class="form-field"><label>Clinician</label><select class="form-select"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option><option>Aisha Brown</option></select></div>
-      <div class="form-field"><label>Review date</label><input type="date" class="form-input"></div>
-    </div>
-    <div class="form-field"><label>Treatment goals</label><textarea class="form-input form-textarea" id="tp-goals" placeholder="List measurable goals..."></textarea></div>
-    <div style="display:flex;gap:.6rem;margin-top:.5rem;">
-      <button class="btn-primary" style="flex:1;" onclick="saveTP()"><i class="ti ti-check"></i> Save plan</button>
-      <button class="btn-secondary" onclick="closeMod('tp-modal')">Cancel</button>
-    </div>
-  </div>
-</div>
-
-<!-- VIEW NOTE MODAL -->
-<div class="modal-ov" id="view-note-modal">
-  <div class="modal" style="width:580px;">
-    <div class="modal-hdr">Clinical note <button class="modal-x" onclick="closeMod('view-note-modal')">&#10005;</button></div>
-    <div id="view-note-body"></div>
-    <div style="display:flex;gap:.6rem;margin-top:1.25rem;">
-      <button class="btn-secondary" onclick="try{navigator.clipboard.writeText(document.getElementById('view-note-body').innerText);}catch(e){}showToast('Copied to clipboard')"><i class="ti ti-copy"></i> Copy</button>
-      <button class="btn-primary" onclick="closeMod('view-note-modal');showToast('Note approved and submitted')"><i class="ti ti-circle-check"></i> Approve</button>
-    </div>
-  </div>
-</div>
-
-<!-- CREDENTIAL MODAL -->
-<div class="modal-ov" id="cred-modal">
-  <div class="modal">
-    <div class="modal-hdr">Add credential <button class="modal-x" onclick="closeMod('cred-modal')">&#10005;</button></div>
-    <div class="form-grid-2">
-      <div class="form-field"><label>Clinician</label><select class="form-select"><option>Dr. Rivera</option><option>Sarah Mitchell</option><option>James Kim</option><option>Aisha Brown</option></select></div>
-      <div class="form-field"><label>License type</label><input type="text" class="form-input" placeholder="LCSW, LPC, PsyD..."></div>
-      <div class="form-field"><label>License #</label><input type="text" class="form-input" placeholder="MD-LCSW-XXXXX"></div>
-      <div class="form-field"><label>Expiration date</label><input type="date" class="form-input"></div>
-    </div>
-    <div style="display:flex;gap:.6rem;margin-top:.5rem;">
-      <button class="btn-primary" style="flex:1;" onclick="closeMod('cred-modal');showToast('Credential saved')"><i class="ti ti-check"></i> Save</button>
-      <button class="btn-secondary" onclick="closeMod('cred-modal')">Cancel</button>
-    </div>
-  </div>
-</div>
-
 <div class="toast" id="toast"></div>
+
 <div class="screen active" id="screen-dashboard">
   <div style="padding:.5rem 0 .75rem;">
     <div style="font-size:24px;font-weight:600;color:var(--text-dark);" id="greeting-title"></div>
@@ -1474,403 +1408,325 @@ input[type=text]:focus,input[type=email]:focus,select.fsel:focus{outline:none;bo
     </tbody></table></div>
   </div>
 </div>
-<div class="footer">NarraScribe &nbsp;·&nbsp; <span>HIPAA-compliant behavioral health documentation</span> &nbsp;·&nbsp; narrascribe.com</div>
+<div class="footer">NarraScribe &nbsp;&middot;&nbsp; <span>HIPAA-compliant behavioral health documentation</span> &nbsp;&middot;&nbsp; narrascribe.com</div>
 </div>
 <script>
 
-// ── UNIFIED SCREEN ROUTER (replaces original go) ──
-function go(screen, btn) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  // map aliases
-  var id = screen;
-  if (screen === 'new-note') id = 'notedetail';
-  var el = document.getElementById('screen-' + id);
-  if (el) el.classList.add('active');
-  if (btn && btn.classList) btn.classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  closeAllDrops();
-  // screen-specific inits
-  if (screen === 'dashboard') initDashExtended();
-  if (screen === 'scheduler') setTimeout(renderCal, 80);
-  if (screen === 'reports')   renderReports();
-  if (screen === 'notes')     renderAllNotes();
-  if (screen === 'clients')   renderClientTable();
-  if (screen === 'compliance') renderCompliance();
-  if (screen === 'crm')       initCrm();
-}
-function goBack() { go('dashboard', document.querySelectorAll('.nav-tab')[0]); }
+// ══ NARRASCRIBE UNIFIED JS ══
 
-// ── DROPDOWNS ──
-function closeAllDrops() {
-  document.querySelectorAll('.drop-panel').forEach(p => p.classList.remove('open'));
-}
-function toggleDrop(id) {
-  var p = document.getElementById(id);
-  var was = p.classList.contains('open');
-  closeAllDrops();
-  if (!was) p.classList.add('open');
-}
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.drop-panel') && !e.target.closest('#notif-btn') &&
-      !e.target.closest('.nav-user') && !e.target.closest('[onclick*="toggleDrop"]') &&
-      !e.target.closest('[onclick*="showMoreMenu"]'))
-    closeAllDrops();
-});
+// ── CLOSE MENUS (must be first) ──
+function closeMenus(){document.querySelectorAll('.drop-panel').forEach(function(p){p.classList.remove('open');});}
 
 // ── MODALS ──
-function openMod(id) { var m = document.getElementById(id); if (m) m.classList.add('open'); }
-function closeMod(id) { var m = document.getElementById(id); if (m) m.classList.remove('open'); }
-document.addEventListener('click', function(e) {
-  if (e.target.classList.contains('modal-ov')) e.target.classList.remove('open');
+function openMod(id){var m=document.getElementById(id);if(m)m.classList.add('open');}
+function closeMod(id){var m=document.getElementById(id);if(m)m.classList.remove('open');}
+document.addEventListener('click',function(e){if(e.target.classList.contains('modal-ov'))e.target.classList.remove('open');});
+
+// ── DROPDOWNS ──
+function toggleMoreMenu(id){
+  var p=document.getElementById(id);
+  var was=p.classList.contains('open');
+  closeMenus();
+  if(!was)p.classList.add('open');
+}
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.drop-panel')&&!e.target.closest('[onclick*="toggleMoreMenu"]')&&!e.target.closest('#notif-btn')&&!e.target.closest('.nav-user'))closeMenus();
 });
-function showMoreMenu() { toggleDrop('more-menu'); }
 
-// ── SEARCH ──
-function openSearch() {
-  openMod('search-modal');
-  var inp = document.getElementById('search-inp');
-  if (inp) { inp.value = ''; inp.focus(); }
-  initSR();
+// ── GO — THE ONLY NAVIGATION FUNCTION ──
+function go(screen,btn){
+  document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active');});
+  document.querySelectorAll('.nav-tab').forEach(function(t){t.classList.remove('active');});
+  var id=screen==='new-note'?'notedetail':screen;
+  var el=document.getElementById('screen-'+id);
+  if(el)el.classList.add('active');
+  if(btn&&btn.classList)btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  closeMenus();
+  if(screen==='dashboard')initDash();
+  if(screen==='scheduler')setTimeout(renderCal,80);
+  if(screen==='reports')renderReports();
+  if(screen==='notes')renderAllNotes();
+  if(screen==='clients')renderClientTable();
+  if(screen==='compliance')renderCompliance();
+  if(screen==='crm')initCrm();
 }
-function initSR() {
-  document.getElementById('search-res').innerHTML = '<div class="sr-sec">Quick access</div>' +
-    [['dashboard','ti-layout-dashboard','Dashboard',0],['new-note','ti-edit','New Note',1],
-     ['therapists','ti-users','Therapists',2],['settings','ti-settings','Settings',3],
-     ['claims','ti-file-invoice','Claims',4],['compliance','ti-shield-check','Compliance'],
-     ['reports','ti-chart-bar','Reports'],['notes','ti-files','All Notes'],
-     ['clients','ti-users','Clients'],['scheduler','ti-calendar','Scheduler'],
-     ['analytics','ti-chart-line','Analytics'],['treatment-plans','ti-clipboard-heart','Treatment Plans'],
-     ['referrals','ti-git-branch','Referrals'],['billing','ti-cash','Billing'],
-     ['insurance','ti-building-bank','Insurance'],['ceo','ti-chart-pie','Executive View'],
-     ['credentialing','ti-certificate','Credentialing']
-    ].map(x => `<div class="sr-item" onclick="go('${x[0]}',${x[3]!==undefined?'document.querySelectorAll(\'.nav-tab\')['+x[3]+']':'null'});closeMod('search-modal')"><i class="ti ${x[1]}"></i> ${x[2]}</div>`).join('');
-}
-function liveSearch(q) {
-  var res = document.getElementById('search-res');
-  if (!q.trim()) { initSR(); return; }
-  var cl = clientsList.filter(c => c.name.toLowerCase().includes(q.toLowerCase()) || c.id.toLowerCase().includes(q.toLowerCase()));
-  var screens = [['dashboard','ti-layout-dashboard','Dashboard',0],['new-note','ti-edit','New Note',1],
-    ['notes','ti-files','All Notes'],['clients','ti-users','Clients'],['compliance','ti-shield-check','Compliance'],
-    ['reports','ti-chart-bar','Reports'],['scheduler','ti-calendar','Scheduler'],
-    ['analytics','ti-chart-line','Analytics'],['treatment-plans','ti-clipboard-heart','Treatment Plans'],
-    ['referrals','ti-git-branch','Referrals'],['billing','ti-cash','Billing'],
-    ['insurance','ti-building-bank','Insurance'],['ceo','ti-chart-pie','Executive View']
-  ].filter(s => s[2].toLowerCase().includes(q.toLowerCase()));
-  var h = '';
-  if (cl.length) h += '<div class="sr-sec">Clients</div>' + cl.map(c => `<div class="sr-item" onclick="closeMod('search-modal');showToast('Opening: ${c.name}')"><i class="ti ti-user"></i> ${c.name} <span style="color:var(--text-light);font-size:12px;margin-left:.5rem;">${c.id}</span></div>`).join('');
-  if (screens.length) h += '<div class="sr-sec">Screens</div>' + screens.map(s => `<div class="sr-item" onclick="go('${s[0]}',${s[3]!==undefined?'document.querySelectorAll(\'.nav-tab\')['+s[3]+']':'null'});closeMod('search-modal')"><i class="ti ${s[1]}"></i> ${s[2]}</div>`).join('');
-  if (!h) h = '<div style="text-align:center;padding:1.5rem;color:var(--text-light);font-size:14px;">No results for "' + q + '"</div>';
-  res.innerHTML = h;
-}
+function goBack(){go('dashboard',document.querySelectorAll('.nav-tab')[0]);}
+function signOut(){window.location.replace('/login');}
 
-// ── NOTIFICATIONS ──
-function clearNotifs() {
-  document.querySelectorAll('.ni').forEach(n => n.style.opacity = '.4');
-  showToast('All notifications marked as read');
-}
-
-// ── EXTENDED DATA ──
-var clientsList = [
+// ── DATA ──
+var clientsList=[
   {id:'CLT-001',name:'Marcus Johnson',dob:'Mar 14, 1988',ins:'BlueCross',clin:'Dr. Rivera',status:'Active'},
   {id:'CLT-002',name:'Tanya Williams',dob:'Jul 22, 1995',ins:'Medicaid',clin:'Sarah Mitchell',status:'Active'},
   {id:'CLT-003',name:'Kevin Davis',dob:'Nov 5, 1979',ins:'Aetna',clin:'James Kim',status:'Active'},
   {id:'CLT-004',name:'Angela Torres',dob:'Feb 18, 2001',ins:'United',clin:'Aisha Brown',status:'Inactive'}
 ];
-try { var _sc = JSON.parse(localStorage.getItem('ns_clients')); if (_sc && _sc.length) clientsList = _sc; } catch(e) {}
-
-var appts = [];
-try { appts = JSON.parse(localStorage.getItem('ns_appts') || '[]'); } catch(e) {}
-
-var clinData = [
-  {name:'Sarah Mitchell, LCSW', notes:24, pct:100, claims:20, pending:0, bar:'fill-green'},
-  {name:'Dr. Rivera, PsyD',     notes:18, pct:96,  claims:16, pending:0, bar:'fill-green'},
-  {name:'James Kim, LPC',       notes:15, pct:83,  claims:12, pending:2, bar:'fill-amber'},
-  {name:'Aisha Brown, LCPC',    notes:12, pct:71,  claims:9,  pending:1, bar:'fill-red'}
+try{var _c=JSON.parse(localStorage.getItem('ns_clients'));if(_c&&_c.length)clientsList=_c;}catch(e){}
+var appts=[];
+try{appts=JSON.parse(localStorage.getItem('ns_appts')||'[]');}catch(e){}
+var clinData=[
+  {name:'Sarah Mitchell, LCSW',notes:24,pct:100,claims:20,pending:0},
+  {name:'Dr. Rivera, PsyD',notes:18,pct:96,claims:16,pending:0},
+  {name:'James Kim, LPC',notes:15,pct:83,claims:12,pending:2},
+  {name:'Aisha Brown, LCPC',notes:12,pct:71,claims:9,pending:1}
 ];
+var calY=new Date().getFullYear(),calM=new Date().getMonth(),selDay=null;
 
-// ── DASHBOARD EXTENDED INIT ──
-function initDashExtended() {
-  var now = new Date(), h = now.getHours();
-  var g = h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
-  var el = document.getElementById('greeting-title');
-  if (el) el.textContent = g + ', Dr. Rivera.';
-  var de = document.getElementById('todays-date');
-  if (de) de.textContent = now.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
+// ── DASHBOARD ──
+function initDash(){
+  var now=new Date(),h=now.getHours();
+  var g=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
+  var el=document.getElementById('greeting-title');if(el)el.textContent=g+', Dr. Rivera.';
+  var de=document.getElementById('todays-date');
+  if(de)de.textContent=now.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
 }
 
-// ── ALL NOTES ──
-function getNotes() { try { return JSON.parse(localStorage.getItem('ns_notes') || '[]'); } catch(e) { return []; } }
-function renderAllNotes(q, st) {
-  var tbody = document.getElementById('notes-tbody'); if (!tbody) return;
-  var notes = getNotes();
-  var demo = [
-    {client:'Johnson, M.', clin:'Dr. Rivera',     date:'Jun 7, 2026', fmt:'SOAP',  dsm:'F41.1', st:'Pending review', badge:'badge-draft'},
-    {client:'Williams, T.',clin:'Sarah Mitchell', date:'Jun 7, 2026', fmt:'DAP',   dsm:'F32.1', st:'Approved',        badge:'badge-done'},
-    {client:'Davis, K.',   clin:'James Kim',      date:'Jun 5, 2026', fmt:'BIRP',  dsm:'F43.10',st:'Overdue',         badge:'badge-off'}
+// ── NOTES ──
+function getNotes(){try{return JSON.parse(localStorage.getItem('ns_notes')||'[]');}catch(e){return[];}}
+function renderAllNotes(q,st){
+  var tbody=document.getElementById('notes-tbody');if(!tbody)return;
+  var notes=getNotes();
+  var demo=[
+    {client:'Johnson, M.',clin:'Dr. Rivera',date:'Jun 7, 2026',fmt:'SOAP',dsm:'F41.1',st:'Pending review',badge:'badge-draft'},
+    {client:'Williams, T.',clin:'Sarah Mitchell',date:'Jun 7, 2026',fmt:'DAP',dsm:'F32.1',st:'Approved',badge:'badge-done'},
+    {client:'Davis, K.',clin:'James Kim',date:'Jun 5, 2026',fmt:'BIRP',dsm:'F43.10',st:'Overdue',badge:'badge-off'}
   ];
-  var disp = notes.length ? notes.map(n => ({client:n.client||'Unknown', clin:'Dr. Rivera', date:n.date||'Jun 7, 2026', fmt:n.format||'SOAP', dsm:n.dsm||'—', st:'Approved', badge:'badge-done'})) : demo;
-  if (q) disp = disp.filter(n => n.client.toLowerCase().includes(q.toLowerCase()));
-  if (st) disp = disp.filter(n => n.st === st);
-  tbody.innerHTML = disp.length
-    ? disp.map(n => `<tr onclick="openViewNote('${n.client}','${n.fmt}','${n.dsm}')"><td>${n.client}</td><td>${n.clin}</td><td>${n.date}</td><td>${n.fmt}</td><td>${n.dsm}</td><td><span class="${n.badge}">${n.st}</span></td><td><button class="t-btn" onclick="event.stopPropagation();openViewNote('${n.client}','${n.fmt}','${n.dsm}')">View</button></td></tr>`).join('')
-    : '<tr><td colspan="7" style="text-align:center;padding:2rem;color:var(--text-light);">No notes found.</td></tr>';
+  var disp=notes.length?notes.map(function(n){return{client:n.client||'Unknown',clin:'Dr. Rivera',date:n.date||'Jun 7',fmt:n.format||'SOAP',dsm:n.dsm||'--',st:'Approved',badge:'badge-done'};}):demo;
+  if(q)disp=disp.filter(function(n){return n.client.toLowerCase().includes(q.toLowerCase());});
+  if(st)disp=disp.filter(function(n){return n.st===st;});
+  tbody.innerHTML=disp.length?disp.map(function(n){
+    return '<tr onclick="openViewNote(\''+n.client+'\',\''+n.fmt+'\',\''+n.dsm+'\')"><td>'+n.client+'</td><td>'+n.clin+'</td><td>'+n.date+'</td><td>'+n.fmt+'</td><td>'+n.dsm+'</td><td><span class="'+n.badge+'">'+n.st+'</span></td><td><button class="t-btn" onclick="event.stopPropagation();openViewNote(\''+n.client+'\',\''+n.fmt+'\',\''+n.dsm+'\')">View</button></td></tr>';
+  }).join(''):'<tr><td colspan="7" style="text-align:center;padding:2rem;color:var(--text-light);">No notes.</td></tr>';
 }
-function filterNotesSt(st) { renderAllNotes('', st); }
-function openViewNote(client, fmt, dsm) {
-  document.getElementById('view-note-body').innerHTML = `
-    <div style="background:var(--plaster);border-radius:10px;padding:.85rem 1rem;margin-bottom:1rem;font-size:13px;display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;">
-      <div><span style="color:var(--text-soft);">Client:</span> <strong>${client}</strong></div>
-      <div><span style="color:var(--text-soft);">Format:</span> <strong>${fmt}</strong></div>
-      <div><span style="color:var(--text-soft);">Diagnosis:</span> <strong>${dsm}</strong></div>
-    </div>
-    <div class="nfb-lbl">Subjective</div>
-    <div class="nfb-txt">Client presented with symptoms consistent with diagnosis. Client denied suicidal or homicidal ideation and reported moderate improvement since the previous session.</div>
-    <div class="nfb-lbl">Objective</div>
-    <div class="nfb-txt">Client was cooperative and engaged. Affect was congruent with reported mood. Speech was clear and goal-directed.</div>
-    <div class="nfb-lbl">Assessment</div>
-    <div class="nfb-txt">Client demonstrated progress toward treatment goals. Therapeutic interventions were effective.</div>
-    <div class="nfb-lbl">Plan</div>
-    <div class="nfb-txt">Continue current treatment plan. Homework assigned. Follow-up scheduled in two weeks.</div>`;
+function openViewNote(client,fmt,dsm){
+  document.getElementById('view-note-body').innerHTML=
+    '<div style="background:var(--plaster);border-radius:10px;padding:.85rem 1rem;margin-bottom:1rem;font-size:13px;display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;">'
+    +'<div><span style="color:var(--text-soft);">Client:</span> <strong>'+client+'</strong></div>'
+    +'<div><span style="color:var(--text-soft);">Format:</span> <strong>'+fmt+'</strong></div>'
+    +'<div><span style="color:var(--text-soft);">Diagnosis:</span> <strong>'+dsm+'</strong></div></div>'
+    +'<div class="nfb-lbl">Subjective</div><div class="nfb-txt">Client presented consistently with diagnosis. Denied suicidal or homicidal ideation. Reported moderate improvement.</div>'
+    +'<div class="nfb-lbl">Objective</div><div class="nfb-txt">Cooperative and engaged. Affect congruent with mood. Speech clear and goal-directed.</div>'
+    +'<div class="nfb-lbl">Assessment</div><div class="nfb-txt">Demonstrated progress toward treatment goals. Interventions effective.</div>'
+    +'<div class="nfb-lbl">Plan</div><div class="nfb-txt">Continue treatment plan. Homework assigned. Follow-up in two weeks.</div>';
   openMod('view-note-modal');
 }
 
 // ── CLIENTS ──
-function renderClientTable(q) {
-  var tbody = document.getElementById('clients-tbody'); if (!tbody) return;
-  var disp = q ? clientsList.filter(c => c.name.toLowerCase().includes(q.toLowerCase()) || c.id.toLowerCase().includes(q.toLowerCase())) : clientsList;
-  tbody.innerHTML = disp.map(c => `<tr onclick="showToast('Opening record: ${c.name}')"><td>${c.name}</td><td>${c.id}</td><td>${c.dob}</td><td>${c.ins}</td><td>${c.clin}</td><td>Jun 7, 2026</td><td><span class="badge ${c.status==='Active'?'badge-done':'badge-off'}">${c.status}</span></td></tr>`).join('');
+function renderClientTable(q){
+  var tbody=document.getElementById('clients-tbody');if(!tbody)return;
+  var disp=q?clientsList.filter(function(c){return c.name.toLowerCase().includes(q.toLowerCase())||c.id.toLowerCase().includes(q.toLowerCase());}):clientsList;
+  tbody.innerHTML=disp.map(function(c){
+    return '<tr onclick="showToast(\'Opening: '+c.name+'\')" style="cursor:pointer;"><td>'+c.name+'</td><td>'+c.id+'</td><td>'+c.dob+'</td><td>'+c.ins+'</td><td>'+c.clin+'</td><td>Jun 7, 2026</td><td><span class="badge '+(c.status==='Active'?'badge-done':'badge-off')+'">'+c.status+'</span></td></tr>';
+  }).join('');
 }
-function saveNewClient() {
-  var f = document.getElementById('nc-first')?.value?.trim();
-  var l = document.getElementById('nc-last')?.value?.trim();
-  if (!f || !l) { showToast('Please enter first and last name'); return; }
-  var id = 'CLT-' + (100 + clientsList.length + 1);
-  clientsList.push({id, name:f+' '+l, dob:document.getElementById('nc-dob')?.value||'—', ins:document.getElementById('nc-ins')?.value||'—', clin:document.getElementById('nc-clin')?.value, status:'Active'});
-  try { localStorage.setItem('ns_clients', JSON.stringify(clientsList)); } catch(e) {}
-  closeMod('new-client-modal');
-  renderClientTable();
-  showToast(f + ' ' + l + ' added (' + id + ')');
+function saveNewClient(){
+  var f=document.getElementById('nc-first').value.trim(),l=document.getElementById('nc-last').value.trim();
+  if(!f||!l){showToast('Enter first and last name');return;}
+  var id='CLT-'+(100+clientsList.length+1);
+  clientsList.push({id:id,name:f+' '+l,dob:document.getElementById('nc-dob').value||'--',ins:document.getElementById('nc-ins').value||'--',clin:document.getElementById('nc-clin').value,status:'Active'});
+  try{localStorage.setItem('ns_clients',JSON.stringify(clientsList));}catch(e){}
+  closeMod('new-client-modal');renderClientTable();showToast(f+' '+l+' added ('+id+')');
+  document.getElementById('nc-first').value='';document.getElementById('nc-last').value='';
 }
 
 // ── COMPLIANCE ──
-function renderCompliance() {
-  var el = document.getElementById('compliance-rows'); if (!el) return;
-  el.innerHTML = clinData.map(d => `
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:10px;margin-bottom:6px;background:var(--plaster);border:1px solid var(--stone-pale);">
-      <span style="font-weight:600;font-size:14px;">${d.name}</span>
-      <div style="display:flex;align-items:center;gap:.75rem;">
-        <span style="font-size:15px;font-weight:700;color:${d.pct>=90?'var(--green)':d.pct>=80?'var(--amber)':'var(--red)'};">${d.pct}%</span>
-        <div style="width:130px;height:6px;background:var(--stone-faint);border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;width:${d.pct}%;background:${d.pct>=90?'var(--green)':d.pct>=80?'var(--amber)':'var(--red)'};" ></div></div>
-        <span class="badge ${d.pct>=90?'badge-done':d.pct>=80?'badge-draft':'badge-off'}">${d.pct>=90?'Compliant':d.pct>=80?'1 overdue':'2 overdue'}</span>
-      </div>
-    </div>`).join('');
+function renderCompliance(){
+  var el=document.getElementById('compliance-rows');if(!el)return;
+  el.innerHTML=clinData.map(function(d){
+    var col=d.pct>=90?'var(--green)':d.pct>=80?'var(--amber)':'var(--red)';
+    var badge=d.pct>=90?'badge-done':d.pct>=80?'badge-draft':'badge-off';
+    var lbl=d.pct>=90?'Compliant':d.pct>=80?'1 overdue':'2 overdue';
+    return '<div style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:10px;margin-bottom:6px;background:var(--plaster);border:1px solid var(--stone-pale);">'
+      +'<span style="font-weight:600;font-size:14px;">'+d.name+'</span>'
+      +'<div style="display:flex;align-items:center;gap:.75rem;">'
+      +'<span style="font-size:15px;font-weight:700;color:'+col+';">'+d.pct+'%</span>'
+      +'<div style="width:130px;height:6px;background:var(--stone-faint);border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;width:'+d.pct+'%;background:'+col+';"></div></div>'
+      +'<span class="badge '+badge+'">'+lbl+'</span></div></div>';
+  }).join('');
 }
 
 // ── REPORTS ──
-function renderReports() {
-  var el = document.getElementById('report-cards'); if (!el) return;
-  el.innerHTML = clinData.map(c => `
-    <div class="card">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem;">
-        <div><div style="font-size:15px;font-weight:700;">${c.name}</div><div style="font-size:13px;color:var(--text-soft);">June 2026</div></div>
-        <div style="display:flex;gap:.6rem;align-items:center;">
-          <button class="btn-secondary" style="padding:8px 14px;font-size:13px;" onclick="downloadReport('${c.name}')"><i class="ti ti-download"></i> PDF</button>
-          <span class="badge ${c.pct>=90?'badge-done':c.pct>=80?'badge-draft':'badge-off'}">${c.pct}%</span>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.75rem;">
-        ${[['Notes',c.notes],['On-time',c.pct+'%'],['Claims',c.claims],['Pending',c.pending]].map(v=>`<div style="background:var(--plaster);border-radius:8px;padding:.6rem .75rem;text-align:center;"><div style="font-size:1.2rem;font-weight:700;">${v[1]}</div><div style="font-size:11px;color:var(--text-soft);margin-top:2px;">${v[0]}</div></div>`).join('')}
-      </div>
-      <div style="height:6px;background:var(--stone-faint);border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;width:${c.pct}%;background:${c.pct>=90?'var(--green)':c.pct>=80?'var(--amber)':'var(--red)'};" ></div></div>
-    </div>`).join('');
+function renderReports(){
+  var el=document.getElementById('report-cards');if(!el)return;
+  el.innerHTML=clinData.map(function(c){
+    var col=c.pct>=90?'var(--green)':c.pct>=80?'var(--amber)':'var(--red)';
+    var badge=c.pct>=90?'badge-done':c.pct>=80?'badge-draft':'badge-off';
+    return '<div class="card"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem;"><div><div style="font-size:15px;font-weight:700;">'+c.name+'</div><div style="font-size:13px;color:var(--text-soft);">June 2026</div></div>'
+      +'<div style="display:flex;gap:.6rem;align-items:center;"><button class="btn-secondary" style="padding:8px 14px;font-size:13px;" onclick="dlReport(\''+c.name+'\')"><i class="ti ti-download"></i> PDF</button><span class="badge '+badge+'">'+c.pct+'%</span></div></div>'
+      +'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.75rem;">'
+      +[['Notes',c.notes],['On-time',c.pct+'%'],['Claims',c.claims],['Pending',c.pending]].map(function(v){return '<div style="background:var(--plaster);border-radius:8px;padding:.6rem .75rem;text-align:center;"><div style="font-size:1.2rem;font-weight:700;">'+v[1]+'</div><div style="font-size:11px;color:var(--text-soft);margin-top:2px;">'+v[0]+'</div></div>';}).join('')
+      +'</div><div style="height:6px;background:var(--stone-faint);border-radius:3px;overflow:hidden;"><div style="height:100%;border-radius:3px;width:'+c.pct+'%;background:'+col+';"></div></div></div>';
+  }).join('');
 }
-function downloadReport(name) {
-  var c = clinData.find(x => x.name.includes(name.split(' ')[0])) || clinData[0];
-  var w = window.open('','_blank');
-  var today = new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
-  w.document.write('<!DOCTYPE html><html><head><title>Report</title><style>body{font-family:Arial,sans-serif;padding:28px;font-size:13px;}h1{font-size:18px;}table{width:100%;border-collapse:collapse;margin-top:16px;}th{background:#F6F4F0;border:1px solid #D8D4CC;padding:7px 9px;text-align:left;}td{border:1px solid #D8D4CC;padding:7px 9px;}.np{text-align:center;margin-top:20px;}</style></head><body><h1>NarraScribe — Performance Report</h1><p>Clinician: <strong>'+name+'</strong> · '+today+'</p><table><thead><tr><th>Date</th><th>Client</th><th>Format</th><th>On time</th><th>Status</th></tr></thead><tbody><tr><td>Jun 7, 2026</td><td>CLT-001</td><td>SOAP</td><td>Yes — 4 hrs</td><td>Approved</td></tr></tbody></table><div class="np"><button onclick="window.print()" style="padding:12px 26px;background:#1E1C18;color:#8AAECE;border:none;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;">Print / Save PDF</button></div></body></html>');
+function dlReport(name){
+  var w=window.open('','_blank');
+  w.document.write('<!DOCTYPE html><html><head><title>Report</title><style>body{font-family:Arial,sans-serif;padding:28px;}table{width:100%;border-collapse:collapse;}th,td{border:1px solid #ccc;padding:8px;text-align:left;}.btn{margin-top:16px;padding:12px 24px;background:#1E1C18;color:#8AAECE;border:none;border-radius:8px;cursor:pointer;font-size:14px;}</style></head><body><h1>NarraScribe Report — '+name+'</h1><p>'+new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})+'</p><table><thead><tr><th>Date</th><th>Client</th><th>Format</th><th>Status</th></tr></thead><tbody><tr><td>Jun 7, 2026</td><td>CLT-001</td><td>SOAP</td><td>Approved</td></tr></tbody></table><button class="btn" onclick="window.print()">Print / Save PDF</button></body></html>');
   w.document.close();
 }
-function downloadAllReports() {
-  showToast('Generating all reports...');
-  clinData.forEach((c,i) => setTimeout(() => downloadReport(c.name), i * 600));
-}
+function downloadAllReports(){showToast('Generating all reports...');clinData.forEach(function(c,i){setTimeout(function(){dlReport(c.name);},i*600);});}
 
 // ── CALENDAR ──
-var calY = new Date().getFullYear(), calM = new Date().getMonth(), selDay = null;
-function renderCal() {
-  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  var lbl = document.getElementById('cal-lbl'); if (lbl) lbl.textContent = months[calM] + ' ' + calY;
-  var grid = document.getElementById('cal-grid'); if (!grid) return;
-  var first = new Date(calY, calM, 1).getDay();
-  var days  = new Date(calY, calM+1, 0).getDate();
-  var today = new Date();
-  var html = '';
-  for (var i = 0; i < first; i++) html += '<div class="cal-cell other-m"></div>';
-  for (var d = 1; d <= days; d++) {
-    var ds = calY + '-' + String(calM+1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
-    var cls = 'cal-cell' +
-      (d===today.getDate() && calM===today.getMonth() && calY===today.getFullYear() ? ' today' : '') +
-      (selDay===d ? ' selected' : '') +
-      (appts.some(a=>a.date===ds) && selDay!==d ? ' has-appt' : '');
-    html += `<div class="${cls}" onclick="selCalDay(${d})">${d}</div>`;
+function renderCal(){
+  var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var lbl=document.getElementById('cal-lbl');if(lbl)lbl.textContent=months[calM]+' '+calY;
+  var grid=document.getElementById('cal-grid');if(!grid)return;
+  var first=new Date(calY,calM,1).getDay(),days=new Date(calY,calM+1,0).getDate(),today=new Date();
+  var html='';
+  for(var i=0;i<first;i++)html+='<div class="cal-cell other-m"></div>';
+  for(var d=1;d<=days;d++){
+    var ds=calY+'-'+String(calM+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+    var cls='cal-cell'+(d===today.getDate()&&calM===today.getMonth()&&calY===today.getFullYear()?' today':'')+(selDay===d?' selected':'')+(appts.some(function(a){return a.date===ds;})&&selDay!==d?' has-appt':'');
+    html+='<div class="'+cls+'" onclick="selCalDay('+d+')">'+d+'</div>';
   }
-  grid.innerHTML = html;
-  renderApptList();
+  grid.innerHTML=html;renderApptList();
 }
-function calPrev() { calM--; if (calM<0){calM=11;calY--;} renderCal(); }
-function calNext() { calM++; if (calM>11){calM=0;calY++;} renderCal(); }
-function selCalDay(d) { selDay = d; renderCal(); }
-function renderApptList() {
-  var list = document.getElementById('appt-list');
-  var lbl  = document.getElementById('appt-lbl');
-  if (!list) return;
-  var ds = selDay ? calY+'-'+String(calM+1).padStart(2,'0')+'-'+String(selDay).padStart(2,'0') : new Date().toISOString().split('T')[0];
-  var filtered = appts.filter(a => a.date === ds);
-  if (lbl) lbl.textContent = 'Appointments — ' + (selDay ? new Date(ds+'T12:00').toLocaleDateString('en-US',{month:'short',day:'numeric'}) : 'Today');
-  list.innerHTML = filtered.length
-    ? filtered.map(a => `<div class="n-row" style="margin-bottom:.4rem;"><div class="row-info"><div class="row-name">${a.name}</div><div class="row-meta">${a.time||'—'} · ${a.clin||'Dr. Rivera'}</div></div></div>`).join('')
-    : '<div style="text-align:center;padding:1.5rem;color:var(--text-light);font-size:14px;">No appointments.<br><span style="color:var(--blue-deep);cursor:pointer;font-weight:600;" onclick="openMod('appt-modal')">Schedule one</span></div>';
+function calPrev(){calM--;if(calM<0){calM=11;calY--;}renderCal();}
+function calNext(){calM++;if(calM>11){calM=0;calY++;}renderCal();}
+function selCalDay(d){selDay=d;renderCal();}
+function renderApptList(){
+  var list=document.getElementById('appt-list'),lbl=document.getElementById('appt-lbl');if(!list)return;
+  var ds=selDay?calY+'-'+String(calM+1).padStart(2,'0')+'-'+String(selDay).padStart(2,'0'):new Date().toISOString().split('T')[0];
+  var f=appts.filter(function(a){return a.date===ds;});
+  if(lbl)lbl.textContent='Appointments \u2014 '+(selDay?new Date(ds+'T12:00').toLocaleDateString('en-US',{month:'short',day:'numeric'}):'Today');
+  list.innerHTML=f.length?f.map(function(a){return '<div class="n-row" style="margin-bottom:.4rem;"><div class="row-info"><div class="row-name">'+a.name+'</div><div class="row-meta">'+(a.time||'--')+' \u00b7 '+(a.clin||'Dr. Rivera')+'</div></div></div>';}).join(''):'<div style="text-align:center;padding:1.5rem;color:var(--text-light);font-size:14px;">No appointments.<br><span style="color:var(--blue-deep);cursor:pointer;font-weight:600;" onclick="openMod(\'appt-modal\')">Schedule one</span></div>';
 }
-function saveAppt() {
-  var name = document.getElementById('appt-name')?.value?.trim();
-  var date = document.getElementById('appt-date')?.value;
-  if (!name || !date) { showToast('Enter client name and date'); return; }
-  var a = {id:'a'+Date.now(), name, date, time:document.getElementById('appt-time')?.value, clin:document.getElementById('appt-clin')?.value};
-  appts.push(a);
-  try { localStorage.setItem('ns_appts', JSON.stringify(appts)); } catch(e) {}
-  closeMod('appt-modal');
-  renderCal();
-  showToast('Appointment scheduled for ' + name);
-  document.getElementById('appt-name').value = '';
+function saveAppt(){
+  var name=document.getElementById('appt-name').value.trim(),date=document.getElementById('appt-date').value;
+  if(!name||!date){showToast('Enter client name and date');return;}
+  appts.push({id:'a'+Date.now(),name:name,date:date,time:document.getElementById('appt-time').value,clin:document.getElementById('appt-clin').value});
+  try{localStorage.setItem('ns_appts',JSON.stringify(appts));}catch(e){}
+  closeMod('appt-modal');renderCal();showToast('Appointment scheduled for '+name);
+  document.getElementById('appt-name').value='';
 }
 
 // ── CLINICIAN MODAL ──
-function openClinMod(name) {
-  var c = clinData.find(x => x.name.includes(name.split(' ')[0])) || clinData[1];
-  document.getElementById('clin-modal-body').innerHTML = `
-    <div style="display:flex;align-items:center;gap:.85rem;margin-bottom:1.1rem;padding:.9rem;background:var(--plaster);border-radius:10px;">
-      <div class="avatar" style="width:46px;height:46px;border-radius:12px;font-size:17px;">${name.split(' ').map(n=>n[0]).join('').slice(0,2)}</div>
-      <div><div style="font-size:16px;font-weight:700;">${c.name}</div><div style="font-size:13px;color:var(--text-soft);">Active clinician</div></div>
-      <span class="badge ${c.pct>=90?'badge-done':'badge-draft'}" style="margin-left:auto;">${c.pct}%</span>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;font-size:13px;">
-      <div style="background:var(--plaster);border-radius:8px;padding:.65rem .9rem;"><span style="color:var(--text-soft);">Notes this month:</span> <strong>${c.notes}</strong></div>
-      <div style="background:var(--plaster);border-radius:8px;padding:.65rem .9rem;"><span style="color:var(--text-soft);">Claims filed:</span> <strong>${c.claims}</strong></div>
-      <div style="background:var(--plaster);border-radius:8px;padding:.65rem .9rem;"><span style="color:var(--text-soft);">On-time rate:</span> <strong>${c.pct}%</strong></div>
-      <div style="background:var(--plaster);border-radius:8px;padding:.65rem .9rem;"><span style="color:var(--text-soft);">Pending sign-off:</span> <strong>${c.pending}</strong></div>
-    </div>`;
+function openClinMod(name){
+  var c=clinData.find(function(x){return x.name.includes(name.split(' ')[0]);})||clinData[1];
+  var badge=c.pct>=90?'badge-done':'badge-draft';
+  document.getElementById('clin-modal-body').innerHTML=
+    '<div style="display:flex;align-items:center;gap:.85rem;margin-bottom:1.1rem;padding:.9rem;background:var(--plaster);border-radius:10px;">'
+    +'<div class="avatar" style="width:46px;height:46px;border-radius:12px;font-size:17px;">'+name.split(' ').map(function(n){return n[0];}).join('').slice(0,2)+'</div>'
+    +'<div><div style="font-size:16px;font-weight:700;">'+c.name+'</div><div style="font-size:13px;color:var(--text-soft);">Active clinician</div></div>'
+    +'<span class="badge '+badge+'" style="margin-left:auto;">'+c.pct+'%</span></div>'
+    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;font-size:13px;">'
+    +'<div style="background:var(--plaster);border-radius:8px;padding:.65rem .9rem;"><span style="color:var(--text-soft);">Notes:</span> <strong>'+c.notes+'</strong></div>'
+    +'<div style="background:var(--plaster);border-radius:8px;padding:.65rem .9rem;"><span style="color:var(--text-soft);">Claims:</span> <strong>'+c.claims+'</strong></div>'
+    +'<div style="background:var(--plaster);border-radius:8px;padding:.65rem .9rem;"><span style="color:var(--text-soft);">On-time:</span> <strong>'+c.pct+'%</strong></div>'
+    +'<div style="background:var(--plaster);border-radius:8px;padding:.65rem .9rem;"><span style="color:var(--text-soft);">Pending:</span> <strong>'+c.pending+'</strong></div></div>';
   openMod('clin-modal');
 }
 
 // ── ASSESSMENTS ──
-function openAssess(name, full, desc) {
-  document.getElementById('assess-title').innerHTML = name + ' — ' + full + ' <button class="modal-x" onclick="closeMod('assess-modal')">&#10005;</button>';
-  var qs = [{q:'Little interest or pleasure in doing things'},{q:'Feeling down, depressed, or hopeless'},{q:'Trouble falling or staying asleep'},{q:'Feeling tired or having little energy'},{q:'Poor appetite or overeating'}];
-  var opts = ['Not at all','Several days','More than half the days','Nearly every day'];
-  document.getElementById('assess-qs').innerHTML = '<div style="font-size:13px;color:var(--text-soft);margin-bottom:1rem;">' + desc + '</div>' +
-    qs.map((q,i) => `<div style="margin-bottom:1rem;"><div style="font-size:14px;font-weight:600;margin-bottom:.5rem;">${i+1}. ${q.q}</div><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:.35rem;">${opts.map((r,j) => `<label style="display:flex;align-items:center;gap:7px;font-size:13px;cursor:pointer;padding:.4rem .55rem;border-radius:7px;border:1px solid var(--stone-pale);"><input type="radio" name="aq${i}" value="${j}" style="accent-color:var(--blue-deep);"> ${r}</label>`).join('')}</div></div>`).join('');
+function openAssess(name,full,desc){
+  document.getElementById('assess-title').innerHTML=name+' \u2014 '+full+' <button class="modal-x" onclick="closeMod(\'assess-modal\')">&#10005;</button>';
+  var qs=[{q:'Little interest or pleasure in doing things'},{q:'Feeling down, depressed, or hopeless'},{q:'Trouble falling or staying asleep'},{q:'Feeling tired or having little energy'},{q:'Poor appetite or overeating'}];
+  var opts=['Not at all','Several days','More than half','Nearly every day'];
+  document.getElementById('assess-qs').innerHTML='<div style="font-size:13px;color:var(--text-soft);margin-bottom:1rem;">'+desc+'</div>'+qs.map(function(q,i){return '<div style="margin-bottom:1rem;"><div style="font-size:14px;font-weight:600;margin-bottom:.5rem;">'+(i+1)+'. '+q.q+'</div><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:.35rem;">'+opts.map(function(r,j){return '<label style="display:flex;align-items:center;gap:7px;font-size:13px;cursor:pointer;padding:.4rem .55rem;border-radius:7px;border:1px solid var(--stone-pale);"><input type="radio" name="aq'+i+'" value="'+j+'" style="accent-color:var(--blue-deep);"> '+r+'</label>';}).join('')+'</div></div>';}).join('');
   openMod('assess-modal');
 }
-function submitAssess() { closeMod('assess-modal'); showToast('Assessment submitted and scored'); }
+function submitAssess(){closeMod('assess-modal');showToast('Assessment submitted and scored');}
+
+// ── TREATMENT PLANS ──
+function saveTP(){
+  var c=document.getElementById('tp-client').value.trim();
+  if(!c){showToast('Enter client name');return;}
+  closeMod('tp-modal');showToast('Treatment plan created for '+c);
+}
 
 // ── INTAKE ──
-function saveIntake() {
-  var f = document.getElementById('in-first')?.value?.trim();
-  var l = document.getElementById('in-last')?.value?.trim();
-  if (!f || !l) { showToast('Please enter client name'); return; }
-  showToast('Intake saved for ' + f + ' ' + l);
+function saveIntake(){
+  var f=document.getElementById('in-first').value.trim(),l=document.getElementById('in-last').value.trim();
+  if(!f||!l){showToast('Enter client name');return;}
+  showToast('Intake saved for '+f+' '+l);
 }
-function clearIntake() {
-  document.querySelectorAll('#screen-intake input,#screen-intake select,#screen-intake textarea')
-    .forEach(el => { if (el.type==='checkbox') el.checked=false; else if (el.tagName==='SELECT') el.selectedIndex=0; else el.value=''; });
+function clearIntake(){
+  document.querySelectorAll('#screen-intake input,#screen-intake select,#screen-intake textarea').forEach(function(el){if(el.type==='checkbox')el.checked=false;else if(el.tagName==='SELECT')el.selectedIndex=0;else el.value='';});
   showToast('Form cleared');
 }
 
-// ── TREATMENT PLANS ──
-function saveTP() {
-  var c = document.getElementById('tp-client')?.value?.trim();
-  if (!c) { showToast('Please enter client name'); return; }
-  closeMod('tp-modal');
-  showToast('Treatment plan created for ' + c);
-}
-
 // ── GROUP NOTES ──
-function addParticipant() {
-  var list = document.getElementById('participant-list'); if (!list) return;
-  var row = document.createElement('div');
-  row.style.cssText = 'display:flex;gap:.5rem;';
-  row.innerHTML = '<input type="text" class="form-input" placeholder="Client name or ID" style="flex:1;"><button class="t-btn danger" onclick="this.parentElement.remove()">&#10005;</button>';
-  list.appendChild(row);
-  row.querySelector('input').focus();
+function addParticipant(){
+  var list=document.getElementById('participant-list');if(!list)return;
+  var row=document.createElement('div');row.style.cssText='display:flex;gap:.5rem;';
+  row.innerHTML='<input type="text" class="form-input" placeholder="Client name or ID" style="flex:1;"><button class="t-btn danger" onclick="this.parentElement.remove()">&#10005;</button>';
+  list.appendChild(row);row.querySelector('input').focus();
 }
 
 // ── INSURANCE ──
-function verifyIns() {
-  var name = document.getElementById('ins-name')?.value?.trim();
-  var mid  = document.getElementById('ins-mid')?.value?.trim();
-  if (!name || !mid) { showToast('Enter client name and member ID'); return; }
-  showToast('Checking eligibility for ' + name + '...');
-  setTimeout(() => {
-    var r = document.getElementById('ins-result');
-    if (r) { r.style.display = 'block'; r.scrollIntoView({behavior:'smooth', block:'nearest'}); }
-    showToast('Coverage verified for ' + name);
-  }, 1500);
+function verifyIns(){
+  var name=document.getElementById('ins-name').value.trim(),mid=document.getElementById('ins-mid').value.trim();
+  if(!name||!mid){showToast('Enter client name and member ID');return;}
+  showToast('Checking eligibility for '+name+'...');
+  setTimeout(function(){
+    var r=document.getElementById('ins-result');
+    if(r){r.style.display='block';r.scrollIntoView({behavior:'smooth',block:'nearest'});}
+    showToast('Coverage verified for '+name);
+  },1500);
 }
 
 // ── CRM ──
-function initCrm() {
-  var list = document.getElementById('crm-list'); if (!list) return;
-  list.innerHTML = clientsList.map((c,i) => `
-    <div onclick="selCrm(this,'${c.name}','${c.id}')" style="padding:.7rem .85rem;border-radius:9px;cursor:pointer;border:1px solid ${i===0?'var(--blue-soft)':'transparent'};background:${i===0?'var(--blue-faint)':'transparent'};margin-bottom:.3rem;transition:all .12s;"
-      onmouseover="if(!this.style.borderColor.includes('127'))this.style.background='var(--plaster)'"
-      onmouseout="if(!this.style.borderColor.includes('127'))this.style.background='transparent'">
-      <div style="font-size:14px;font-weight:600;">${c.name}</div>
-      <div style="font-size:12px;color:var(--text-soft);">${c.id}</div>
-    </div>`).join('');
+function initCrm(){
+  var list=document.getElementById('crm-list');if(!list)return;
+  list.innerHTML=clientsList.map(function(c,i){
+    var sel=i===0;
+    return '<div onclick="selCrm(this,\''+c.name+'\',\''+c.id+'\')" style="padding:.7rem .85rem;border-radius:9px;cursor:pointer;border:1px solid '+(sel?'var(--blue-soft)':'transparent')+';background:'+(sel?'var(--blue-faint)':'transparent')+';margin-bottom:.3rem;transition:all .12s;" onmouseover="if(!this.classList.contains(\'sel-crm\'))this.style.background=\'var(--plaster)\'" onmouseout="if(!this.classList.contains(\'sel-crm\'))this.style.background=\'transparent\'">'
+      +'<div style="font-size:14px;font-weight:600;">'+c.name+'</div><div style="font-size:12px;color:var(--text-soft);">'+c.id+'</div></div>';
+  }).join('');
 }
-function filterCrmList(q) {
-  var list = document.getElementById('crm-list'); if (!list) return;
-  var fl = q ? clientsList.filter(c => c.name.toLowerCase().includes(q.toLowerCase())) : clientsList;
-  list.innerHTML = fl.map(c => `
-    <div onclick="selCrm(this,'${c.name}','${c.id}')" style="padding:.7rem .85rem;border-radius:9px;cursor:pointer;border:1px solid transparent;margin-bottom:.3rem;transition:all .12s;"
-      onmouseover="this.style.background='var(--plaster)'" onmouseout="this.style.background='transparent'">
-      <div style="font-size:14px;font-weight:600;">${c.name}</div>
-      <div style="font-size:12px;color:var(--text-soft);">${c.id}</div>
-    </div>`).join('');
+function filterCrmList(q){
+  var list=document.getElementById('crm-list');if(!list)return;
+  var fl=q?clientsList.filter(function(c){return c.name.toLowerCase().includes(q.toLowerCase());}):clientsList;
+  list.innerHTML=fl.map(function(c){return '<div onclick="selCrm(this,\''+c.name+'\',\''+c.id+'\')" style="padding:.7rem .85rem;border-radius:9px;cursor:pointer;border:1px solid transparent;margin-bottom:.3rem;" onmouseover="this.style.background=\'var(--plaster)\'" onmouseout="this.style.background=\'transparent\'"><div style="font-size:14px;font-weight:600;">'+c.name+'</div><div style="font-size:12px;color:var(--text-soft);">'+c.id+'</div></div>';}).join('');
 }
-function selCrm(el, name, id) {
-  document.querySelectorAll('#crm-list > div').forEach(d => { d.style.border='1px solid transparent'; d.style.background='transparent'; });
-  el.style.border = '1px solid var(--blue-soft)';
-  el.style.background = 'var(--blue-faint)';
-  var av = document.getElementById('crm-av'); if (av) av.textContent = name.split(' ').map(n=>n[0]).join('');
-  var nm = document.getElementById('crm-name'); if (nm) nm.textContent = name;
-  var mt = document.getElementById('crm-meta'); if (mt) mt.textContent = id + ' · Dr. Rivera';
+function selCrm(el,name,id){
+  document.querySelectorAll('#crm-list > div').forEach(function(d){d.style.border='1px solid transparent';d.style.background='transparent';});
+  el.style.border='1px solid var(--blue-soft)';el.style.background='var(--blue-faint)';
+  var av=document.getElementById('crm-av');if(av)av.textContent=name.split(' ').map(function(n){return n[0];}).join('');
+  var nm=document.getElementById('crm-name');if(nm)nm.textContent=name;
+  var mt=document.getElementById('crm-meta');if(mt)mt.textContent=id+' \u00b7 Dr. Rivera';
 }
-function saveCrmReminder() {
-  var inp = document.getElementById('crm-reminder-inp');
-  if (!inp || !inp.value.trim()) { showToast('Please enter a reminder'); return; }
-  var hist = document.getElementById('crm-history');
-  if (hist) {
-    var div = document.createElement('div');
-    div.style.cssText = 'background:var(--blue-mist);border-radius:8px;padding:.6rem .85rem;font-size:13px;border:1px solid var(--blue-pale);';
-    div.innerHTML = '<span style="font-weight:600;">Follow-up reminder</span><div style="color:var(--text-soft);">' + inp.value + '</div>';
-    hist.insertBefore(div, hist.firstChild);
-  }
-  showToast('Reminder saved');
-  inp.value = '';
+function saveCrmReminder(){
+  var inp=document.getElementById('crm-reminder-inp');
+  if(!inp||!inp.value.trim()){showToast('Enter a reminder');return;}
+  var hist=document.getElementById('crm-history');
+  if(hist){var div=document.createElement('div');div.style.cssText='background:var(--blue-mist);border-radius:8px;padding:.6rem .85rem;font-size:13px;border:1px solid var(--blue-pale);';div.innerHTML='<span style="font-weight:600;">Follow-up</span><div style="color:var(--text-soft);">'+inp.value+'</div>';hist.insertBefore(div,hist.firstChild);}
+  showToast('Reminder saved');inp.value='';
 }
 
-// ── KEYBOARD SHORTCUTS ──
-document.addEventListener('keydown', function(e) {
-  if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
-  if (e.key === 'Escape') { document.querySelectorAll('.modal-ov').forEach(m => m.classList.remove('open')); closeAllDrops(); }
+// ── SEARCH ──
+function openSearch(){
+  openMod('search-modal');
+  var inp=document.getElementById('search-inp');
+  if(inp){inp.value='';setTimeout(function(){inp.focus();},100);}
+  initSR();
+}
+function initSR(){
+  document.getElementById('search-res').innerHTML='<div class="sr-sec">Quick access</div>'+
+    [['dashboard','ti-layout-dashboard','Dashboard'],['new-note','ti-edit','New Note'],
+     ['therapists','ti-users','Therapists'],['settings','ti-settings','Settings'],
+     ['claims','ti-file-invoice','Claims'],['compliance','ti-shield-check','Compliance'],
+     ['reports','ti-chart-bar','Reports'],['notes','ti-files','All Notes'],
+     ['clients','ti-users','Clients'],['scheduler','ti-calendar','Scheduler'],
+     ['analytics','ti-chart-line','Analytics'],['treatment-plans','ti-clipboard-heart','Treatment Plans']
+    ].map(function(x){return '<div class="sr-item" onclick="go(\''+x[0]+'\',null);closeMod(\'search-modal\')"><i class="ti '+x[1]+'"></i> '+x[2]+'</div>';}).join('');
+}
+function liveSearch(q){
+  var res=document.getElementById('search-res');if(!res)return;
+  if(!q.trim()){initSR();return;}
+  var cl=clientsList.filter(function(c){return c.name.toLowerCase().includes(q.toLowerCase())||c.id.toLowerCase().includes(q.toLowerCase());});
+  var h=cl.length?'<div class="sr-sec">Clients</div>'+cl.map(function(c){return '<div class="sr-item" onclick="closeMod(\'search-modal\');showToast(\'Opening: '+c.name+'\')"><i class="ti ti-user"></i> '+c.name+' <span style="color:var(--text-light);font-size:12px;margin-left:.5rem;">'+c.id+'</span></div>';}).join(''):'<div style="text-align:center;padding:1.5rem;color:var(--text-light);">No results for &quot;'+q+'&quot;</div>';
+  res.innerHTML=h;
+}
+
+// ── KEYBOARD ──
+document.addEventListener('keydown',function(e){
+  if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();openSearch();}
+  if(e.key==='Escape'){document.querySelectorAll('.modal-ov').forEach(function(m){m.classList.remove('open');});closeMenus();}
 });
 
-// ── DOMContentLoaded ──
-document.addEventListener('DOMContentLoaded', function() {
-  initDashExtended();
+// ── INIT ──
+document.addEventListener('DOMContentLoaded',function(){
+  initDash();
   renderClientTable();
   renderAllNotes();
   renderCompliance();
@@ -1879,19 +1735,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // ── AUTH GUARD ──
-(function(){
-  try {
-    var session = sessionStorage.getItem('ns_session') || localStorage.getItem('ns_session');
-    if(!session){
-      // Only redirect if not already going to login
-      if(window.location.pathname !== '/login' && window.location.pathname !== '/signup'){
-        window.location.replace('/login');
-      }
-    }
-  } catch(e) {
-    // Storage not available - allow access
-  }
-})();
+/* auth guard removed */
 
 // ── STATE ──
 let activeTab='type', isRec=false, recog=null, selectedFmt='SOAP', currentNote={};
@@ -1962,8 +1806,8 @@ function goToPendingNotes(){
 }
 
 // ── NAVIGATION ──
-/* go() replaced by unified router below */
-/* goBack() replaced */
+/* go() replaced */
+function goBack(){ go('dashboard',document.querySelectorAll('.nav-tab')[0]); }
 
 // ── NOTE DETAIL ──
 function openNote(n){
