@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — NarraScribe</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--iron:#1E1C18;--blue-deep:#3A5F8A;--blue-mid:#5A7FA8;--blue-soft:#8AAECE;--blue-pale:#C2D8EC;--blue-mist:#E8F1F8;--stone-pale:#D8D4CC;--plaster:#F6F4F0;--white:#FDFCFA;--text-dark:#1A1C22;--text-mid:#445060;--text-soft:#7A8592;}
+html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--plaster);color:var(--text-dark);font-size:16px;line-height:1.7;}
+
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1rem,4vw,4rem);background:var(--iron);}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo{width:32px;height:32px;background:var(--blue-mid);border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.nav-logo i{font-size:18px;color:#fff;}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:#fff;}
+.nav-name span{color:var(--blue-soft);}
+.nav-back{font-size:13px;color:var(--blue-soft);text-decoration:none;display:flex;align-items:center;gap:5px;white-space:nowrap;}
+.nav-back:hover{color:#fff;}
+
+.hero{background:var(--iron);padding:clamp(2rem,5vw,4rem) clamp(1rem,4vw,4rem) clamp(1.5rem,3vw,3rem);text-align:center;}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-soft);margin-bottom:1rem;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,3.2rem);font-weight:300;color:#fff;margin-bottom:.75rem;}
+.hero-sub{font-size:.95rem;color:rgba(255,255,255,.4);max-width:480px;margin:0 auto;font-weight:300;}
+
+.content{max-width:900px;margin:0 auto;padding:clamp(2rem,5vw,4rem) clamp(1rem,3vw,2rem);display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start;}
+
+h2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:400;color:var(--text-dark);margin-bottom:1rem;}
+h2 em{font-style:italic;color:var(--blue-deep);}
+p{font-size:14px;color:var(--text-mid);margin-bottom:1rem;font-weight:300;line-height:1.8;}
+
+.contact-cards{display:flex;flex-direction:column;gap:.85rem;margin-top:1.5rem;}
+.contact-card{background:var(--white);border:1px solid var(--stone-pale);border-radius:12px;padding:1rem 1.2rem;display:flex;align-items:center;gap:1rem;}
+.contact-card i{font-size:20px;color:var(--blue-mid);flex-shrink:0;}
+.cc-label{font-size:11px;color:var(--text-soft);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;}
+.cc-value{font-size:13px;color:var(--text-dark);font-weight:500;word-break:break-all;}
+
+.form-card{background:var(--white);border:1px solid var(--stone-pale);border-radius:14px;padding:2rem;}
+.form-title{font-size:16px;font-weight:500;color:var(--text-dark);margin-bottom:1.5rem;}
+.form-group{margin-bottom:1.1rem;}
+label{font-size:12px;font-weight:500;color:var(--text-mid);display:block;margin-bottom:5px;}
+input,select,textarea{width:100%;padding:10px 13px;border-radius:9px;border:1px solid var(--stone-pale);font-size:13px;background:var(--plaster);color:var(--text-dark);font-family:'DM Sans',sans-serif;transition:border-color .15s;}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue-mid);box-shadow:0 0 0 3px rgba(58,95,138,.09);}
+textarea{min-height:100px;resize:vertical;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.submit-btn{width:100%;padding:13px;border-radius:9px;background:var(--iron);color:var(--blue-soft);font-size:14px;font-weight:500;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;margin-top:.25rem;}
+.submit-btn:hover{background:#2E2C26;color:#fff;}
+.success-msg{display:none;background:var(--blue-mist);border:1px solid var(--blue-pale);border-radius:9px;padding:1rem;text-align:center;font-size:13px;color:var(--blue-deep);margin-top:1rem;}
+
+.footer{background:var(--iron);padding:2.5rem clamp(1rem,4vw,4rem);text-align:center;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-top:.75rem;flex-wrap:wrap;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,.25);text-decoration:none;}
+.footer-links a:hover{color:rgba(255,255,255,.6);}
+
+@media(max-width:768px){ .nav-links{display:none!important;} .hamburger{display:flex!important;}
+  .content{grid-template-columns:1fr;gap:1.5rem;padding:1.5rem 1rem;}
+  .form-card{padding:1.25rem;}
+  .form-row{grid-template-columns:1fr;}
+  .footer-links{gap:1rem;}
+}
+
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;margin-left:auto;}
+.hamburger span{width:22px;height:2px;background:rgba(255,255,255,.7);border-radius:2px;display:block;transition:all .3s;}
+.mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--iron);z-index:200;padding:1.5rem;flex-direction:column;}
+.mobile-nav.open{display:flex;}
+.mobile-nav-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;}
+.mobile-nav-close{background:none;border:none;cursor:pointer;color:rgba(255,255,255,.6);font-size:24px;padding:4px;}
+.mobile-nav a{display:block;padding:1rem 0;color:rgba(255,255,255,.7);text-decoration:none;font-size:16px;border-bottom:1px solid rgba(255,255,255,.07);font-family:'DM Sans',sans-serif;}
+.mobile-nav a:hover{color:#fff;}
+.mobile-nav-demo{display:block;margin-top:1.5rem;padding:14px;background:var(--blue-mid);color:#fff!important;border-radius:10px;text-align:center;font-weight:600;font-size:15px;border:none!important;}
+@media(max-width:768px){
+  .hamburger{display:flex;}
+  .nav-back{display:none;}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="/" class="nav-brand">
+    <div class="nav-logo"><i class="ti ti-notes"></i></div>
+    <div class="nav-name">Narra<span>Scribe</span></div>
+  </a>
+  <a href="/" class="nav-back"><i class="ti ti-arrow-left"></i> Back to home</a>
+  <button class="hamburger" onclick="openMobileNav()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-header">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="nav-logo"><i class="ti ti-notes"></i></div>
+      <div class="nav-name">Narra<span>Scribe</span></div>
+    </div>
+    <button class="mobile-nav-close" onclick="closeMobileNav()">&#x2715;</button>
+  </div>
+  <a href="/" onclick="closeMobileNav()">Home</a>
+  <a href="/about" onclick="closeMobileNav()">About</a>
+  <a href="/contact" onclick="closeMobileNav()">Contact</a>
+  <a href="/privacy" onclick="closeMobileNav()">Privacy policy</a>
+  <a href="/terms" onclick="closeMobileNav()">Terms of service</a>
+  <a href="/hipaa" onclick="closeMobileNav()">HIPAA &amp; BAA</a>
+  <a href="/login" onclick="closeMobileNav()">Sign in</a>
+  <a href="https://narrascribe.com/demo" class="mobile-nav-demo">Book a demo</a>
+</div>
+<div class="hero">
+  <div class="hero-eyebrow">Get in touch</div>
+  <h1 class="hero-title">Contact NarraScribe</h1>
+  <p class="hero-sub">Ready to see it in action, or have questions? We'd love to hear from you.</p>
+</div>
+<div class="content">
+  <div class="contact-info">
+    <h2>Let's <em>talk</em></h2>
+    <p>Whether you're a clinic owner ready to get started, a therapist with questions, or a compliance officer who needs to review our security posture — we're here.</p>
+    <div class="contact-cards">
+      <div class="contact-card"><i class="ti ti-mail"></i><div><div class="cc-label">General enquiries</div><div class="cc-value">hello@narrascribe.com</div></div></div>
+      <div class="contact-card"><i class="ti ti-shield-check"></i><div><div class="cc-label">HIPAA &amp; compliance</div><div class="cc-value">compliance@narrascribe.com</div></div></div>
+      <div class="contact-card"><i class="ti ti-headset"></i><div><div class="cc-label">Support</div><div class="cc-value">support@narrascribe.com</div></div></div>
+    </div>
+  </div>
+  <div class="form-card">
+    <div class="form-title">Send us a message</div>
+    <div class="form-row">
+      <div class="form-group"><label>First name</label><input type="text" placeholder="Sarah"></div>
+      <div class="form-group"><label>Last name</label><input type="text" placeholder="Mitchell"></div>
+    </div>
+    <div class="form-group"><label>Email address</label><input type="email" placeholder="sarah@yourclinic.com"></div>
+    <div class="form-group"><label>Clinic name</label><input type="text" placeholder="Your clinic name"></div>
+    <div class="form-group">
+      <label>I'm interested in</label>
+      <select>
+        <option>Scheduling a demo</option>
+        <option>Requesting a BAA</option>
+        <option>Pricing information</option>
+        <option>Technical support</option>
+        <option>HIPAA / compliance questions</option>
+        <option>Something else</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your clinic and what you're looking for..."></textarea></div>
+    <button class="submit-btn" onclick="handleSubmit()">Send message</button>
+    <div class="success-msg" id="success-msg"><i class="ti ti-circle-check"></i> Thanks! We'll be in touch within one business day.</div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-copy">© 2026 NarraScribe. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/privacy">Privacy policy</a>
+    <a href="/terms">Terms of service</a>
+    <a href="/hipaa">HIPAA &amp; BAA</a>
+  </div>
+</footer>
+<script>
+function handleSubmit(){
+  document.getElementById('success-msg').style.display='block';
+  document.querySelector('.submit-btn').textContent='Sent!';
+  document.querySelector('.submit-btn').style.background='#2A4A2A';
+  document.querySelector('.submit-btn').style.color='#A8D8B8';
+}
+</script>
+<script>
+function openMobileNav(){ document.getElementById('mobile-nav').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeMobileNav(){ document.getElementById('mobile-nav').classList.remove('open'); document.body.style.overflow=''; }
+</script>
+</body>
+</html>
